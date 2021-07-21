@@ -11,7 +11,7 @@ struct CardView: View, Identifiable {
     // MARK: - PROPERTIES
     
     let id = UUID()
-    var honeymoon: Destination
+    var honeymoon: Person
     
     var body: some View {
         Image(honeymoon.image)
@@ -55,7 +55,7 @@ struct CardView: View, Identifiable {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(honeymoon: honeymoonData[18])
+        CardView(honeymoon: people[0])
             .previewLayout(.fixed(width: 375, height: 600))
     }
 }

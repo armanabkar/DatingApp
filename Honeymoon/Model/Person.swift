@@ -7,8 +7,14 @@
 
 import SwiftUI
 
-struct Destination {
+struct Person {
     var place: String
     var country: String
+    var image: String
+}
+
+struct Person1 {
+    var name: String
+    var hometown: String
     var image: String
 }

@@ -23,7 +23,7 @@ struct ContentView: View {
     @State var cardViews: [CardView] = {
         var views = [CardView]()
         for index in 0..<2 {
-            views.append(CardView(honeymoon: honeymoonData[index]))
+            views.append(CardView(honeymoon: people[index]))
         }
         return views
     }()
@@ -35,7 +35,7 @@ struct ContentView: View {
         
         self.lastCardIndex += 1
         
-        let honeymoon = honeymoonData[lastCardIndex % honeymoonData.count]
+        let honeymoon = people[lastCardIndex % people.count]
         
         let newCardView = CardView(honeymoon: honeymoon)
         

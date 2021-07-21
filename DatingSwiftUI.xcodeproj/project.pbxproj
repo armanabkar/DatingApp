@@ -13,8 +13,8 @@
 		F0A23825263C3E36006DC490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A23824263C3E36006DC490 /* Assets.xcassets */; };
 		F0A23828263C3E36006DC490 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A23827263C3E36006DC490 /* Preview Assets.xcassets */; };
 		F0A2382B263C3E36006DC490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A23829263C3E36006DC490 /* LaunchScreen.storyboard */; };
-		F0A23836263C4085006DC490 /* HoneymoonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23835263C4085006DC490 /* HoneymoonModel.swift */; };
-		F0A2383A263C40D6006DC490 /* HoneymoonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23839263C40D6006DC490 /* HoneymoonData.swift */; };
+		F0A23836263C4085006DC490 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23835263C4085006DC490 /* Person.swift */; };
+		F0A2383A263C40D6006DC490 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23839263C40D6006DC490 /* Data.swift */; };
 		F0A2383F263C4149006DC490 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2383E263C4149006DC490 /* CardView.swift */; };
 		F0A23843263C423C006DC490 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23842263C423C006DC490 /* HeaderView.swift */; };
 		F0A23846263C426E006DC490 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23845263C426E006DC490 /* InfoView.swift */; };
@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F0A2381B263C3E36006DC490 /* Honeymoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Honeymoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0A2381B263C3E36006DC490 /* DatingSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A2381E263C3E36006DC490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0A23820263C3E36006DC490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F0A23822263C3E36006DC490 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,8 +40,8 @@
 		F0A23827263C3E36006DC490 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0A2382A263C3E36006DC490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0A2382C263C3E36006DC490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0A23835263C4085006DC490 /* HoneymoonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneymoonModel.swift; sourceTree = "<group>"; };
-		F0A23839263C40D6006DC490 /* HoneymoonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoneymoonData.swift; sourceTree = "<group>"; };
+		F0A23835263C4085006DC490 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		F0A23839263C40D6006DC490 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F0A2383E263C4149006DC490 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F0A23842263C423C006DC490 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F0A23845263C426E006DC490 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		F0A2381C263C3E36006DC490 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F0A2381B263C3E36006DC490 /* Honeymoon.app */,
+				F0A2381B263C3E36006DC490 /* DatingSwiftUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 		F0A23834263C4073006DC490 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F0A23835263C4085006DC490 /* HoneymoonModel.swift */,
+				F0A23835263C4085006DC490 /* Person.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,7 +133,7 @@
 		F0A23838263C40C4006DC490 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F0A23839263C40D6006DC490 /* HoneymoonData.swift */,
+				F0A23839263C40D6006DC490 /* Data.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -198,9 +198,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F0A2381A263C3E36006DC490 /* Honeymoon */ = {
+		F0A2381A263C3E36006DC490 /* DatingSwiftUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0A2382F263C3E36006DC490 /* Build configuration list for PBXNativeTarget "Honeymoon" */;
+			buildConfigurationList = F0A2382F263C3E36006DC490 /* Build configuration list for PBXNativeTarget "DatingSwiftUI" */;
 			buildPhases = (
 				F0A23817263C3E36006DC490 /* Sources */,
 				F0A23818263C3E36006DC490 /* Frameworks */,
@@ -210,9 +210,9 @@
 			);
 			dependencies = (
 			);
-			name = Honeymoon;
+			name = DatingSwiftUI;
 			productName = Honeymoon;
-			productReference = F0A2381B263C3E36006DC490 /* Honeymoon.app */;
+			productReference = F0A2381B263C3E36006DC490 /* DatingSwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -229,7 +229,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F0A23816263C3E36006DC490 /* Build configuration list for PBXProject "Honeymoon" */;
+			buildConfigurationList = F0A23816263C3E36006DC490 /* Build configuration list for PBXProject "DatingSwiftUI" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -242,7 +242,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F0A2381A263C3E36006DC490 /* Honeymoon */,
+				F0A2381A263C3E36006DC490 /* DatingSwiftUI */,
 			);
 		};
 /* End PBXProject section */
@@ -271,7 +271,7 @@
 				F0A23856263C4363006DC490 /* PlaySound.swift in Sources */,
 				F0A23846263C426E006DC490 /* InfoView.swift in Sources */,
 				F0A23865263C4404006DC490 /* GuideComponent.swift in Sources */,
-				F0A23836263C4085006DC490 /* HoneymoonModel.swift in Sources */,
+				F0A23836263C4085006DC490 /* Person.swift in Sources */,
 				F0A2385C263C43AD006DC490 /* SymbolModifier.swift in Sources */,
 				F0A23859263C4398006DC490 /* TitleModifier.swift in Sources */,
 				F0A2384C263C42BC006DC490 /* FooterView.swift in Sources */,
@@ -279,7 +279,7 @@
 				F0A23853263C4349006DC490 /* CardTransition.swift in Sources */,
 				F0A2385F263C43C7006DC490 /* ButtonModifier.swift in Sources */,
 				F0A23821263C3E36006DC490 /* SceneDelegate.swift in Sources */,
-				F0A2383A263C40D6006DC490 /* HoneymoonData.swift in Sources */,
+				F0A2383A263C40D6006DC490 /* Data.swift in Sources */,
 				F0A23862263C43F6006DC490 /* HeaderComponent.swift in Sources */,
 				F0A2383F263C4149006DC490 /* CardView.swift in Sources */,
 				F0A23823263C3E36006DC490 /* ContentView.swift in Sources */,
@@ -431,7 +431,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.Honeymoon;
+				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.DatingSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,7 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.Honeymoon;
+				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.DatingSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -462,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F0A23816263C3E36006DC490 /* Build configuration list for PBXProject "Honeymoon" */ = {
+		F0A23816263C3E36006DC490 /* Build configuration list for PBXProject "DatingSwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0A2382D263C3E36006DC490 /* Debug */,
@@ -471,7 +471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0A2382F263C3E36006DC490 /* Build configuration list for PBXNativeTarget "Honeymoon" */ = {
+		F0A2382F263C3E36006DC490 /* Build configuration list for PBXNativeTarget "DatingSwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0A23830263C3E36006DC490 /* Debug */,
