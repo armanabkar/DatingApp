@@ -1,13 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "5665387.jpg",
       "idiom" : "universal",
-      "filename" : "photo-athens-greece.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "photo-athens-greece@2x.jpg",
       "scale" : "2x"
     },
     {
@@ -16,7 +15,7 @@
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

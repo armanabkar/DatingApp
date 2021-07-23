@@ -35,9 +35,9 @@ struct CardView: View, Identifiable {
                             alignment: .bottom
                         )
                     
-                    Text(person.neighborhood.uppercased())
+                    Text("\(person.age) - \(person.neighborhood.uppercased())")
                         .foregroundColor(Color.black)
-                        .font(.footnote)
+                        .font(.subheadline)
                         .fontWeight(.bold)
                         .frame(minWidth: 85)
                         .padding(.horizontal, 10)
@@ -55,7 +55,7 @@ struct CardView: View, Identifiable {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(person: people[0])
+        CardView(person: people[1])
             .previewLayout(.fixed(width: 375, height: 600))
     }
 }

@@ -10,5 +10,6 @@ import SwiftUI
 struct Person {
     var name: String
     var neighborhood: String
+    var age: Int
     var image: String
 }
