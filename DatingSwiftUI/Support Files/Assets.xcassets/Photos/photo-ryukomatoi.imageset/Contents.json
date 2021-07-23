@@ -1,13 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "dd4if0v-5a3d6e56-b6d3-416c-84e7-19e2ffcb7473.jpg",
       "idiom" : "universal",
-      "filename" : "photo-veligandu-island-maldives.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "photo-veligandu-island-maldives@2x.jpg",
       "scale" : "2x"
     },
     {
@@ -16,7 +15,7 @@
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
