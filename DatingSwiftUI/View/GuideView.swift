@@ -16,15 +16,13 @@ struct GuideView: View {
             VStack(alignment: .center, spacing: 20) {
                 HeaderComponent()
                 
-                Spacer(minLength: 10)
-                
-                Text("Get Started!")
-                    .fontWeight(.black)
-                    .modifier(TitleModifier())
-                
-                Text("Find Hot dates in your neighborhood!")
+                Spacer(minLength: 0)
+                Text("Find Hot dates from your favorite anime!")
+                    .font(.title)
+                    .fontWeight(.bold)
                     .lineLimit(nil)
                     .multilineTextAlignment(.center)
+                    .modifier(TitleModifier())
                 
                 Spacer(minLength: 10)
                 

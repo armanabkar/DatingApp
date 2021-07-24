@@ -56,11 +56,11 @@ struct InfoView_Previews: PreviewProvider {
 struct AppInfoView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            RowAppInfoView(ItemOne: "Application", ItemTwo: "Dating | SwiftUI")
+            RowAppInfoView(ItemOne: "Application", ItemTwo: "Anime Dating | SwiftUI")
             RowAppInfoView(ItemOne: "Developer", ItemTwo: "Arman Abkar")
             RowAppInfoView(ItemOne: "Compatibility", ItemTwo: "iPhone and iPad")
             RowAppInfoView(ItemOne: "Website", ItemTwo: "armanabkar.ir")
-            RowAppInfoView(ItemOne: "Version", ItemTwo: "1.0.0")
+            RowAppInfoView(ItemOne: "Version", ItemTwo: "2.0.0")
         }
     }
 }
@@ -86,17 +86,11 @@ struct RowAppInfoView: View {
 struct CreditsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text("Photos").foregroundColor(Color.gray)
-                Spacer()
-                Text("Unsplash")
-            }
-            
-            Divider()
-            Text("Photographers").foregroundColor(Color.gray)
-            Text("Shifaaz Shamoon (Maldives), Grillot Edouard (France), Evan Wise (Greece), Christoph Schulz (United Arab Emirates), Andrew Coelho (USA), Damiano Baschiera (Italy), Daniel Olah (Hungary), Andrzej Rusinowski (Poland), Lucas Miguel (Slovenia), Florencia Potter (Spain), Ian Simmonds (USA), Ian Keefe (Canada), Denys Nevozhai (Thailand), David Köhler (Italy), Andre Benz (USA), Alexandre Chambon (South Korea), Roberto Nickson (Mexico), Ajit Paul Abraham (UK), Jeremy Bishop (USA), Davi Costa (Brazil), Liam Pozz (Australia)")
+            Text("Animes").foregroundColor(Color.gray)
+            Text("Naruto, Attack on Titan, Kill la Kill")
                 .multilineTextAlignment(.leading)
                 .font(.footnote)
+            Divider()
         }
     }
 }

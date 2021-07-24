@@ -1,30 +1,30 @@
 {
   "images" : [
     {
+      "filename" : "black-logo-1.png",
       "idiom" : "universal",
-      "filename" : "logo-honeymoon.pdf",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
-      "filename" : "logo-honeymoon-1.pdf",
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "light"
         }
       ],
+      "filename" : "black-logo.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
-      "filename" : "logo-honeymoon-dark.pdf",
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "dark"
         }
       ],
+      "filename" : "white-logo.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
@@ -32,53 +32,53 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x",
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "light"
         }
-      ]
+      ],
+      "idiom" : "universal",
+      "scale" : "2x"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x",
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "dark"
         }
-      ]
+      ],
+      "idiom" : "universal",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
       "scale" : "3x"
     },
     {
-      "idiom" : "universal",
-      "scale" : "3x",
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "light"
         }
-      ]
+      ],
+      "idiom" : "universal",
+      "scale" : "3x"
     },
     {
-      "idiom" : "universal",
-      "scale" : "3x",
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "dark"
         }
-      ]
+      ],
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   },
   "properties" : {
     "preserves-vector-representation" : true

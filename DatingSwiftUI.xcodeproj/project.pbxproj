@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F099C39B26AB216800379601 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C39A26AB216800379601 /* AuthView.swift */; };
+		F099C39E26AB294000379601 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C39D26AB294000379601 /* HomeView.swift */; };
 		F0A2381F263C3E36006DC490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2381E263C3E36006DC490 /* AppDelegate.swift */; };
 		F0A23821263C3E36006DC490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23820263C3E36006DC490 /* SceneDelegate.swift */; };
-		F0A23823263C3E36006DC490 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23822263C3E36006DC490 /* ContentView.swift */; };
 		F0A23825263C3E36006DC490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A23824263C3E36006DC490 /* Assets.xcassets */; };
 		F0A23828263C3E36006DC490 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A23827263C3E36006DC490 /* Preview Assets.xcassets */; };
 		F0A2382B263C3E36006DC490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A23829263C3E36006DC490 /* LaunchScreen.storyboard */; };
@@ -33,10 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F099C39A26AB216800379601 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		F099C39D26AB294000379601 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F0A2381B263C3E36006DC490 /* DatingSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A2381E263C3E36006DC490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0A23820263C3E36006DC490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F0A23822263C3E36006DC490 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F0A23824263C3E36006DC490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0A23827263C3E36006DC490 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0A2382A263C3E36006DC490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -144,12 +146,13 @@
 		F0A2383D263C412D006DC490 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F0A23822263C3E36006DC490 /* ContentView.swift */,
 				F0A23842263C423C006DC490 /* HeaderView.swift */,
 				F0A23845263C426E006DC490 /* InfoView.swift */,
 				F0A23848263C4294006DC490 /* GuideView.swift */,
 				F0A2384B263C42BC006DC490 /* FooterView.swift */,
 				F0A2383E263C4149006DC490 /* CardView.swift */,
+				F099C39A26AB216800379601 /* AuthView.swift */,
+				F099C39D26AB294000379601 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,10 +286,11 @@
 				F0A23853263C4349006DC490 /* CardTransition.swift in Sources */,
 				F0A2385F263C43C7006DC490 /* ButtonModifier.swift in Sources */,
 				F0A23821263C3E36006DC490 /* SceneDelegate.swift in Sources */,
+				F099C39E26AB294000379601 /* HomeView.swift in Sources */,
 				F0A2383A263C40D6006DC490 /* Data.swift in Sources */,
 				F0A23862263C43F6006DC490 /* HeaderComponent.swift in Sources */,
 				F0A2383F263C4149006DC490 /* CardView.swift in Sources */,
-				F0A23823263C3E36006DC490 /* ContentView.swift in Sources */,
+				F099C39B26AB216800379601 /* AuthView.swift in Sources */,
 				F0A23843263C423C006DC490 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
