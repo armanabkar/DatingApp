@@ -21,7 +21,7 @@ struct HeaderView: View {
                 self.showInfoView.toggle()
             }) {
                 Image(systemName: "info.circle")
-                    .font(.system(size: 28, weight: .regular))
+                    .font(.system(size: 38, weight: .regular))
             }
             .accentColor(Color.primary)
             .sheet(isPresented: $showInfoView) {
@@ -32,7 +32,7 @@ struct HeaderView: View {
             Image("logo-dating-pink")
                 .resizable()
                 .scaledToFit()
-                .frame(height: 28)
+                .frame(height: 38)
             
             Spacer()
             Button(action: {
@@ -40,8 +40,8 @@ struct HeaderView: View {
                 self.haptics.notificationOccurred(.success)
                 self.showGuideView.toggle()
             }) {
-                Image(systemName: "questionmark.circle")
-                    .font(.system(size: 28, weight: .regular))
+                Image(systemName: "person.circle")
+                    .font(.system(size: 38, weight: .regular))
             }
             .accentColor(Color.primary)
             .sheet(isPresented: $showGuideView) {

@@ -18,7 +18,7 @@ struct HeaderComponent: View {
             Image("logo-dating")
                 .resizable()
                 .scaledToFit()
-                .frame(height: 28)
+                .frame(height: 38)
         }
     }
 }
