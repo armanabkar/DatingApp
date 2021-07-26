@@ -88,10 +88,12 @@ struct HomeView: View {
                             ZStack {
                                 
                                 Image(systemName: "x.circle")
+                                    .foregroundColor(.red)
                                     .modifier(SymbolModifier())
                                     .opacity(self.dragState.translation.width < -self.dragAreaThreshold && self.isTopCard(cardView: cardView) ? 1.0 : 0.0)
                                 
                                 Image(systemName: "heart.circle")
+                                    .foregroundColor(.green)
                                     .modifier(SymbolModifier())
                                     .opacity(self.dragState.translation.width > self.dragAreaThreshold && self.isTopCard(cardView: cardView) ? 1.0 : 0.0)
                             }

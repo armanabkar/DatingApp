@@ -10,6 +10,8 @@ import SwiftUI
 struct AuthView: View {
     
     @State var phoneNumber: String = ""
+    @State var name: String = ""
+    @State var age: String = ""
     
     var body: some View {
         NavigationView {
@@ -24,35 +26,47 @@ struct AuthView: View {
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .padding(.top, 50)
+                        .padding(.top, 25)
                     Image("logo-dating-app")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 48)
                     
                     Spacer()
-                    TextField("Enter your phone", text: $phoneNumber)
-                        .font(.system(.title, design: .rounded))
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 12)
-                        .background(
-                            ZStack {
-                                Capsule().stroke(Color.white, lineWidth: 3)
-                                RoundedRectangle(cornerRadius: 40)
-                                    .fill(Color.white.opacity(0.25)
-                                    )
-                                    .frame(width: 300)
-                            }
-                        )
-                        .scaledToFit()
+                    AuthField(placeholder: "Enter your Number", text: $phoneNumber)
+                    AuthField(placeholder: "Enter your Name", text: $name)
+                    AuthField(placeholder: "Enter your Age", text: $age)
+                    
+                    HStack {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 40)
+                                .fill(Color.white.opacity(1)
+                                )
+                                .frame(width: 150, height: 50)
+                            Text("Male")
+                                .foregroundColor(.black)
+                                .fontWeight(.bold)
+                                .font(.title3)
+                        }
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 40)
+                                .fill(Color.white.opacity(0.25)
+                                )
+                                .frame(width: 150, height: 50)
+                            Text("Female")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .font(.title3)
+                        }
+                    }
+                    .padding(.top)
                     
                     Button(action: {
                         
                     }) {
                         NavigationLink(destination: HomeView().navigationBarHidden(true)) {
                             Text("Let's go!".uppercased())
-                                .font(.system(.title3, design: .rounded))
+                                .font(.system(.title2, design: .rounded))
                                 .fontWeight(.heavy)
                                 .padding(.horizontal, 20)
                                 .padding(.vertical, 12)
@@ -61,7 +75,7 @@ struct AuthView: View {
                                     Capsule().stroke(Color.white, lineWidth: 3)
                                 )
                                 .padding(.top, 30)
-                                .padding(.bottom, 125)
+                                .padding(.bottom, 75)
                         }
                     }
                     Spacer()
@@ -77,5 +91,30 @@ struct AuthView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         AuthView()
+    }
+}
+
+struct AuthField: View {
+    
+    var placeholder: String
+    @Binding var text: String
+    
+    var body: some View {
+        TextField(placeholder, text: $text)
+            .font(.system(.title, design: .rounded))
+            .foregroundColor(.white)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 12)
+            .background(
+                ZStack {
+                    Capsule().stroke(Color.white, lineWidth: 3)
+                    RoundedRectangle(cornerRadius: 40)
+                        .fill(Color.white.opacity(0.25)
+                        )
+                        .frame(width: 300)
+                }
+            )
+            .padding(.top)
+            .scaledToFit()
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F099C39B26AB216800379601 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C39A26AB216800379601 /* AuthView.swift */; };
 		F099C39E26AB294000379601 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C39D26AB294000379601 /* HomeView.swift */; };
+		F099C3A526ADC07800379601 /* NavigationViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C3A426ADC07800379601 /* NavigationViewExtension.swift */; };
 		F0A2381F263C3E36006DC490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2381E263C3E36006DC490 /* AppDelegate.swift */; };
 		F0A23821263C3E36006DC490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23820263C3E36006DC490 /* SceneDelegate.swift */; };
 		F0A23825263C3E36006DC490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A23824263C3E36006DC490 /* Assets.xcassets */; };
@@ -19,7 +20,7 @@
 		F0A2383F263C4149006DC490 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2383E263C4149006DC490 /* CardView.swift */; };
 		F0A23843263C423C006DC490 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23842263C423C006DC490 /* HeaderView.swift */; };
 		F0A23846263C426E006DC490 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23845263C426E006DC490 /* InfoView.swift */; };
-		F0A23849263C4294006DC490 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23848263C4294006DC490 /* GuideView.swift */; };
+		F0A23849263C4294006DC490 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23848263C4294006DC490 /* ProfileView.swift */; };
 		F0A2384C263C42BC006DC490 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2384B263C42BC006DC490 /* FooterView.swift */; };
 		F0A23853263C4349006DC490 /* CardTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23852263C4349006DC490 /* CardTransition.swift */; };
 		F0A23856263C4363006DC490 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23855263C4363006DC490 /* PlaySound.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		F099C39A26AB216800379601 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		F099C39D26AB294000379601 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F099C3A426ADC07800379601 /* NavigationViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewExtension.swift; sourceTree = "<group>"; };
 		F0A2381B263C3E36006DC490 /* DatingSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A2381E263C3E36006DC490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0A23820263C3E36006DC490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		F0A2383E263C4149006DC490 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F0A23842263C423C006DC490 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F0A23845263C426E006DC490 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		F0A23848263C4294006DC490 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		F0A23848263C4294006DC490 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F0A2384B263C42BC006DC490 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		F0A23852263C4349006DC490 /* CardTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransition.swift; sourceTree = "<group>"; };
 		F0A23855263C4363006DC490 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
@@ -148,7 +150,7 @@
 			children = (
 				F0A23842263C423C006DC490 /* HeaderView.swift */,
 				F0A23845263C426E006DC490 /* InfoView.swift */,
-				F0A23848263C4294006DC490 /* GuideView.swift */,
+				F0A23848263C4294006DC490 /* ProfileView.swift */,
 				F0A2384B263C42BC006DC490 /* FooterView.swift */,
 				F0A2383E263C4149006DC490 /* CardView.swift */,
 				F099C39A26AB216800379601 /* AuthView.swift */,
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				F0A23852263C4349006DC490 /* CardTransition.swift */,
+				F099C3A426ADC07800379601 /* NavigationViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -273,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0A23849263C4294006DC490 /* GuideView.swift in Sources */,
+				F0A23849263C4294006DC490 /* ProfileView.swift in Sources */,
 				F0A23856263C4363006DC490 /* PlaySound.swift in Sources */,
 				F0A23846263C426E006DC490 /* InfoView.swift in Sources */,
 				F0ECDA1826A816A900A6A413 /* Suggestions.swift in Sources */,
@@ -281,6 +284,7 @@
 				F0A23836263C4085006DC490 /* Person.swift in Sources */,
 				F0A2385C263C43AD006DC490 /* SymbolModifier.swift in Sources */,
 				F0A23859263C4398006DC490 /* TitleModifier.swift in Sources */,
+				F099C3A526ADC07800379601 /* NavigationViewExtension.swift in Sources */,
 				F0A2384C263C42BC006DC490 /* FooterView.swift in Sources */,
 				F0A2381F263C3E36006DC490 /* AppDelegate.swift in Sources */,
 				F0A23853263C4349006DC490 /* CardTransition.swift in Sources */,

@@ -16,7 +16,32 @@ struct InfoView: View {
             VStack(alignment: .center, spacing: 20) {
                 HeaderComponent()
                 
-                Spacer(minLength: 10)
+                Spacer(minLength: 0)
+                Text("Find Hot dates from your favorite anime series!")
+                    .font(.title)
+                    .fontWeight(.heavy)
+                    .lineLimit(nil)
+                    .multilineTextAlignment(.center)
+                    .modifier(TitleModifier())
+                
+                Spacer(minLength: 0)
+                
+                VStack(alignment: .leading, spacing: 25) {
+                    GuideComponent(
+                        title: "Like",
+                        subtitle: "Swipe right",
+                        description: "Do you like them? Touch the screen and swipe right. If they do the same, you will be matched!",
+                        icon: "heart.circle", iconColor: .green)
+                    
+                    GuideComponent(
+                        title: "Dismiss",
+                        subtitle: "Swipe left",
+                        description: "You don't like them? Touch the screen and swipe left. You will no longer see them.",
+                        icon: "xmark.circle", iconColor: .red)
+                }
+                
+                
+                Spacer(minLength: 0)
                 
                 Text("App Info")
                     .fontWeight(.black)
@@ -29,15 +54,6 @@ struct InfoView: View {
                     .modifier(TitleModifier())
                 
                 CreditsView()
-                
-                Spacer(minLength: 10)
-                
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Continue".uppercased())
-                        .modifier(ButtonModifier())
-                }
             }
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding(.top, 15)

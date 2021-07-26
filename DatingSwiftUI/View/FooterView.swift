@@ -16,6 +16,7 @@ struct FooterView: View {
         HStack {
             Image(systemName: "xmark.circle")
                 .font(.system(size: 42, weight: .light))
+                .foregroundColor(.red)
             
             Spacer()
             
@@ -29,7 +30,9 @@ struct FooterView: View {
                     .fontWeight(.heavy)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 12)
-                    .accentColor(Color.pink)
+                    .accentColor(Color.white)
+                    .background(Color.pink)
+                    .cornerRadius(50)
                     .background(
                         Capsule().stroke(Color.pink, lineWidth: 2)
                     )
@@ -39,6 +42,7 @@ struct FooterView: View {
             
             Image(systemName: "heart.circle")
                 .font(.system(size: 42, weight: .light))
+                .foregroundColor(.green)
         }
         .padding()
     }

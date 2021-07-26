@@ -22,6 +22,7 @@ struct HeaderView: View {
             }) {
                 Image(systemName: "info.circle")
                     .font(.system(size: 38, weight: .regular))
+                    .foregroundColor(.gray)
             }
             .accentColor(Color.primary)
             .sheet(isPresented: $showInfoView) {
@@ -42,10 +43,11 @@ struct HeaderView: View {
             }) {
                 Image(systemName: "person.circle")
                     .font(.system(size: 38, weight: .regular))
+                    .foregroundColor(.pink)
             }
             .accentColor(Color.primary)
             .sheet(isPresented: $showGuideView) {
-                GuideView()
+                ProfileView()
             }
         }
         .padding()
