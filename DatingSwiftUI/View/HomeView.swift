@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    let homeViewModel = HomeViewModel()
     @State var showAlert: Bool = false
     @State var showGuide: Bool = false
     @State var showInfo: Bool = false
@@ -19,9 +20,7 @@ struct HomeView: View {
     
     @State var cardViews: [CardView] = {
         var views = [CardView]()
-        for index in 0..<2 {
-            views.append(CardView(person: people[index]))
-        }
+        views.append(CardView(person: people[0]))
         return views
     }()
     
@@ -152,6 +151,10 @@ struct HomeView: View {
                 title: Text(self.generateRandomSuggestion()),
                 dismissButton: .default(Text("Close")))
         }
+        .onAppear(perform: {
+            homeViewModel.fetchAll()
+        })
+        
     }
     
     private func generateRandomSuggestion() -> String {

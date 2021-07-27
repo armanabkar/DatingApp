@@ -40,7 +40,6 @@ struct InfoView: View {
                         icon: "xmark.circle", iconColor: .red)
                 }
                 
-                
                 Spacer(minLength: 0)
                 
                 Text("App Info")
@@ -93,7 +92,6 @@ struct RowAppInfoView: View {
                 Spacer()
                 Text(ItemTwo)
             }
-            
             Divider()
         }
     }
@@ -103,9 +101,7 @@ struct CreditsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Animes").foregroundColor(Color.gray)
-            Text("Naruto, Attack on Titan, Kill la Kill")
-                .multilineTextAlignment(.leading)
-                .font(.footnote)
+            Text("Naruto, Naruto: Shippuden, Attack on Titan, Kill la Kill, One Piece, Tokyo Ghoul, Persona 5, Hunter X Hunter, Demon Slayer")
             Divider()
         }
     }

@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Person {
+struct Person: Codable {
+    var id: Int
     var name: String
     var neighborhood: String
     var age: Int

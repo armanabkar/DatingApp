@@ -12,14 +12,10 @@ struct CardView: View, Identifiable {
     let id = UUID()
     var person: Person
     
+    
     var body: some View {
-        Image(person.image)
-            .resizable()
-            .cornerRadius(24)
-            .scaledToFit()
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .overlay(LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0), Color.pink.opacity(0.25)]), startPoint: .top, endPoint: .bottom)
-                        .cornerRadius(24))
+        ImageView(withURL: person.image)
+            .frame(height: 575)
             .overlay(
                 VStack(alignment: .center, spacing: 12) {
                     Text(person.name.uppercased())
@@ -58,7 +54,7 @@ struct CardView: View, Identifiable {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(person: people[1])
+        CardView(person: people[0])
             .previewLayout(.fixed(width: 375, height: 600))
     }
 }
