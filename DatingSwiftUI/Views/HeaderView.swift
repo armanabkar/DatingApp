@@ -20,7 +20,7 @@ struct HeaderView: View {
                 self.haptics.notificationOccurred(.success)
                 self.showInfoView.toggle()
             }) {
-                Image(systemName: "info.circle")
+                Image(systemName: K.Icon.info)
                     .font(.system(size: 38, weight: .regular))
                     .foregroundColor(.gray)
             }
@@ -30,7 +30,7 @@ struct HeaderView: View {
             }
             
             Spacer()
-            Image("logo-dating-pink")
+            Image(K.Image.pinkLogo)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 38)
@@ -41,7 +41,7 @@ struct HeaderView: View {
                 self.haptics.notificationOccurred(.success)
                 self.showGuideView.toggle()
             }) {
-                Image(systemName: "person.circle")
+                Image(systemName: K.Icon.profile)
                     .font(.system(size: 38, weight: .regular))
                     .foregroundColor(.pink)
             }

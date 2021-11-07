@@ -12,9 +12,9 @@ struct HomeViewModel {
     func getCharacters() {
         WebService().fetchCharacters { result in
             switch result {
-                case .success(let characters):
-                    if let characters = characters {
-                        people.append(contentsOf: characters)
+                case .success(let fetchedCharacters):
+                    if let fetchedCharacters = fetchedCharacters {
+                        characters.append(contentsOf: fetchedCharacters)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -25,9 +25,9 @@ struct HomeViewModel {
     func getSuggestions() {
         WebService().fetchSuggestions { result in
             switch result {
-                case .success(let suggestion):
-                    if let suggestion = suggestion {
-                        suggestions.append(contentsOf: suggestion)
+                case .success(let fetchedSuggestions):
+                    if let fetchedSuggestions = fetchedSuggestions {
+                        suggestions.append(contentsOf: fetchedSuggestions)
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -42,13 +42,13 @@ struct HomeViewModel {
     
 }
 
-var people: [Person] = [
-    Person(
+var characters: [Character] = [
+    Character(
         id: 0,
         name: "Kushina Uzumaki",
         neighborhood: "Hidden Leaf Village",
         age: 24,
-        image: "https://i.ibb.co/bLCTr8K/kushinauzumaki.png"
+        image: "images/kushinauzumaki.png"
     )
 ]
 

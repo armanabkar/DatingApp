@@ -15,12 +15,9 @@ enum NetworkError: Error {
 }
 
 class WebService {
-    
-    private let charactersAPI = "https://animedating-server.herokuapp.com/api/v1/characters"
-    private let suggestionsAPI = "https://animedating-server.herokuapp.com/api/v1/suggestions"
 
-    func fetchCharacters(completion: @escaping (Result<[Person]?, NetworkError>) -> Void) {
-        guard let url = URL(string: charactersAPI) else {
+    func fetchCharacters(completion: @escaping (Result<[Character]?, NetworkError>) -> Void) {
+        guard let url = URL(string: K.charactersURL) else {
             return completion(.failure(.badURL))
         }
         
@@ -29,7 +26,7 @@ class WebService {
                 return completion(.failure(.noData))
             }
             
-            let characters = try? JSONDecoder().decode([Person].self, from: data)
+            let characters = try? JSONDecoder().decode([Character].self, from: data)
             DispatchQueue.main.async {
                 completion(.success(characters))
             }
@@ -38,7 +35,7 @@ class WebService {
     }
     
     func fetchSuggestions(completion: @escaping (Result<[String]?, NetworkError>) -> Void) {
-        guard let url = URL(string: suggestionsAPI) else {
+        guard let url = URL(string: K.suggestionURL) else {
             return completion(.failure(.badURL))
         }
         

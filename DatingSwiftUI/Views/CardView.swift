@@ -10,15 +10,14 @@ import SwiftUI
 struct CardView: View, Identifiable {
     
     let id = UUID()
-    var person: Person
-    
+    var character: Character
     
     var body: some View {
-        ImageView(withURL: person.image)
+        ImageView(withURL: "\(K.baseURL)\(character.image)")
             .frame(height: 575)
             .overlay(
                 VStack(alignment: .center, spacing: 12) {
-                    Text(person.name.uppercased())
+                    Text(character.name.uppercased())
                         .foregroundColor(Color.white)
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -33,7 +32,7 @@ struct CardView: View, Identifiable {
                             alignment: .bottom
                         )
                     
-                    Text("\(person.age) - \(person.neighborhood.uppercased())")
+                    Text("\(character.age) - \(character.neighborhood.uppercased())")
                         .foregroundColor(Color.black)
                         .font(.subheadline)
                         .fontWeight(.bold)
@@ -54,7 +53,7 @@ struct CardView: View, Identifiable {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(person: people[0])
+        CardView(character: characters[0])
             .previewLayout(.fixed(width: 375, height: 600))
     }
 }

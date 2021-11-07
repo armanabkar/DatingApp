@@ -14,7 +14,7 @@ struct InfoView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 20) {
-                HeaderComponent()
+                HeaderIconComponent()
                 
                 Spacer(minLength: 0)
                 Text("Find Hot dates from your favorite anime series!")

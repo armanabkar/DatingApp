@@ -20,15 +20,15 @@ struct HomeView: View {
     
     @State var cardViews: [CardView] = {
         var views = [CardView]()
-        views.append(CardView(person: people[0]))
+        views.append(CardView(character: characters[0]))
         return views
     }()
     
     private func moveCards() {
         cardViews.removeFirst()
         self.lastCardIndex += 1
-        let person = people[lastCardIndex % people.count]
-        let newCardView = CardView(person: person)
+        let character = characters[lastCardIndex % characters.count]
+        let newCardView = CardView(character: character)
         cardViews.append(newCardView)
     }
     
@@ -86,12 +86,12 @@ struct HomeView: View {
                         .overlay(
                             ZStack {
                                 
-                                Image(systemName: "x.circle")
+                                Image(systemName: K.Icon.dismiss)
                                     .foregroundColor(.red)
                                     .modifier(SymbolModifier())
                                     .opacity(self.dragState.translation.width < -self.dragAreaThreshold && self.isTopCard(cardView: cardView) ? 1.0 : 0.0)
                                 
-                                Image(systemName: "heart.circle")
+                                Image(systemName: K.Icon.like)
                                     .foregroundColor(.green)
                                     .modifier(SymbolModifier())
                                     .opacity(self.dragState.translation.width > self.dragAreaThreshold && self.isTopCard(cardView: cardView) ? 1.0 : 0.0)

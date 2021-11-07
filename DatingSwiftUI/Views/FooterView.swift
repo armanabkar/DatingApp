@@ -14,7 +14,7 @@ struct FooterView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "xmark.circle")
+            Image(systemName: K.Icon.dismiss)
                 .font(.system(size: 42, weight: .light))
                 .foregroundColor(.red)
             
@@ -40,7 +40,7 @@ struct FooterView: View {
             
             Spacer()
             
-            Image(systemName: "heart.circle")
+            Image(systemName: K.Icon.like)
                 .font(.system(size: 42, weight: .light))
                 .foregroundColor(.green)
         }

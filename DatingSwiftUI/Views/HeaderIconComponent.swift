@@ -1,5 +1,5 @@
 //
-//  HeaderComponent.swift
+//  HeaderIconComponent.swift
 //  DatingSwiftUI
 //
 //  Created by Arman Abkar on 4/30/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HeaderComponent: View {
+struct HeaderIconComponent: View {
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
             Capsule()
@@ -15,7 +15,7 @@ struct HeaderComponent: View {
                 .foregroundColor(Color.secondary)
                 .opacity(0.2)
             
-            Image("logo-dating")
+            Image(K.Image.blackLogo)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 38)
@@ -25,7 +25,7 @@ struct HeaderComponent: View {
 
 struct HeaderComponent_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderComponent()
+        HeaderIconComponent()
             .previewLayout(.fixed(width: 375, height: 128))
     }
 }

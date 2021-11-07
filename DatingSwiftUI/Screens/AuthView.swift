@@ -27,15 +27,15 @@ struct AuthView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding(.top, 25)
-                    Image("logo-dating-app")
+                    Image(K.Image.whiteLogo)
                         .resizable()
                         .scaledToFit()
                         .frame(height: 48)
                     
                     Spacer()
-                    AuthField(placeholder: "Enter your Number", text: $phoneNumber)
-                    AuthField(placeholder: "Enter your Name", text: $name)
-                    AuthField(placeholder: "Enter your Age", text: $age)
+                    AuthFieldView(placeholder: "Enter your Number", text: $phoneNumber)
+                    AuthFieldView(placeholder: "Enter your Name", text: $name)
+                    AuthFieldView(placeholder: "Enter your Age", text: $age)
                     
                     HStack {
                         ZStack {
@@ -94,7 +94,7 @@ struct LoginView_Previews: PreviewProvider {
     }
 }
 
-struct AuthField: View {
+struct AuthFieldView: View {
     
     var placeholder: String
     @Binding var text: String

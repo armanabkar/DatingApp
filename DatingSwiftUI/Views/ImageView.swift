@@ -23,7 +23,7 @@ struct ImageView: View {
             .scaledToFit()
             .frame(minWidth: 0, maxWidth: .infinity)
             .onReceive(imageLoader.didChange) { data in
-                self.image = UIImage(data: data) ?? UIImage(systemName: "person")!
+                self.image = UIImage(data: data) ?? UIImage(systemName: K.Icon.profile)!
             }
     }
 }

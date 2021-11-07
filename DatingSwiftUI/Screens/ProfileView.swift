@@ -14,11 +14,11 @@ struct ProfileView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 20) {
-                HeaderComponent()
+                HeaderIconComponent()
                 
                 Spacer(minLength: 10)
                 VStack {
-                    Image(systemName: "person.circle")
+                    Image(systemName: K.Icon.profile)
                         .resizable()
                         .frame(width: 150, height: 150)
                         .padding(.bottom, 40)
