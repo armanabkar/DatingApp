@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    let homeViewModel = HomeViewModel()
+    @StateObject private var homeViewModel = HomeViewModel()
     @State var showAlert: Bool = false
     @State var showGuide: Bool = false
     @State var showInfo: Bool = false
@@ -18,22 +18,16 @@ struct HomeView: View {
     @State private var lastCardIndex: Int = 1
     @State private var cardRemovalTransition = AnyTransition.trailingBottom
     
-    @State var cardViews: [CardView] = {
-        var views = [CardView]()
-        views.append(CardView(character: characters[0]))
-        return views
-    }()
-    
     private func moveCards() {
-        cardViews.removeFirst()
+        homeViewModel.cardViews.removeFirst()
         self.lastCardIndex += 1
-        let character = characters[lastCardIndex % characters.count]
+        let character = homeViewModel.characters[lastCardIndex % homeViewModel.characters.count]
         let newCardView = CardView(character: character)
-        cardViews.append(newCardView)
+        homeViewModel.cardViews.append(newCardView)
     }
     
     private func isTopCard(cardView: CardView) -> Bool {
-        guard let index = cardViews.firstIndex(where: { $0.id == cardView.id }) else {
+        guard let index = homeViewModel.cardViews.firstIndex(where: { $0.id == cardView.id }) else {
             return false
         }
         return index == 0
@@ -80,7 +74,7 @@ struct HomeView: View {
             
             Spacer()
             ZStack {
-                ForEach(cardViews) { cardView in
+                ForEach(homeViewModel.cardViews) { cardView in
                     cardView
                         .zIndex(self.isTopCard(cardView: cardView) ? 1 : 0)
                         .overlay(
@@ -148,7 +142,7 @@ struct HomeView: View {
         }
         .alert(isPresented: $showAlert) {
             Alert(
-                title: Text(self.generateRandomSuggestion()),
+                title: Text(homeViewModel.generateRandomSuggestion()),
                 dismissButton: .default(Text("Close")))
         }
         .onAppear(perform: {
@@ -156,13 +150,6 @@ struct HomeView: View {
         })
         
     }
-    
-    private func generateRandomSuggestion() -> String {
-        let randomInt = Int.random(in: 0..<11)
-        let suggestion = suggestions[randomInt]
-        return suggestion
-    }
-    
 }
 
 struct HomeView_Previews: PreviewProvider {

@@ -62,7 +62,7 @@ struct AuthView: View {
                     .padding(.top)
                     
                     Button(action: {
-                        
+                        Text("sas")
                     }) {
                         NavigationLink(destination: HomeView().navigationBarHidden(true)) {
                             Text("Let's go!".uppercased())

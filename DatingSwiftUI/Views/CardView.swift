@@ -53,7 +53,13 @@ struct CardView: View, Identifiable {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(character: characters[0])
+        CardView(character: Character(
+            id: 0,
+            name: "Kushina Uzumaki",
+            neighborhood: "Hidden Leaf Village",
+            age: 24,
+            image: "images/kushinauzumaki.png"
+        ))
             .previewLayout(.fixed(width: 375, height: 600))
     }
 }
