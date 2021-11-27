@@ -459,6 +459,7 @@
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "DatingSwiftUI/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,6 +481,7 @@
 				DEVELOPMENT_TEAM = QMW26WR72K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "DatingSwiftUI/Support Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

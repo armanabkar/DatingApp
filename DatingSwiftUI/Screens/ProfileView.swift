@@ -37,7 +37,7 @@ struct ProfileView: View {
                     self.presentationMode.wrappedValue.dismiss()
                     NavigationView<ProfileView>.popToRootView()
                 }) {
-                    Text("Delete Account".uppercased())
+                    Text("Log Out".uppercased())
                         .modifier(ButtonModifier())
                 }
             }

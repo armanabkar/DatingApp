@@ -61,23 +61,21 @@ struct AuthView: View {
                     }
                     .padding(.top)
                     
-                    Button(action: {
-                        Text("sas")
-                    }) {
-                        NavigationLink(destination: HomeView().navigationBarHidden(true)) {
-                            Text("Let's go!".uppercased())
-                                .font(.system(.title2, design: .rounded))
-                                .fontWeight(.heavy)
-                                .padding(.horizontal, 20)
-                                .padding(.vertical, 12)
-                                .accentColor(Color.white)
-                                .background(
-                                    Capsule().stroke(Color.white, lineWidth: 3)
-                                )
-                                .padding(.top, 30)
-                                .padding(.bottom, 75)
-                        }
+                    
+                    NavigationLink(destination: HomeView().navigationBarHidden(true)) {
+                        Text("Let's go!".uppercased())
+                            .font(.system(.title2, design: .rounded))
+                            .fontWeight(.heavy)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 12)
+                            .accentColor(Color.white)
+                            .background(
+                                Capsule().stroke(Color.white, lineWidth: 3)
+                            )
+                            .padding(.top, 30)
+                            .padding(.bottom, 75)
                     }
+                    
                     Spacer()
                     Text("*Currently only available in the USA.")
                         .foregroundColor(.white)
