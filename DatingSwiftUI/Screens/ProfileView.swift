@@ -12,39 +12,42 @@ struct ProfileView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .center, spacing: 20) {
-                HeaderIconComponent()
-                
-                Spacer(minLength: 10)
-                VStack {
-                    Image(systemName: K.Icon.profile)
-                        .resizable()
-                        .frame(width: 150, height: 150)
-                        .padding(.bottom, 40)
+        ZStack {
+            LinearGradient(colors: [.pink.opacity(0.75), .white], startPoint: .bottom, endPoint: .top)
+                .ignoresSafeArea(.all)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .center, spacing: 20) {
+                    Spacer(minLength: 10)
+                    VStack {
+                        Image(systemName: K.Icon.profile)
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                            .padding(.bottom, 30)
+                        
+                        Text("Ryuko Matoi")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.pink)
+                        Spacer()
+                        Text("Honnōji Academy")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                    }
                     
-                    Text("Ryuko Matoi")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.pink)
-                    Text("17 - Honnōji Academy")
-                        .font(.title3)
-                        .fontWeight(.semibold)
+                    Spacer(minLength: 10)
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                        NavigationView<ProfileView>.popToRootView()
+                    }) {
+                        Text("Log Out".uppercased())
+                            .modifier(ButtonModifier())
+                    }
                 }
-                
-                Spacer(minLength: 10)
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                    NavigationView<ProfileView>.popToRootView()
-                }) {
-                    Text("Log Out".uppercased())
-                        .modifier(ButtonModifier())
-                }
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding(.top, 15)
+                .padding(.bottom, 25)
+                .padding(.horizontal, 25)
             }
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .padding(.top, 15)
-            .padding(.bottom, 25)
-            .padding(.horizontal, 25)
         }
     }
 }

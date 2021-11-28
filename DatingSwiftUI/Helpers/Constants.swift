@@ -9,13 +9,10 @@ import SwiftUI
 
 struct K {
     
-    static let baseURL = "https://animedating-server.herokuapp.com/"
-    static let charactersURL = "\(baseURL)api/v1/characters"
-    static let suggestionURL = "\(baseURL)api/v1/suggestions"
-    
-    struct Color {
-        
-    }
+    static let baseURL = "https://animedating-server.herokuapp.com"
+    static let startURL = "\(baseURL)/start"
+    static let charactersURL = "\(baseURL)/api/v1/characters"
+    static let suggestionURL = "\(baseURL)/api/v1/suggestions"
     
     struct Image {
         static let background = "backgound"

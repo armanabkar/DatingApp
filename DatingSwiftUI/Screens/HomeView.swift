@@ -14,7 +14,8 @@ struct HomeView: View {
     
     var body: some View {
         VStack {
-            HeaderView(showGuideView: $homeViewModel.showGuide, showInfoView: $homeViewModel.showInfo)
+            HeaderView(showGuideView: $homeViewModel.showGuide,
+                       showInfoView: $homeViewModel.showInfo)
                 .opacity(dragState.isDragging ? 0.0 : 1.0)
                 .animation(.default)
             
@@ -42,6 +43,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .previewDevice("iPhone 12")
+            .previewDevice("iPhone 13 Pro")
     }
 }

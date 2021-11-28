@@ -164,6 +164,7 @@
 		F0A2383D263C412D006DC490 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F0A23845263C426E006DC490 /* InfoView.swift */,
 				F0A23848263C4294006DC490 /* ProfileView.swift */,
 				F099C39A26AB216800379601 /* AuthView.swift */,
 				F099C39D26AB294000379601 /* HomeView.swift */,
@@ -177,7 +178,6 @@
 				F0A23861263C43F6006DC490 /* HeaderIconComponent.swift */,
 				F0A23864263C4404006DC490 /* GuideComponent.swift */,
 				F0A23842263C423C006DC490 /* HeaderView.swift */,
-				F0A23845263C426E006DC490 /* InfoView.swift */,
 				F0A2384B263C42BC006DC490 /* FooterView.swift */,
 				F0A2383E263C4149006DC490 /* CardView.swift */,
 				F099C3B626AF13FF00379601 /* ImageView.swift */,
