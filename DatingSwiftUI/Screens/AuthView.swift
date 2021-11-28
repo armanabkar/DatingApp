@@ -80,6 +80,7 @@ struct AuthView: View {
                     Text("*Currently only available in the USA.")
                         .foregroundColor(.white)
                 }
+                .frame(width: 320)
             }
             .navigationBarHidden(true)
         }
@@ -109,10 +110,10 @@ struct AuthFieldView: View {
                     RoundedRectangle(cornerRadius: 40)
                         .fill(Color.white.opacity(0.25)
                         )
-                        .frame(width: 300)
                 }
             )
             .padding(.top)
+            .frame(width: .infinity)
             .scaledToFit()
     }
 }

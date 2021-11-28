@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0889DB1275389EA00452C22 /* HomeCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0889DB0275389EA00452C22 /* HomeCardsView.swift */; };
 		F099C39B26AB216800379601 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C39A26AB216800379601 /* AuthView.swift */; };
 		F099C39E26AB294000379601 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C39D26AB294000379601 /* HomeView.swift */; };
 		F099C3A526ADC07800379601 /* NavigationViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C3A426ADC07800379601 /* NavigationViewExtension.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F0889DB0275389EA00452C22 /* HomeCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardsView.swift; sourceTree = "<group>"; };
 		F099C39A26AB216800379601 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		F099C39D26AB294000379601 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F099C3A426ADC07800379601 /* NavigationViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewExtension.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				F0A2384B263C42BC006DC490 /* FooterView.swift */,
 				F0A2383E263C4149006DC490 /* CardView.swift */,
 				F099C3B626AF13FF00379601 /* ImageView.swift */,
+				F0889DB0275389EA00452C22 /* HomeCardsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				F0A23846263C426E006DC490 /* InfoView.swift in Sources */,
 				F0A23865263C4404006DC490 /* GuideComponent.swift in Sources */,
 				F099C3C026AFEFFF00379601 /* Constants.swift in Sources */,
+				F0889DB1275389EA00452C22 /* HomeCardsView.swift in Sources */,
 				F0A23836263C4085006DC490 /* Character.swift in Sources */,
 				F0A2385C263C43AD006DC490 /* SymbolModifier.swift in Sources */,
 				F0A23859263C4398006DC490 /* TitleModifier.swift in Sources */,
