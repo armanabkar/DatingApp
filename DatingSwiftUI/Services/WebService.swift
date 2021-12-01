@@ -14,8 +14,35 @@ enum NetworkError: Error {
     case custom(String?)
 }
 
-class WebService {
+protocol API {
+    func startServer(completion: @escaping (Result<String, NetworkError>) -> Void)
+    func fetchCharacters(completion: @escaping (Result<[Character]?, NetworkError>) -> Void)
+    func fetchSuggestions(completion: @escaping (Result<[String]?, NetworkError>) -> Void)
+}
 
+
+final class WebService: API {
+    
+    static let shared = WebService()
+    private init() {}
+
+    func startServer(completion: @escaping (Result<String, NetworkError>) -> Void) {
+        guard let url = URL(string: K.startURL) else {
+            return completion(.failure(.badURL))
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard error == nil else {
+                return completion(.failure(.noData))
+            }
+            
+            if (response as? HTTPURLResponse)?.statusCode == 200 {
+                completion(.success("Welcome to Anime Dating"))
+            }
+        }
+        .resume()
+    }
+    
     func fetchCharacters(completion: @escaping (Result<[Character]?, NetworkError>) -> Void) {
         guard let url = URL(string: K.charactersURL) else {
             return completion(.failure(.badURL))

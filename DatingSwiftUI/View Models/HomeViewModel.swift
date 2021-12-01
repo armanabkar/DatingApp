@@ -8,7 +8,7 @@
 import SwiftUI
 
 final class HomeViewModel: ObservableObject {
-    
+
     @Published var characters: [Character] = [
         Character(
             id: 0,
@@ -36,9 +36,10 @@ final class HomeViewModel: ObservableObject {
     }()
     @Published var offset: CGFloat = .zero
     var dragAreaThreshold: CGFloat = 65.0
+    var webService: API = WebService.shared
     
     func getCharacters() {
-        WebService().fetchCharacters { result in
+        webService.fetchCharacters { result in
             switch result {
                 case .success(let fetchedCharacters):
                     if let fetchedCharacters = fetchedCharacters {
@@ -51,7 +52,7 @@ final class HomeViewModel: ObservableObject {
     }
     
     func getSuggestions() {
-        WebService().fetchSuggestions { result in
+        webService.fetchSuggestions { result in
             switch result {
                 case .success(let fetchedSuggestions):
                     if let fetchedSuggestions = fetchedSuggestions {
