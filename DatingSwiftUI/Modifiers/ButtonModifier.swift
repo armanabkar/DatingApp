@@ -10,10 +10,10 @@ import SwiftUI
 struct ButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.headline)
+            .font(.title3)
             .padding()
             .frame(minWidth: 0, maxWidth: .infinity)
-            .background(Capsule().fill(Color.pink))
+            .background(RoundedRectangle(cornerRadius: 14).fill(Color.pink))
             .foregroundColor(Color.white)
     }
 }

@@ -16,25 +16,35 @@ struct ProfileView: View {
             LinearGradient(colors: [.pink.opacity(0.75), .white], startPoint: .bottom, endPoint: .top)
                 .ignoresSafeArea(.all)
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(alignment: .center, spacing: 20) {
-                    Spacer(minLength: 10)
-                    VStack {
-                        Image(systemName: K.Icon.profile)
-                            .resizable()
-                            .frame(width: 200, height: 200)
-                            .padding(.bottom, 30)
-                        
-                        Text("Ryuko Matoi")
+                VStack(alignment: .center, spacing: 30) {
+                    Image(K.Image.kushinaUzumaki)
+                        .resizable()
+                        .frame(width: 225, height: 225)
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(Color.pink,
+                                        lineWidth: 5)
+                        )
+                        .shadow(radius: 6)
+                    
+                    VStack(spacing: 5) {
+                        Text("Kushina Uzumaki")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(.pink)
-                        Spacer()
-                        Text("Honnōji Academy")
-                            .font(.title3)
+                        Text("Hidden Leaf Village")
+                            .font(.title2)
                             .fontWeight(.semibold)
+                        Divider()
+                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. ")
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
                     }
+                    .padding()
+                    .background(Color.pink.opacity(0.25))
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
                     
-                    Spacer(minLength: 10)
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                         NavigationView<ProfileView>.popToRootView()
@@ -43,9 +53,7 @@ struct ProfileView: View {
                             .modifier(ButtonModifier())
                     }
                 }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .padding(.top, 15)
-                .padding(.bottom, 25)
+                .padding(.top, 50)
                 .padding(.horizontal, 25)
             }
         }

@@ -21,12 +21,11 @@ struct AuthView: View {
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                 
-                VStack {
+                VStack(alignment: .center) {
                     Text("Welcome to")
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .padding(.top, 25)
                     Image(K.Image.whiteLogo)
                         .resizable()
                         .scaledToFit()
@@ -35,45 +34,20 @@ struct AuthView: View {
                     Spacer()
                     AuthFieldView(placeholder: "Enter your Number", text: $phoneNumber)
                     AuthFieldView(placeholder: "Enter your Name", text: $name)
+                        .padding(.top)
                     AuthFieldView(placeholder: "Enter your Age", text: $age)
-                    
+                        .padding(.top)
                     HStack {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 40)
-                                .fill(Color.white.opacity(1)
-                                )
-                                .frame(width: 150, height: 50)
-                            Text("Male")
-                                .foregroundColor(.black)
-                                .fontWeight(.bold)
-                                .font(.title3)
-                        }
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 40)
-                                .fill(Color.white.opacity(0.25)
-                                )
-                                .frame(width: 150, height: 50)
-                            Text("Female")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                                .font(.title3)
-                        }
+                        AuthPickerView(name: "Male", opacity: 1)
+                        AuthPickerView(name: "Female", opacity: 0.25)
                     }
                     .padding(.top)
                     
                     
                     NavigationLink(destination: HomeView().navigationBarHidden(true)) {
                         Text("Let's go!".uppercased())
-                            .font(.system(.title2, design: .rounded))
-                            .fontWeight(.heavy)
-                            .padding(.horizontal, 20)
-                            .padding(.vertical, 12)
-                            .accentColor(Color.white)
-                            .background(
-                                Capsule().stroke(Color.white, lineWidth: 3)
-                            )
-                            .padding(.top, 30)
-                            .padding(.bottom, 75)
+                            .modifier(ButtonModifier())
+                            .padding(.top)
                     }
                     
                     Spacer()
@@ -81,6 +55,7 @@ struct AuthView: View {
                         .foregroundColor(.white)
                 }
                 .frame(width: 320)
+                .padding(.vertical, 20)
             }
             .navigationBarHidden(true)
         }
@@ -100,20 +75,35 @@ struct AuthFieldView: View {
     
     var body: some View {
         TextField(placeholder, text: $text)
-            .font(.system(.title, design: .rounded))
-            .foregroundColor(.white)
-            .padding(.horizontal, 20)
-            .padding(.vertical, 12)
+            .font(.title3)
+            .padding()
+            .frame(minWidth: 0, maxWidth: .infinity)
             .background(
                 ZStack {
-                    Capsule().stroke(Color.white, lineWidth: 3)
-                    RoundedRectangle(cornerRadius: 40)
+                    RoundedRectangle(cornerRadius: 14).stroke(Color.white, lineWidth: 3)
+                    RoundedRectangle(cornerRadius: 14)
                         .fill(Color.white.opacity(0.25)
                         )
                 }
             )
-            .padding(.top)
-            .frame(width: .infinity)
-            .scaledToFit()
+    }
+}
+
+struct AuthPickerView: View {
+    
+    var name: String
+    var opacity: Double
+    
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 14)
+                .fill(Color.white.opacity(opacity)
+                )
+                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 50)
+            Text(name)
+                .foregroundColor(opacity < 0.5 ? .white : .black)
+                .fontWeight(.bold)
+                .font(.title3)
+        }
     }
 }

@@ -19,6 +19,7 @@ struct K {
         static let pinkLogo = "logo-dating-pink"
         static let blackLogo = "logo-dating"
         static let whiteLogo = "logo-dating-app"
+        static let kushinaUzumaki = "kushinauzumaki"
     }
     
     struct Icon {
