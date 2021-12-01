@@ -13,7 +13,7 @@ struct CardView: View, Identifiable {
     var character: Character
     
     var body: some View {
-        ImageView(withURL: "\(K.baseURL)\(character.image)")
+        ImageView(withURL: "\(K.baseURL)/\(character.image)")
             .frame(height: 575)
             .overlay(
                 VStack(alignment: .center, spacing: 12) {
