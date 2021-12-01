@@ -16,7 +16,6 @@ struct HeaderView: View {
     var body: some View {
         HStack {
             Button(action: {
-                playSound(sound: "sound-click", type: "mp3")
                 self.haptics.notificationOccurred(.success)
                 self.showInfoView.toggle()
             }) {
@@ -37,7 +36,6 @@ struct HeaderView: View {
             
             Spacer()
             Button(action: {
-                playSound(sound: "sound-click", type: "mp3")
                 self.haptics.notificationOccurred(.success)
                 self.showGuideView.toggle()
             }) {

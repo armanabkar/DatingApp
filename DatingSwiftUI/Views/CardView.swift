@@ -45,7 +45,7 @@ struct CardView: View, Identifiable {
                 }
                 .frame(minWidth: 280)
                 .padding(.bottom, 50)
-                .shadow(radius: 1),
+                .shadow(radius: 2),
                 alignment: .bottom
             )
     }

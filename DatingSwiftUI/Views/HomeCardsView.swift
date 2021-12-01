@@ -19,7 +19,6 @@ struct HomeCardsView: View {
                     .zIndex(homeViewModel.isTopCard(cardView: cardView) ? 1 : 0)
                     .overlay(
                         ZStack {
-                            
                             Image(systemName: K.Icon.dismiss)
                                 .foregroundColor(.red)
                                 .modifier(SymbolModifier())
@@ -66,7 +65,6 @@ struct HomeCardsView: View {
                         }
                         
                         if drag.translation.width < -homeViewModel.dragAreaThreshold || drag.translation.width > homeViewModel.dragAreaThreshold {
-                            playSound(sound: "sound-rise", type: "mp3")
                             homeViewModel.moveCards()
                         }
                     })
@@ -74,5 +72,11 @@ struct HomeCardsView: View {
                     .transition(homeViewModel.cardRemovalTransition)
             }
         }
+    }
+}
+
+struct HomeCardsView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeCardsView(homeViewModel: HomeViewModel())
     }
 }

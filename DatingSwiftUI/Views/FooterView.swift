@@ -21,7 +21,6 @@ struct FooterView: View {
             Spacer()
             
             Button(action: {
-                playSound(sound: "sound-click", type: "mp3")
                 self.haptics.notificationOccurred(.success)
                 self.showSuggestionAlert.toggle()
             }) {
@@ -32,7 +31,7 @@ struct FooterView: View {
                     .padding(.vertical, 12)
                     .accentColor(Color.white)
                     .background(Color.pink)
-                    .cornerRadius(50)
+                    .cornerRadius(14)
                     .background(
                         Capsule().stroke(Color.pink, lineWidth: 2)
                     )

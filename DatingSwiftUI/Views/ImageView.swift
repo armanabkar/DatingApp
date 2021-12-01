@@ -19,7 +19,7 @@ struct ImageView: View {
     var body: some View {
         Image(uiImage: image)
             .resizable()
-            .cornerRadius(24)
+            .cornerRadius(14)
             .scaledToFit()
             .frame(minWidth: 0, maxWidth: .infinity)
             .onReceive(imageLoader.didChange) { data in
