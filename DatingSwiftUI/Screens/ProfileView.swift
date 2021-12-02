@@ -50,6 +50,7 @@ struct ProfileView: View {
                         NavigationView<ProfileView>.popToRootView()
                     }) {
                         Text("Log Out".uppercased())
+                            .fontWeight(.bold)
                             .modifier(ButtonModifier())
                     }
                 }

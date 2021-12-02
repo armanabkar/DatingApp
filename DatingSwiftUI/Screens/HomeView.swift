@@ -13,17 +13,14 @@ struct HomeView: View {
     @GestureState private var dragState = DragState.inactive
     
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             HeaderView(showGuideView: $homeViewModel.showGuide,
                        showInfoView: $homeViewModel.showInfo)
                 .opacity(dragState.isDragging ? 0.0 : 1.0)
                 .animation(.default)
             
-            Spacer()
             HomeCardsView(homeViewModel: homeViewModel)
-                .padding(.horizontal)
             
-            Spacer()
             FooterView(showSuggestionAlert: $homeViewModel.showAlert)
                 .opacity(dragState.isDragging ? 0.0 : 1.0)
                 .animation(.default)
@@ -36,7 +33,6 @@ struct HomeView: View {
         .onAppear(perform: {
             homeViewModel.fetchAll()
         })
-        
     }
 }
 

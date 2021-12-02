@@ -46,6 +46,7 @@ struct AuthView: View {
                     
                     NavigationLink(destination: HomeView().navigationBarHidden(true)) {
                         Text("Let's go!".uppercased())
+                            .fontWeight(.bold)
                             .modifier(ButtonModifier())
                             .padding(.top)
                     }
@@ -82,7 +83,7 @@ struct AuthFieldView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 14).stroke(Color.white, lineWidth: 3)
                     RoundedRectangle(cornerRadius: 14)
-                        .fill(Color.white.opacity(0.25)
+                        .fill(Color.white.opacity(0.5)
                         )
                 }
             )

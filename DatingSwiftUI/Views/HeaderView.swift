@@ -11,16 +11,14 @@ struct HeaderView: View {
     
     @Binding var showGuideView: Bool
     @Binding var showInfoView: Bool
-    let haptics = UINotificationFeedbackGenerator()
     
     var body: some View {
         HStack {
             Button(action: {
-                self.haptics.notificationOccurred(.success)
                 self.showInfoView.toggle()
             }) {
                 Image(systemName: K.Icon.info)
-                    .font(.system(size: 38, weight: .regular))
+                    .font(.system(size: 40, weight: .semibold))
                     .foregroundColor(.gray)
             }
             .accentColor(Color.primary)
@@ -32,15 +30,14 @@ struct HeaderView: View {
             Image(K.Image.pinkLogo)
                 .resizable()
                 .scaledToFit()
-                .frame(height: 38)
+                .frame(height: 40)
             
             Spacer()
             Button(action: {
-                self.haptics.notificationOccurred(.success)
                 self.showGuideView.toggle()
             }) {
                 Image(systemName: K.Icon.profile)
-                    .font(.system(size: 38, weight: .regular))
+                    .font(.system(size: 40, weight: .semibold))
                     .foregroundColor(.pink)
             }
             .accentColor(Color.primary)
@@ -48,7 +45,7 @@ struct HeaderView: View {
                 ProfileView()
             }
         }
-        .padding()
+        .padding(.horizontal)
     }
 }
 
