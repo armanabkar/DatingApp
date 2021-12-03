@@ -9,14 +9,7 @@ import SwiftUI
 
 final class HomeViewModel: ObservableObject {
 
-    @Published var characters: [Character] = [
-        Character(
-            id: 0,
-            name: "Kushina Uzumaki",
-            neighborhood: "Hidden Leaf Village",
-            age: 24,
-            image: "images/kushinauzumaki.png"
-        )]
+    @Published var characters: [Character] = [Character.createFirstCharacter()]
     @Published var suggestions: [String] = []
     @Published var lastCardIndex: Int = 1
     @Published var showAlert: Bool = false
@@ -24,45 +17,11 @@ final class HomeViewModel: ObservableObject {
     @Published var showInfo: Bool = false
     @Published var cardRemovalTransition = AnyTransition.trailingBottom
     @Published var cardViews: [CardView] = {
-        var views = [CardView]()
-        views.append(CardView(character: Character(
-            id: 0,
-            name: "Kushina Uzumaki",
-            neighborhood: "Hidden Leaf Village",
-            age: 24,
-            image: "images/kushinauzumaki.png"
-        )))
-        return views
+        return [CardView(character: Character.createFirstCharacter())]
     }()
     @Published var offset: CGFloat = .zero
     var dragAreaThreshold: CGFloat = 65.0
     var webService: API = WebService.shared
-    
-    func getCharacters() {
-        webService.fetchCharacters { result in
-            switch result {
-                case .success(let fetchedCharacters):
-                    if let fetchedCharacters = fetchedCharacters {
-                        self.characters.append(contentsOf: fetchedCharacters)
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func getSuggestions() {
-        webService.fetchSuggestions { result in
-            switch result {
-                case .success(let fetchedSuggestions):
-                    if let fetchedSuggestions = fetchedSuggestions {
-                        self.suggestions.append(contentsOf: fetchedSuggestions)
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-            }
-        }
-    }
     
     func moveCards() {
         cardViews.removeFirst()
@@ -88,6 +47,32 @@ final class HomeViewModel: ObservableObject {
     func fetchAll(){
         getCharacters()
         getSuggestions()
+    }
+    
+    private func getCharacters() {
+        webService.fetchCharacters { result in
+            switch result {
+                case .success(let fetchedCharacters):
+                    if let fetchedCharacters = fetchedCharacters {
+                        self.characters.append(contentsOf: fetchedCharacters)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func getSuggestions() {
+        webService.fetchSuggestions { result in
+            switch result {
+                case .success(let fetchedSuggestions):
+                    if let fetchedSuggestions = fetchedSuggestions {
+                        self.suggestions.append(contentsOf: fetchedSuggestions)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
     }
     
 }

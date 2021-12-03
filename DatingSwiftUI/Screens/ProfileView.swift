@@ -13,7 +13,7 @@ struct ProfileView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.pink.opacity(0.75), .white], startPoint: .bottom, endPoint: .top)
+            LinearGradient(colors: [.pink.opacity(0.1), .white], startPoint: .bottom, endPoint: .top)
                 .ignoresSafeArea(.all)
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .center, spacing: 30) {

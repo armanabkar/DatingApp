@@ -20,7 +20,6 @@ protocol API {
     func fetchSuggestions(completion: @escaping (Result<[String]?, NetworkError>) -> Void)
 }
 
-
 final class WebService: API {
     
     static let shared = WebService()

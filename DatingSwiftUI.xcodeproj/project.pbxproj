@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F0889DB1275389EA00452C22 /* HomeCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0889DB0275389EA00452C22 /* HomeCardsView.swift */; };
+		F0889DB3275A214500452C22 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0889DB2275A214500452C22 /* AuthViewModel.swift */; };
 		F099C39B26AB216800379601 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C39A26AB216800379601 /* AuthView.swift */; };
 		F099C39E26AB294000379601 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C39D26AB294000379601 /* HomeView.swift */; };
 		F099C3A526ADC07800379601 /* NavigationViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C3A426ADC07800379601 /* NavigationViewExtension.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		F0889DB0275389EA00452C22 /* HomeCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardsView.swift; sourceTree = "<group>"; };
+		F0889DB2275A214500452C22 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		F099C39A26AB216800379601 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		F099C39D26AB294000379601 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F099C3A426ADC07800379601 /* NavigationViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewExtension.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				F099C3B026AEEC1A00379601 /* HomeViewModel.swift */,
+				F0889DB2275A214500452C22 /* AuthViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				F0A23846263C426E006DC490 /* InfoView.swift in Sources */,
 				F0A23865263C4404006DC490 /* GuideComponent.swift in Sources */,
 				F099C3C026AFEFFF00379601 /* Constants.swift in Sources */,
+				F0889DB3275A214500452C22 /* AuthViewModel.swift in Sources */,
 				F0889DB1275389EA00452C22 /* HomeCardsView.swift in Sources */,
 				F0A23836263C4085006DC490 /* Character.swift in Sources */,
 				F0A2385C263C43AD006DC490 /* SymbolModifier.swift in Sources */,
@@ -436,8 +440,8 @@
 		F0A23830263C3E36006DC490 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DatingSwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = QMW26WR72K;
@@ -448,6 +452,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.DatingSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -458,8 +463,8 @@
 		F0A23831263C3E36006DC490 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DatingSwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = QMW26WR72K;
@@ -470,6 +475,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.DatingSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
