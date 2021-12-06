@@ -53,6 +53,11 @@ struct AuthView: View {
                             .modifier(ButtonModifier())
                             .padding(.top)
                     }
+                    .disabled(authViewModel.areFieldsFilled() ? false : true)
+                    .opacity(authViewModel.areFieldsFilled() ? 1 : 0.5)
+                    .onTapGesture {
+                        authViewModel.login()
+                    }
                     
                     Spacer()
                     Text("* Currently only available in the USA.")

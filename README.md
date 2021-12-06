@@ -11,5 +11,5 @@ Dating application. Built with SwiftUI and MVVM architecture using Node.js as a 
 - [x] Async image loader
 - [x] Reusable components
 - [ ] Unit/Integration Tests
-- [ ] Basic authentication system
+- [x] Basic authentication system (need iOS 15)
 - [ ] iOS 15 

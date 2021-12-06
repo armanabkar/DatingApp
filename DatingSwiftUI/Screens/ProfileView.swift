@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @StateObject private var authViewModel = AuthViewModel()
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -55,6 +56,7 @@ struct ProfileView: View {
                 
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
+                    authViewModel.logout()
                     NavigationView<ProfileView>.popToRootView()
                 }) {
                     Text("Log Out".uppercased())
