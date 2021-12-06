@@ -34,6 +34,7 @@
 		F0A2385F263C43C7006DC490 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2385E263C43C7006DC490 /* ButtonModifier.swift */; };
 		F0A23862263C43F6006DC490 /* HeaderIconComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23861263C43F6006DC490 /* HeaderIconComponent.swift */; };
 		F0A23865263C4404006DC490 /* GuideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23864263C4404006DC490 /* GuideComponent.swift */; };
+		F0FE149B275E19DB00BDE5C2 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		F0A2385E263C43C7006DC490 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		F0A23861263C43F6006DC490 /* HeaderIconComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderIconComponent.swift; sourceTree = "<group>"; };
 		F0A23864263C4404006DC490 /* GuideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideComponent.swift; sourceTree = "<group>"; };
+		F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				F0A2383E263C4149006DC490 /* CardView.swift */,
 				F099C3B626AF13FF00379601 /* ImageView.swift */,
 				F0889DB0275389EA00452C22 /* HomeCardsView.swift */,
+				F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				F0A2384C263C42BC006DC490 /* FooterView.swift in Sources */,
 				F0A2381F263C3E36006DC490 /* AppDelegate.swift in Sources */,
 				F0A23853263C4349006DC490 /* CardTransition.swift in Sources */,
+				F0FE149B275E19DB00BDE5C2 /* ChatListView.swift in Sources */,
 				F0A2385F263C43C7006DC490 /* ButtonModifier.swift in Sources */,
 				F099C3B426AF130B00379601 /* ImageLoader.swift in Sources */,
 				F0A23821263C3E36006DC490 /* SceneDelegate.swift in Sources */,

@@ -19,7 +19,7 @@ struct ProfileView: View {
                 VStack(alignment: .center, spacing: 30) {
                     Image(K.Image.kushinaUzumaki)
                         .resizable()
-                        .frame(width: 225, height: 225)
+                        .frame(width: 200, height: 200)
                         .clipShape(Circle())
                         .overlay(
                             Circle()
@@ -44,19 +44,26 @@ struct ProfileView: View {
                     .padding()
                     .background(Color.pink.opacity(0.25))
                     .clipShape(RoundedRectangle(cornerRadius: 14))
-                    
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                        NavigationView<ProfileView>.popToRootView()
-                    }) {
-                        Text("Log Out".uppercased())
-                            .fontWeight(.bold)
-                            .modifier(ButtonModifier())
-                    }
                 }
                 .padding(.top, 50)
-                .padding(.horizontal, 25)
+                
+                Text("Your Messages")
+                    .bold()
+                    .font(.title)
+                    .padding()
+                ChatListView()
+                
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                    NavigationView<ProfileView>.popToRootView()
+                }) {
+                    Text("Log Out".uppercased())
+                        .fontWeight(.bold)
+                        .modifier(ButtonModifier())
+                }
+                .padding(.top, 20)
             }
+            .padding(.horizontal, 25)
         }
     }
 }

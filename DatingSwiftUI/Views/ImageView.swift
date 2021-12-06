@@ -27,3 +27,23 @@ struct ImageView: View {
             }
     }
 }
+
+struct ImageView2: View {
+    
+    @ObservedObject var imageLoader: ImageLoader
+    @State var image: UIImage = UIImage()
+    
+    init(withURL url: String) {
+        imageLoader = ImageLoader(urlString: url)
+    }
+    
+    var body: some View {
+        Image(uiImage: image)
+            .resizable()
+            .frame(width: 70, height: 70)
+            .onReceive(imageLoader.didChange) { data in
+                self.image = UIImage(data: data) ?? UIImage(systemName: K.Icon.profile)!
+            }
+    }
+}
+
