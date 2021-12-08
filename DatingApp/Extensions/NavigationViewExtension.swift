@@ -9,8 +9,12 @@ import SwiftUI
 
 extension NavigationView {
     static func popToRootView() {
-        findNavigationController(viewController: UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.rootViewController)?
-            .popToRootViewController(animated: true)
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
+        findNavigationController(viewController: window?
+                                    .rootViewController)?
+                                    .popToRootViewController(animated: true)
     }
     
     static func findNavigationController(viewController: UIViewController?) -> UINavigationController? {

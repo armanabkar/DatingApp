@@ -33,7 +33,7 @@ struct HomeCardsView: View {
                     .offset(x: homeViewModel.isTopCard(cardView: cardView) ?  self.dragState.translation.width : 0, y: homeViewModel.isTopCard(cardView: cardView) ?  self.dragState.translation.height : 0)
                     .scaleEffect(self.dragState.isDragging && homeViewModel.isTopCard(cardView: cardView) ? 0.85 : 1.0)
                     .rotationEffect(Angle(degrees: homeViewModel.isTopCard(cardView: cardView) ? Double(self.dragState.translation.width / 12) : 0))
-                    .animation(.interpolatingSpring(stiffness: 120, damping: 120))
+                    .animation(.interpolatingSpring(stiffness: 120, damping: 120), value: dragState.isDragging)
                     .gesture(LongPressGesture(minimumDuration: 0.01)
                                 .sequenced(before: DragGesture())
                                 .updating(self.$dragState, body: { (value, state, transaction) in

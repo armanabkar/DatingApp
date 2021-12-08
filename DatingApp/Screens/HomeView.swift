@@ -17,13 +17,13 @@ struct HomeView: View {
             HeaderView(showGuideView: $homeViewModel.showGuide,
                        showInfoView: $homeViewModel.showInfo)
                 .opacity(dragState.isDragging ? 0.0 : 1.0)
-                .animation(.default)
+                .animation(.default, value: dragState.isDragging)
             
             HomeCardsView(homeViewModel: homeViewModel)
             
             FooterView(showSuggestionAlert: $homeViewModel.showAlert)
                 .opacity(dragState.isDragging ? 0.0 : 1.0)
-                .animation(.default)
+                .animation(.default, value: dragState.isDragging)
         }
         .alert(isPresented: $homeViewModel.showAlert) {
             Alert(
