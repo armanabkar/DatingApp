@@ -8,7 +8,7 @@
 import SwiftUI
 
 final class HomeViewModel: ObservableObject {
-
+    
     @Published var characters: [Character] = [Character.createFirstCharacter()]
     @Published var suggestions: [String] = []
     @Published var lastCardIndex: Int = 1
@@ -50,27 +50,23 @@ final class HomeViewModel: ObservableObject {
     }
     
     private func getCharacters() {
-        webService.fetchCharacters { result in
-            switch result {
-                case .success(let fetchedCharacters):
-                    if let fetchedCharacters = fetchedCharacters {
-                        self.characters.append(contentsOf: fetchedCharacters)
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
+        Task.init {
+            do {
+                let fetchedCharacters = try await webService.fetchCharacters()
+                characters.append(contentsOf: fetchedCharacters)
+            } catch {
+                print(error)
             }
         }
     }
     
     private func getSuggestions() {
-        webService.fetchSuggestions { result in
-            switch result {
-                case .success(let fetchedSuggestions):
-                    if let fetchedSuggestions = fetchedSuggestions {
-                        self.suggestions.append(contentsOf: fetchedSuggestions)
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
+        Task.init {
+            do {
+                let fetchedSuggestions = try await webService.fetchSuggestions()
+                suggestions.append(contentsOf: fetchedSuggestions)
+            } catch {
+                print(error)
             }
         }
     }

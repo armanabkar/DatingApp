@@ -7,75 +7,48 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case badURL
-    case noData
-    case decodingError
-    case custom(String?)
-}
-
 protocol API {
-    func startServer(completion: @escaping (Result<String, NetworkError>) -> Void)
-    func fetchCharacters(completion: @escaping (Result<[Character]?, NetworkError>) -> Void)
-    func fetchSuggestions(completion: @escaping (Result<[String]?, NetworkError>) -> Void)
+    func startServer() async throws
+    func fetchCharacters() async throws -> [Character]
+    func fetchSuggestions() async throws -> [String]
 }
 
 final class WebService: API {
     
     static let shared = WebService()
     private init() {}
-
-    func startServer(completion: @escaping (Result<String, NetworkError>) -> Void) {
-        guard let url = URL(string: K.startURL) else {
-            return completion(.failure(.badURL))
-        }
+    
+    func startServer() async throws {
+        guard let url = URL(string: K.startURL) else { fatalError("Missing URL") }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil else {
-                return completion(.failure(.noData))
-            }
-            
-            if (response as? HTTPURLResponse)?.statusCode == 200 {
-                completion(.success("Welcome to Anime Dating"))
-            }
-        }
-        .resume()
+        let urlRequest = URLRequest(url: url)
+        let (_, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while starting server") }
     }
     
-    func fetchCharacters(completion: @escaping (Result<[Character]?, NetworkError>) -> Void) {
-        guard let url = URL(string: K.charactersURL) else {
-            return completion(.failure(.badURL))
-        }
+    func fetchCharacters() async throws -> [Character] {
+        guard let url = URL(string: K.charactersURL) else { fatalError("Missing URL") }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else {
-                return completion(.failure(.noData))
-            }
-            
-            let characters = try? JSONDecoder().decode([Character].self, from: data)
-            DispatchQueue.main.async {
-                completion(.success(characters))
-            }
-        }
-        .resume()
+        let urlRequest = URLRequest(url: url)
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching characters") }
+        let decodedCharacters = try JSONDecoder().decode([Character].self, from: data)
+        
+        return decodedCharacters
     }
     
-    func fetchSuggestions(completion: @escaping (Result<[String]?, NetworkError>) -> Void) {
-        guard let url = URL(string: K.suggestionURL) else {
-            return completion(.failure(.badURL))
-        }
+    func fetchSuggestions() async throws -> [String] {
+        guard let url = URL(string: K.suggestionURL) else { fatalError("Missing URL") }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else {
-                return completion(.failure(.noData))
-            }
-            
-            let suggestions = try? JSONDecoder().decode([String].self, from: data)
-            DispatchQueue.main.async {
-                completion(.success(suggestions))
-            }
-        }
-        .resume()
+        let urlRequest = URLRequest(url: url)
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching suggestions") }
+        let decodedSuggestions = try JSONDecoder().decode([String].self, from: data)
+        
+        return decodedSuggestions
     }
-
+    
 }
