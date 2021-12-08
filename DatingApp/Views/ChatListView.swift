@@ -15,7 +15,15 @@ struct ChatListView: View {
         VStack {
             ForEach(homeViewModel.characters.prefix(5), id: \.id) { character in
                 HStack(alignment: .center) {
-                    ImageView2(withURL: "\(K.baseURL)/\(character.image)")
+                    AsyncImage(url: URL(string: "\(K.baseURL)/\(character.image)")) { image in
+                        image
+                            .resizable()
+                            .frame(width: 70, height: 70)
+                    } placeholder: {
+                        Color.gray
+                            .opacity(0.2)
+                            .frame(width: 70, height: 70)
+                    }
                     VStack(alignment: .leading) {
                         Text(character.name)
                             .font(.title2)

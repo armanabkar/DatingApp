@@ -13,14 +13,12 @@ struct CardView: View, Identifiable {
     var character: Character
     
     var body: some View {
-        ZStack {
-            Color.gray
-                .opacity(0.3)
-                .blur(radius: 5)
-                .frame(height: 575)
+        AsyncImage(url: URL(string: "\(K.baseURL)/\(character.image)")) { image in
+            image
+                .resizable()
                 .cornerRadius(14)
-                .padding()
-            ImageView(withURL: "\(K.baseURL)/\(character.image)")
+                .scaledToFit()
+                .frame(minWidth: 0, maxWidth: .infinity)
                 .frame(height: 575)
                 .shadow(radius: 3)
                 .overlay(
@@ -58,6 +56,16 @@ struct CardView: View, Identifiable {
                         .shadow(radius: 2),
                     alignment: .bottom
                 )
+            
+        } placeholder: {
+            Color.gray
+                .opacity(0.2)
+                .blur(radius: 5)
+                .frame(height: 575)
+                .cornerRadius(14)
+                .frame(height: 575)
+                .shadow(radius: 3)
+                .padding(.horizontal)
         }
     }
 }
