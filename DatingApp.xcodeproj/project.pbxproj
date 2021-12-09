@@ -15,8 +15,6 @@
 		F099C3AC26AEE89F00379601 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C3AB26AEE89F00379601 /* WebService.swift */; };
 		F099C3B126AEEC1A00379601 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C3B026AEEC1A00379601 /* HomeViewModel.swift */; };
 		F099C3C026AFEFFF00379601 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C3BF26AFEFFF00379601 /* Constants.swift */; };
-		F0A2381F263C3E36006DC490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2381E263C3E36006DC490 /* AppDelegate.swift */; };
-		F0A23821263C3E36006DC490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23820263C3E36006DC490 /* SceneDelegate.swift */; };
 		F0A23825263C3E36006DC490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A23824263C3E36006DC490 /* Assets.xcassets */; };
 		F0A23828263C3E36006DC490 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A23827263C3E36006DC490 /* Preview Assets.xcassets */; };
 		F0A2382B263C3E36006DC490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A23829263C3E36006DC490 /* LaunchScreen.storyboard */; };
@@ -33,6 +31,7 @@
 		F0A23862263C43F6006DC490 /* HeaderIconComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23861263C43F6006DC490 /* HeaderIconComponent.swift */; };
 		F0A23865263C4404006DC490 /* GuideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23864263C4404006DC490 /* GuideComponent.swift */; };
 		F0FE149B275E19DB00BDE5C2 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */; };
+		F0FE149D2761006A00BDE5C2 /* DatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE149C2761006A00BDE5C2 /* DatingApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +44,6 @@
 		F099C3B026AEEC1A00379601 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F099C3BF26AFEFFF00379601 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F0A2381B263C3E36006DC490 /* DatingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0A2381E263C3E36006DC490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F0A23820263C3E36006DC490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F0A23824263C3E36006DC490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0A23827263C3E36006DC490 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0A2382A263C3E36006DC490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +61,7 @@
 		F0A23861263C43F6006DC490 /* HeaderIconComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderIconComponent.swift; sourceTree = "<group>"; };
 		F0A23864263C4404006DC490 /* GuideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideComponent.swift; sourceTree = "<group>"; };
 		F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		F0FE149C2761006A00BDE5C2 /* DatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +78,10 @@
 		F069A7B32654E228005375D1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F0A2381E263C3E36006DC490 /* AppDelegate.swift */,
-				F0A23820263C3E36006DC490 /* SceneDelegate.swift */,
 				F0A23824263C3E36006DC490 /* Assets.xcassets */,
 				F0A23829263C3E36006DC490 /* LaunchScreen.storyboard */,
 				F0A2382C263C3E36006DC490 /* Info.plist */,
+				F0FE149C2761006A00BDE5C2 /* DatingApp.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -290,11 +287,10 @@
 				F099C3A526ADC07800379601 /* NavigationViewExtension.swift in Sources */,
 				F099C3AC26AEE89F00379601 /* WebService.swift in Sources */,
 				F0A2384C263C42BC006DC490 /* FooterView.swift in Sources */,
-				F0A2381F263C3E36006DC490 /* AppDelegate.swift in Sources */,
 				F0A23853263C4349006DC490 /* CardTransition.swift in Sources */,
 				F0FE149B275E19DB00BDE5C2 /* ChatListView.swift in Sources */,
 				F0A2385F263C43C7006DC490 /* ButtonModifier.swift in Sources */,
-				F0A23821263C3E36006DC490 /* SceneDelegate.swift in Sources */,
+				F0FE149D2761006A00BDE5C2 /* DatingApp.swift in Sources */,
 				F099C39E26AB294000379601 /* HomeView.swift in Sources */,
 				F0A23862263C43F6006DC490 /* HeaderIconComponent.swift in Sources */,
 				F0A2383F263C4149006DC490 /* CardView.swift in Sources */,
@@ -436,6 +432,7 @@
 		F0A23830263C3E36006DC490 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -459,6 +456,7 @@
 		F0A23831263C3E36006DC490 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;

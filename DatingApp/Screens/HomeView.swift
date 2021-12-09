@@ -13,7 +13,7 @@ struct HomeView: View {
     @GestureState private var dragState = DragState.inactive
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 30) {
             HeaderView(showGuideView: $homeViewModel.showGuide,
                        showInfoView: $homeViewModel.showInfo)
                 .opacity(dragState.isDragging ? 0.0 : 1.0)

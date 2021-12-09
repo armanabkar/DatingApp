@@ -24,10 +24,9 @@ struct AuthView: View {
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                    Image(K.Image.whiteLogo)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 38)
+                    Text("Anime Dating")
+                        .font(.system(size: 42, weight: .heavy, design: .rounded))
+                        .foregroundColor(.white)
                     
                     Spacer()
                     AuthFieldView(placeholder: "Enter your Number",
