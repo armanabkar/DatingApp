@@ -14,10 +14,8 @@ struct AuthView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Image("backgound")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+                LinearGradient(colors: [.pink, .purple], startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
                 
                 VStack(alignment: .center) {
                     Text("Welcome to")

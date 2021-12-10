@@ -17,8 +17,13 @@ struct ProfileView: View {
             LinearGradient(colors: [.pink.opacity(0.1), .white], startPoint: .bottom, endPoint: .top)
                 .ignoresSafeArea(.all)
             ScrollView(.vertical, showsIndicators: false) {
+                Capsule()
+                    .frame(width: 120, height: 6)
+                    .foregroundColor(Color.secondary)
+                    .opacity(0.2)
+                    .padding(.top, 15)
                 VStack(alignment: .center, spacing: 30) {
-                    Image(K.Image.kushinaUzumaki)
+                    Image(K.Image.placeholder)
                         .resizable()
                         .frame(width: 200, height: 200)
                         .clipShape(Circle())
@@ -46,7 +51,7 @@ struct ProfileView: View {
                     .background(Color.pink.opacity(0.25))
                     .clipShape(RoundedRectangle(cornerRadius: 14))
                 }
-                .padding(.top, 50)
+                .padding(.top, 25)
                 
                 Text("Your Messages")
                     .bold()

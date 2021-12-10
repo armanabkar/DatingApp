@@ -14,10 +14,18 @@ struct InfoView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 20) {
-                HeaderIconComponent()
+                VStack(alignment: .center, spacing: 20) {
+                    Capsule()
+                        .frame(width: 120, height: 6)
+                        .foregroundColor(Color.secondary)
+                        .opacity(0.2)
+                    
+                    Text("Anime Dating")
+                        .font(.system(size: 38, weight: .heavy, design: .rounded))
+                        .foregroundColor(.black)
+                }
                 
-                Spacer(minLength: 0)
-                Text("Find Hot dates from your favorite anime series!")
+                Text("Find hot dates from your favorite anime!")
                     .font(.title)
                     .fontWeight(.heavy)
                     .lineLimit(nil)

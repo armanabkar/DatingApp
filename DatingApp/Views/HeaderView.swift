@@ -27,10 +27,9 @@ struct HeaderView: View {
             }
             
             Spacer()
-            Image(K.Image.pinkLogo)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 40)
+            Text("Anime Dating")
+                .font(.system(size: 32, weight: .heavy, design: .rounded))
+                .foregroundColor(.pink)
             
             Spacer()
             Button(action: {

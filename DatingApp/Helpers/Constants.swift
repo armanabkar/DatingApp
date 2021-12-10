@@ -15,10 +15,7 @@ struct K {
     static let suggestionURL = "\(baseURL)/api/v1/suggestions"
     
     struct Image {
-        static let background = "backgound"
-        static let pinkLogo = "logo-dating-pink"
-        static let blackLogo = "logo-dating"
-        static let kushinaUzumaki = "kushinauzumaki"
+        static let placeholder = "kushinauzumaki"
     }
     
     struct Icon {

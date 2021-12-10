@@ -16,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgound" translatesAutoresizingMaskIntoConstraints="NO" id="9kL-6Y-gsA">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anime Dating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bB-We-x7X">
                                 <rect key="frame" x="70" y="393.33333333333331" width="250" height="57.333333333333314"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="40"/>
@@ -26,27 +23,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mi3-ge-QzY">
-                                <rect key="frame" x="71" y="244" width="248" height="127.66666666666663"/>
+                                <rect key="frame" x="130" y="255.33333333333337" width="130" height="127"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="VgN-tZ-s2h"/>
+                                    <constraint firstAttribute="width" constant="130" id="oWz-hi-TtF"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0eH-0H-Ds4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
-                            <constraint firstItem="0bB-We-x7X" firstAttribute="centerY" secondItem="9kL-6Y-gsA" secondAttribute="centerY" id="3lo-lg-Eek"/>
-                            <constraint firstAttribute="bottom" secondItem="9kL-6Y-gsA" secondAttribute="bottom" id="5cP-yD-D91"/>
-                            <constraint firstItem="0eH-0H-Ds4" firstAttribute="bottom" secondItem="0bB-We-x7X" secondAttribute="bottom" constant="359.33333333333331" id="BNY-3g-zfo"/>
-                            <constraint firstItem="mi3-ge-QzY" firstAttribute="centerX" secondItem="9kL-6Y-gsA" secondAttribute="centerX" id="CsF-a0-3hV"/>
-                            <constraint firstItem="9kL-6Y-gsA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Dap-7S-BXX"/>
-                            <constraint firstItem="9kL-6Y-gsA" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="EeC-DU-wBc"/>
-                            <constraint firstItem="mi3-ge-QzY" firstAttribute="centerX" secondItem="0bB-We-x7X" secondAttribute="centerX" id="FY3-dG-DNd"/>
-                            <constraint firstItem="0eH-0H-Ds4" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="0bB-We-x7X" secondAttribute="trailing" constant="70" id="J7i-jj-w1b"/>
-                            <constraint firstItem="0eH-0H-Ds4" firstAttribute="trailing" secondItem="mi3-ge-QzY" secondAttribute="trailing" constant="71" id="WAp-8m-5aZ"/>
-                            <constraint firstItem="0bB-We-x7X" firstAttribute="leading" relation="lessThanOrEqual" secondItem="0eH-0H-Ds4" secondAttribute="leading" constant="70" id="Ylc-lj-bcM"/>
-                            <constraint firstItem="0bB-We-x7X" firstAttribute="top" secondItem="mi3-ge-QzY" secondAttribute="bottom" constant="20.666666666666686" id="auQ-O3-HUc"/>
-                            <constraint firstItem="mi3-ge-QzY" firstAttribute="top" secondItem="0eH-0H-Ds4" secondAttribute="top" constant="198" id="b50-by-Eor"/>
-                            <constraint firstAttribute="trailing" secondItem="9kL-6Y-gsA" secondAttribute="trailing" id="haS-Su-SGB"/>
-                            <constraint firstItem="mi3-ge-QzY" firstAttribute="leading" secondItem="0eH-0H-Ds4" secondAttribute="leading" constant="70.999999999999986" id="sae-1B-MfA"/>
+                            <constraint firstItem="mi3-ge-QzY" firstAttribute="leading" secondItem="0eH-0H-Ds4" secondAttribute="leading" constant="130" id="BIc-sL-lCL"/>
+                            <constraint firstItem="0bB-We-x7X" firstAttribute="top" secondItem="mi3-ge-QzY" secondAttribute="bottom" constant="10" id="F5h-hP-RmH"/>
+                            <constraint firstItem="0eH-0H-Ds4" firstAttribute="trailing" secondItem="mi3-ge-QzY" secondAttribute="trailing" constant="130" id="YpX-T8-Cr7"/>
+                            <constraint firstItem="0bB-We-x7X" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sPm-xB-rKb"/>
+                            <constraint firstItem="0bB-We-x7X" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vCy-uE-8PN"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -56,10 +48,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backgound" width="2048" height="2049"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
