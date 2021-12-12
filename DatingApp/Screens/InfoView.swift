@@ -12,60 +12,62 @@ struct InfoView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .center, spacing: 20) {
+            ZStack {
+                Color.pink.opacity(0.1).ignoresSafeArea()
+                ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .center, spacing: 20) {
-                    Capsule()
-                        .frame(width: 120, height: 6)
-                        .foregroundColor(Color.secondary)
-                        .opacity(0.2)
+                    VStack(alignment: .center, spacing: 20) {
+                        Capsule()
+                            .frame(width: 120, height: 6)
+                            .foregroundColor(Color.secondary)
+                            .opacity(0.25)
+                        
+                        Text("Anime Dating")
+                            .font(.system(size: 38, weight: .heavy, design: .rounded))
+                            .foregroundColor(.pink)
+                    }
                     
-                    Text("Anime Dating")
-                        .font(.system(size: 38, weight: .heavy, design: .rounded))
-                        .foregroundColor(.black)
-                }
-                
-                Text("Find hot dates from your favorite anime!")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                    .lineLimit(nil)
-                    .multilineTextAlignment(.center)
-                    .modifier(TitleModifier())
-                
-                Spacer(minLength: 0)
-                
-                VStack(alignment: .leading, spacing: 25) {
-                    GuideComponent(
-                        title: "Like",
-                        subtitle: "Swipe right",
-                        description: "Do you like them? Touch the screen and swipe right. If they do the same, you will be matched!",
-                        icon: "heart.circle", iconColor: .green)
+                    Text("Find hot dates from your favorite anime!")
+                        .font(.title)
+                        .fontWeight(.heavy)
+                        .lineLimit(nil)
+                        .multilineTextAlignment(.center)
                     
-                    GuideComponent(
-                        title: "Dismiss",
-                        subtitle: "Swipe left",
-                        description: "You don't like them? Touch the screen and swipe left. You will no longer see them.",
-                        icon: "xmark.circle", iconColor: .red)
+                    Spacer(minLength: 0)
+                    
+                    VStack(alignment: .leading, spacing: 25) {
+                        GuideComponent(
+                            title: "Like",
+                            subtitle: "Swipe right",
+                            description: "Do you like them? Touch the screen and swipe right. If they do the same, you will be matched!",
+                            icon: "heart.circle", iconColor: .green)
+                        
+                        GuideComponent(
+                            title: "Dismiss",
+                            subtitle: "Swipe left",
+                            description: "You don't like them? Touch the screen and swipe left. You will no longer see them.",
+                            icon: "xmark.circle", iconColor: .red)
+                    }
+                    
+                    Spacer(minLength: 0)
+
+                    Text("App Info")
+                        .fontWeight(.black)
+                        .modifier(TitleModifier())
+                    
+                    AppInfoView()
+                    
+                    Text("Credits")
+                        .fontWeight(.black)
+                        .modifier(TitleModifier())
+                    
+                    CreditsView()
                 }
-                
-                Spacer(minLength: 0)
-                
-                Text("App Info")
-                    .fontWeight(.black)
-                    .modifier(TitleModifier())
-                
-                AppInfoView()
-                
-                Text("Credits")
-                    .fontWeight(.black)
-                    .modifier(TitleModifier())
-                
-                CreditsView()
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding(.top, 15)
+                .padding(.bottom, 25)
+                .padding(.horizontal, 25)
             }
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .padding(.top, 15)
-            .padding(.bottom, 25)
-            .padding(.horizontal, 25)
         }
     }
 }

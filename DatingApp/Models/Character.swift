@@ -19,10 +19,10 @@ extension Character {
     static func createFirstCharacter() -> Character {
         return Character(
             id: 0,
-            name: "Kushina Uzumaki",
+            name: "Hinata Hyuga",
             neighborhood: "Hidden Leaf Village",
-            age: 24,
-            image: "images/kushinauzumaki.png"
+            age: 16,
+            image: "images/hinatahyuga.jpg"
         )
     }
 }

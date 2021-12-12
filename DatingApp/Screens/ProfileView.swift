@@ -14,13 +14,12 @@ struct ProfileView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.pink.opacity(0.1), .white], startPoint: .bottom, endPoint: .top)
-                .ignoresSafeArea(.all)
+            Color.pink.opacity(0.1).ignoresSafeArea()
             ScrollView(.vertical, showsIndicators: false) {
                 Capsule()
                     .frame(width: 120, height: 6)
                     .foregroundColor(Color.secondary)
-                    .opacity(0.2)
+                    .opacity(0.25)
                     .padding(.top, 15)
                 VStack(alignment: .center, spacing: 30) {
                     Image(K.Image.placeholder)
@@ -40,11 +39,11 @@ struct ProfileView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.pink)
                         Text("Hidden Leaf Village")
-                            .font(.title2)
+                            .font(.title3)
                             .fontWeight(.semibold)
                         Divider()
                         Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. ")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black.opacity(0.7))
                             .multilineTextAlignment(.center)
                     }
                     .padding()

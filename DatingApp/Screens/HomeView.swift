@@ -13,6 +13,8 @@ struct HomeView: View {
     @GestureState private var dragState = DragState.inactive
     
     var body: some View {
+        ZStack {
+            Color.gray.opacity(0.15).ignoresSafeArea()
         VStack(spacing: 30) {
             HeaderView(showGuideView: $homeViewModel.showGuide,
                        showInfoView: $homeViewModel.showInfo)
@@ -33,6 +35,7 @@ struct HomeView: View {
         .onAppear(perform: {
             homeViewModel.fetchAll()
         })
+    }
     }
 }
 
