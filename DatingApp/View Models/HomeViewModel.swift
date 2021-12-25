@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 final class HomeViewModel: ObservableObject {
     
     @Published var characters: [Character] = [Character.createFirstCharacter()]
@@ -24,11 +25,13 @@ final class HomeViewModel: ObservableObject {
     var webService: API = WebService.shared
     
     func moveCards() {
-        cardViews.removeFirst()
-        self.lastCardIndex += 1
-        let character = characters[lastCardIndex % characters.count]
-        let newCardView = CardView(character: character)
-        cardViews.append(newCardView)
+        DispatchQueue.main.async {
+            self.cardViews.removeFirst()
+            self.lastCardIndex += 1
+            let character = self.characters[self.lastCardIndex % self.characters.count]
+            let newCardView = CardView(character: character)
+            self.cardViews.append(newCardView)
+        }
     }
     
     func isTopCard(cardView: CardView) -> Bool {
@@ -42,6 +45,7 @@ final class HomeViewModel: ObservableObject {
         let randomInt = Int.random(in: 0..<11)
         let suggestion = suggestions[randomInt]
         return suggestion
+        
     }
     
     func fetchAll(){
@@ -50,23 +54,27 @@ final class HomeViewModel: ObservableObject {
     }
     
     private func getCharacters() {
-        Task.init {
-            do {
-                let fetchedCharacters = try await webService.fetchCharacters()
-                characters.append(contentsOf: fetchedCharacters)
-            } catch {
-                print(error)
+        DispatchQueue.main.async {
+            Task.init {
+                do {
+                    let fetchedCharacters = try await self.webService.fetchCharacters()
+                    self.characters.append(contentsOf: fetchedCharacters)
+                } catch {
+                    print(error)
+                }
             }
         }
     }
     
     private func getSuggestions() {
-        Task.init {
-            do {
-                let fetchedSuggestions = try await webService.fetchSuggestions()
-                suggestions.append(contentsOf: fetchedSuggestions)
-            } catch {
-                print(error)
+        DispatchQueue.main.async {
+            Task.init {
+                do {
+                    let fetchedSuggestions = try await self.webService.fetchSuggestions()
+                    self.suggestions.append(contentsOf: fetchedSuggestions)
+                } catch {
+                    print(error)
+                }
             }
         }
     }

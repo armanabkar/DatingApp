@@ -49,5 +49,6 @@ struct GuideComponent_Previews: PreviewProvider {
             icon: "heart.circle",
             iconColor: .green)
             .previewLayout(.sizeThatFits)
+            .padding()
     }
 }

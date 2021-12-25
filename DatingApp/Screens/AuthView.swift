@@ -50,8 +50,8 @@ struct AuthView: View {
                             .modifier(ButtonModifier())
                             .padding(.top)
                     }
-                    .disabled(authViewModel.areFieldsFilled() ? true : false)
-                    .opacity(authViewModel.areFieldsFilled() ? 0.5 : 1)
+                    .disabled(authViewModel.areFieldsFilled() ? false : true)
+                    .opacity(authViewModel.areFieldsFilled() ? 1 : 0.5)
                     .onTapGesture {
                         authViewModel.login()
                     }

@@ -13,7 +13,7 @@ struct InfoView: View {
     
     var body: some View {
             ZStack {
-                Color.pink.opacity(0.1).ignoresSafeArea()
+                Color.blue.opacity(0.1).ignoresSafeArea()
                 ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .center, spacing: 20) {
                     VStack(alignment: .center, spacing: 20) {
@@ -27,9 +27,9 @@ struct InfoView: View {
                             .foregroundColor(.pink)
                     }
                     
-                    Text("Find hot dates from your favorite anime!")
-                        .font(.title)
-                        .fontWeight(.heavy)
+                    RichText("Find *hot dates* from your favorite anime!")
+                        .font(.system(size: 22, weight: .medium, design: .rounded))
+                        .textCase(.uppercase)
                         .lineLimit(nil)
                         .multilineTextAlignment(.center)
                     

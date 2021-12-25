@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F06742E7276E40C700488A5C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06742E6276E40C700488A5C /* StringExtension.swift */; };
+		F06742E9276E411C00488A5C /* RichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06742E8276E411C00488A5C /* RichText.swift */; };
 		F0889DB1275389EA00452C22 /* HomeCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0889DB0275389EA00452C22 /* HomeCardsView.swift */; };
 		F0889DB3275A214500452C22 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0889DB2275A214500452C22 /* AuthViewModel.swift */; };
 		F099C39B26AB216800379601 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C39A26AB216800379601 /* AuthView.swift */; };
@@ -31,9 +33,24 @@
 		F0A23865263C4404006DC490 /* GuideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23864263C4404006DC490 /* GuideComponent.swift */; };
 		F0FE149B275E19DB00BDE5C2 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */; };
 		F0FE149D2761006A00BDE5C2 /* DatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE149C2761006A00BDE5C2 /* DatingApp.swift */; };
+		F0FE14A72765F37400BDE5C2 /* DatingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14A62765F37400BDE5C2 /* DatingAppTests.swift */; };
+		F0FE14AF2765F3E800BDE5C2 /* WebServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14AE2765F3E800BDE5C2 /* WebServiceStub.swift */; };
+		F0FE14B22765F58400BDE5C2 /* WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14B12765F58400BDE5C2 /* WebServiceTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F0FE14A82765F37400BDE5C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0A23813263C3E36006DC490 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0A2381A263C3E36006DC490;
+			remoteInfo = DatingApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		F06742E6276E40C700488A5C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		F06742E8276E411C00488A5C /* RichText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichText.swift; sourceTree = "<group>"; };
 		F0889DB0275389EA00452C22 /* HomeCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardsView.swift; sourceTree = "<group>"; };
 		F0889DB2275A214500452C22 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		F099C39A26AB216800379601 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -60,10 +77,21 @@
 		F0A23864263C4404006DC490 /* GuideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideComponent.swift; sourceTree = "<group>"; };
 		F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		F0FE149C2761006A00BDE5C2 /* DatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingApp.swift; sourceTree = "<group>"; };
+		F0FE14A42765F37400BDE5C2 /* DatingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0FE14A62765F37400BDE5C2 /* DatingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingAppTests.swift; sourceTree = "<group>"; };
+		F0FE14AE2765F3E800BDE5C2 /* WebServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceStub.swift; sourceTree = "<group>"; };
+		F0FE14B12765F58400BDE5C2 /* WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F0A23818263C3E36006DC490 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0FE14A12765F37400BDE5C2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -105,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				F0A2381D263C3E36006DC490 /* DatingApp */,
+				F0FE14A52765F37400BDE5C2 /* DatingAppTests */,
 				F0A2381C263C3E36006DC490 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				F0A2381B263C3E36006DC490 /* DatingApp.app */,
+				F0FE14A42765F37400BDE5C2 /* DatingAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +200,7 @@
 				F0A2383E263C4149006DC490 /* CardView.swift */,
 				F0889DB0275389EA00452C22 /* HomeCardsView.swift */,
 				F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */,
+				F06742E8276E411C00488A5C /* RichText.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +218,7 @@
 			children = (
 				F0A23852263C4349006DC490 /* CardTransition.swift */,
 				F099C3A426ADC07800379601 /* NavigationViewExtension.swift */,
+				F06742E6276E40C700488A5C /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +231,32 @@
 				F0A2385E263C43C7006DC490 /* ButtonModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		F0FE14A52765F37400BDE5C2 /* DatingAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0FE14B02765F56A00BDE5C2 /* Services */,
+				F0FE14AD2765F3D700BDE5C2 /* Stubs */,
+				F0FE14A62765F37400BDE5C2 /* DatingAppTests.swift */,
+			);
+			path = DatingAppTests;
+			sourceTree = "<group>";
+		};
+		F0FE14AD2765F3D700BDE5C2 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				F0FE14AE2765F3E800BDE5C2 /* WebServiceStub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		F0FE14B02765F56A00BDE5C2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F0FE14B12765F58400BDE5C2 /* WebServiceTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,17 +279,39 @@
 			productReference = F0A2381B263C3E36006DC490 /* DatingApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F0FE14A32765F37400BDE5C2 /* DatingAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0FE14AC2765F37400BDE5C2 /* Build configuration list for PBXNativeTarget "DatingAppTests" */;
+			buildPhases = (
+				F0FE14A02765F37400BDE5C2 /* Sources */,
+				F0FE14A12765F37400BDE5C2 /* Frameworks */,
+				F0FE14A22765F37400BDE5C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0FE14A92765F37400BDE5C2 /* PBXTargetDependency */,
+			);
+			name = DatingAppTests;
+			productName = DatingAppTests;
+			productReference = F0FE14A42765F37400BDE5C2 /* DatingAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F0A23813263C3E36006DC490 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					F0A2381A263C3E36006DC490 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					F0FE14A32765F37400BDE5C2 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = F0A2381A263C3E36006DC490;
 					};
 				};
 			};
@@ -249,6 +329,7 @@
 			projectRoot = "";
 			targets = (
 				F0A2381A263C3E36006DC490 /* DatingApp */,
+				F0FE14A32765F37400BDE5C2 /* DatingAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -261,6 +342,13 @@
 				F0A2382B263C3E36006DC490 /* LaunchScreen.storyboard in Resources */,
 				F0A23828263C3E36006DC490 /* Preview Assets.xcassets in Resources */,
 				F0A23825263C3E36006DC490 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0FE14A22765F37400BDE5C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,17 +373,37 @@
 				F099C3AC26AEE89F00379601 /* WebService.swift in Sources */,
 				F0A2384C263C42BC006DC490 /* FooterView.swift in Sources */,
 				F0A23853263C4349006DC490 /* CardTransition.swift in Sources */,
+				F06742E9276E411C00488A5C /* RichText.swift in Sources */,
 				F0FE149B275E19DB00BDE5C2 /* ChatListView.swift in Sources */,
 				F0A2385F263C43C7006DC490 /* ButtonModifier.swift in Sources */,
 				F0FE149D2761006A00BDE5C2 /* DatingApp.swift in Sources */,
 				F099C39E26AB294000379601 /* HomeView.swift in Sources */,
 				F0A2383F263C4149006DC490 /* CardView.swift in Sources */,
 				F099C39B26AB216800379601 /* AuthView.swift in Sources */,
+				F06742E7276E40C700488A5C /* StringExtension.swift in Sources */,
 				F0A23843263C423C006DC490 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0FE14A02765F37400BDE5C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0FE14AF2765F3E800BDE5C2 /* WebServiceStub.swift in Sources */,
+				F0FE14B22765F58400BDE5C2 /* WebServiceTests.swift in Sources */,
+				F0FE14A72765F37400BDE5C2 /* DatingAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0FE14A92765F37400BDE5C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0A2381A263C3E36006DC490 /* DatingApp */;
+			targetProxy = F0FE14A82765F37400BDE5C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F0A23829263C3E36006DC490 /* LaunchScreen.storyboard */ = {
@@ -473,6 +581,54 @@
 			};
 			name = Release;
 		};
+		F0FE14AA2765F37400BDE5C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QMW26WR72K;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.DatingAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DatingApp.app/DatingApp";
+			};
+			name = Debug;
+		};
+		F0FE14AB2765F37400BDE5C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QMW26WR72K;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.DatingAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DatingApp.app/DatingApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -490,6 +646,15 @@
 			buildConfigurations = (
 				F0A23830263C3E36006DC490 /* Debug */,
 				F0A23831263C3E36006DC490 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0FE14AC2765F37400BDE5C2 /* Build configuration list for PBXNativeTarget "DatingAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0FE14AA2765F37400BDE5C2 /* Debug */,
+				F0FE14AB2765F37400BDE5C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

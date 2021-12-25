@@ -49,5 +49,7 @@ struct ChatListView: View {
 struct ChatListView_Previews: PreviewProvider {
     static var previews: some View {
         ChatListView()
+            .previewLayout(.sizeThatFits)
+            .padding()
     }
 }

@@ -14,26 +14,27 @@ struct ProfileView: View {
     
     var body: some View {
         ZStack {
-            Color.pink.opacity(0.1).ignoresSafeArea()
+            Color.blue.opacity(0.1).ignoresSafeArea()
             ScrollView(.vertical, showsIndicators: false) {
                 Capsule()
                     .frame(width: 120, height: 6)
                     .foregroundColor(Color.secondary)
                     .opacity(0.25)
                     .padding(.top, 15)
-                VStack(alignment: .center, spacing: 30) {
-                    Image(K.Image.placeholder)
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                        .clipShape(Circle())
-                        .overlay(
-                            Circle()
-                                .stroke(Color.pink,
-                                        lineWidth: 5)
-                        )
-                        .shadow(radius: 6)
                     
                     VStack(spacing: 5) {
+                        Image(K.Image.placeholder)
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                            .clipShape(Circle())
+                            .overlay(
+                                Circle()
+                                    .stroke(Color.white,
+                                            lineWidth: 5)
+                            )
+                            .shadow(radius: 3)
+                            .padding(10)
+                        
                         Text("Kushina Uzumaki")
                             .font(.largeTitle)
                             .fontWeight(.bold)
@@ -43,15 +44,11 @@ struct ProfileView: View {
                             .fontWeight(.semibold)
                         Divider()
                         Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. ")
-                            .foregroundColor(.black.opacity(0.7))
+                            .foregroundColor(.black.opacity(0.8))
                             .multilineTextAlignment(.center)
                     }
                     .padding()
-                    .background(Color.pink.opacity(0.25))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
-                }
-                .padding(.top, 25)
-                
+
                 Text("Your Messages")
                     .bold()
                     .font(.title)

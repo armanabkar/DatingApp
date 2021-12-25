@@ -23,7 +23,9 @@ final class AuthViewModel: ObservableObject {
     }
     
     func areFieldsFilled() -> Bool {
-        phoneNumber != "" && name != "" && age != "" ? false : true
+        !phoneNumber.isEmpty &&
+        !name.isEmpty &&
+        !age.isEmpty ? true : false
     }
     
 }
