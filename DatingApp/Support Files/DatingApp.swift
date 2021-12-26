@@ -12,7 +12,7 @@ struct TestApp: App {
     
     init() {
         Task.init {
-            try await WebService.shared.startServer()
+            let _ = try await WebService.shared.startServer()
         }
     }
     

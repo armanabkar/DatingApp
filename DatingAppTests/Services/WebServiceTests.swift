@@ -12,6 +12,11 @@ class WebServiceTests: XCTestCase {
     
     var webService: API = WebService.shared
     
+    func test_start() async throws {
+        let responseCode = try await webService.startServer()
+        XCTAssertEqual(responseCode, 200)
+    }
+    
     func test_fetchCharacters() async throws {
         let characters = try await webService.fetchCharacters()
         XCTAssertEqual(characters.count, 75)

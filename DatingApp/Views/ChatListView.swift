@@ -40,9 +40,9 @@ struct ChatListView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             }
         }
-        .onAppear(perform: {
-            homeViewModel.fetchAll()
-        })
+        .task {
+            await homeViewModel.getCharacters()
+        }
     }
 }
 

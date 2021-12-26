@@ -21,17 +21,16 @@ final class HomeViewModel: ObservableObject {
         return [CardView(character: Character.createFirstCharacter())]
     }()
     @Published var offset: CGFloat = .zero
+    @Published var dragState: DragState = DragState.inactive
     var dragAreaThreshold: CGFloat = 65.0
     var webService: API = WebService.shared
     
     func moveCards() {
-        DispatchQueue.main.async {
-            self.cardViews.removeFirst()
-            self.lastCardIndex += 1
-            let character = self.characters[self.lastCardIndex % self.characters.count]
-            let newCardView = CardView(character: character)
-            self.cardViews.append(newCardView)
-        }
+        cardViews.removeFirst()
+        lastCardIndex += 1
+        let character = characters[lastCardIndex % characters.count]
+        let newCardView = CardView(character: character)
+        cardViews.append(newCardView)
     }
     
     func isTopCard(cardView: CardView) -> Bool {
@@ -48,35 +47,24 @@ final class HomeViewModel: ObservableObject {
         
     }
     
-    func fetchAll(){
-        getCharacters()
-        getSuggestions()
+    func getCharacters() async {
+        do {
+            let fetchedCharacters = try await webService.fetchCharacters()
+            characters.append(contentsOf: fetchedCharacters)
+        } catch {
+            print(error)
+        }
+        
     }
     
-    private func getCharacters() {
-        DispatchQueue.main.async {
-            Task.init {
-                do {
-                    let fetchedCharacters = try await self.webService.fetchCharacters()
-                    self.characters.append(contentsOf: fetchedCharacters)
-                } catch {
-                    print(error)
-                }
-            }
+    func getSuggestions() async {
+        do {
+            let fetchedSuggestions = try await webService.fetchSuggestions()
+            suggestions.append(contentsOf: fetchedSuggestions)
+        } catch {
+            print(error)
         }
-    }
-    
-    private func getSuggestions() {
-        DispatchQueue.main.async {
-            Task.init {
-                do {
-                    let fetchedSuggestions = try await self.webService.fetchSuggestions()
-                    self.suggestions.append(contentsOf: fetchedSuggestions)
-                } catch {
-                    print(error)
-                }
-            }
-        }
+        
     }
     
 }

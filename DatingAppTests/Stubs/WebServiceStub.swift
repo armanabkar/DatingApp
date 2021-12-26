@@ -13,8 +13,8 @@ final class WebServiceStub: API {
     static let shared = WebServiceStub()
     private init() {}
     
-    func startServer() async throws {
-        return
+    func startServer() async throws -> Int {
+        return 200
     }
     
     func fetchCharacters() async throws -> [Character] {
