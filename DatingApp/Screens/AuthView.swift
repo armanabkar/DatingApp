@@ -22,7 +22,7 @@ struct AuthView: View {
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                    Text("Anime Dating")
+                    Text(K.Information.appName)
                         .font(.system(size: 42, weight: .heavy, design: .rounded))
                         .foregroundColor(.white)
                     
@@ -57,7 +57,7 @@ struct AuthView: View {
                     }
                     
                     Spacer()
-                    Text("* Currently only available in the USA.")
+                    Text("*Currently only available in the USA.")
                         .foregroundColor(.white)
                 }
                 .frame(maxWidth: 320)

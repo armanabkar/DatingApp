@@ -27,7 +27,7 @@ struct HeaderView: View {
             }
             
             Spacer()
-            Text("Anime Dating")
+            Text(K.Information.appName)
                 .font(.system(size: 32, weight: .heavy, design: .rounded))
                 .foregroundColor(.pink)
             

@@ -26,7 +26,7 @@ final class WebService: API {
     private init() {}
     
     func startServer() async throws -> Int {
-        guard let url = URL(string: K.startURL) else { throw NetworkError.badURL }
+        guard let url = URL(string: K.URL.startURL) else { throw NetworkError.badURL }
         
         let urlRequest = URLRequest(url: url)
         let (_, response) = try await URLSession.shared.data(for: urlRequest)
@@ -36,8 +36,21 @@ final class WebService: API {
         return response.statusCode
     }
     
+    func fetch<T: Codable>(fromURL url: String) async throws -> T {
+        guard let url = URL(string: url) else { throw NetworkError.badURL }
+        
+        let urlRequest = URLRequest(url: url)
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw NetworkError.noData }
+        
+        guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
+            throw NetworkError.decodingError
+        }
+        return decodedData
+    }
+    
     func fetchCharacters() async throws -> [Character] {
-        guard let url = URL(string: K.charactersURL) else { throw NetworkError.badURL }
+        guard let url = URL(string: K.URL.charactersURL) else { throw NetworkError.badURL }
         
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
@@ -50,7 +63,7 @@ final class WebService: API {
     }
     
     func fetchSuggestions() async throws -> [String] {
-        guard let url = URL(string: K.suggestionURL) else { throw NetworkError.badURL }
+        guard let url = URL(string: K.URL.suggestionURL) else { throw NetworkError.badURL }
         
         let urlRequest = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: urlRequest)

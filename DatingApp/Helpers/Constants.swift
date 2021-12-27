@@ -9,10 +9,22 @@ import SwiftUI
 
 struct K {
     
-    static let baseURL = "https://animedating-server.herokuapp.com"
-    static let startURL = "\(baseURL)/start"
-    static let charactersURL = "\(baseURL)/api/v1/characters"
-    static let suggestionURL = "\(baseURL)/api/v1/suggestions"
+    struct Information {
+        static let appName = "ANIME DATING"
+        static let description = "Find *hot dates* from your favorite anime!"
+    }
+    
+    struct Identifiers {
+        static let CFBundleVersion = "CFBundleVersion"
+        static let CFBundleShortVersionString = "CFBundleShortVersionString"
+    }
+    
+    struct URL {
+        static let baseURL = "https://animedating-server.herokuapp.com"
+        static let startURL = "\(baseURL)/start"
+        static let charactersURL = "\(baseURL)/api/v1/characters"
+        static let suggestionURL = "\(baseURL)/api/v1/suggestions"
+    }
     
     struct Image {
         static let placeholder = "kushinauzumaki"

@@ -13,7 +13,7 @@ struct CardView: View, Identifiable {
     var character: Character
     
     var body: some View {
-        AsyncImage(url: URL(string: "\(K.baseURL)/\(character.image)")) { image in
+        AsyncImage(url: URL(string: "\(K.URL.baseURL)/\(character.image)")) { image in
             image
                 .resizable()
                 .cornerRadius(14)
@@ -72,13 +72,7 @@ struct CardView: View, Identifiable {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(character: Character(
-            id: 0,
-            name: "Kushina Uzumaki",
-            neighborhood: "Hidden Leaf Village",
-            age: 24,
-            image: "images/kushinauzumaki.png"
-        ))
+        CardView(character: Character.createFirstCharacter())
             .previewLayout(.fixed(width: 375, height: 600))
     }
 }

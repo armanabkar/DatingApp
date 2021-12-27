@@ -22,12 +22,12 @@ struct InfoView: View {
                             .foregroundColor(Color.secondary)
                             .opacity(0.25)
                         
-                        Text("Anime Dating")
+                        Text(K.Information.appName)
                             .font(.system(size: 38, weight: .heavy, design: .rounded))
                             .foregroundColor(.pink)
                     }
                     
-                    RichText("Find *hot dates* from your favorite anime!")
+                    RichText(K.Information.description)
                         .font(.system(size: 22, weight: .medium, design: .rounded))
                         .textCase(.uppercase)
                         .lineLimit(nil)
@@ -79,13 +79,22 @@ struct InfoView_Previews: PreviewProvider {
 }
 
 struct AppInfoView: View {
+    
+    private var appVersion: String {
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary[K.Identifiers.CFBundleShortVersionString] as! String
+        let build = dictionary[K.Identifiers.CFBundleVersion] as! String
+        
+        return "\(version)(\(build))"
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             RowAppInfoView(ItemOne: "Application", ItemTwo: "Dating App | SwiftUI")
             RowAppInfoView(ItemOne: "Developer", ItemTwo: "Arman Abkar")
             RowAppInfoView(ItemOne: "Compatibility", ItemTwo: "iPhone and iPad")
             RowAppInfoView(ItemOne: "Website", ItemTwo: "armanabkar.ir")
-            RowAppInfoView(ItemOne: "Version", ItemTwo: "2.0.0")
+            RowAppInfoView(ItemOne: "Version", ItemTwo: appVersion)
         }
     }
 }

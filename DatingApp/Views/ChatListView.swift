@@ -15,7 +15,7 @@ struct ChatListView: View {
         VStack {
             ForEach(homeViewModel.characters.prefix(5), id: \.id) { character in
                 HStack(alignment: .center) {
-                    AsyncImage(url: URL(string: "\(K.baseURL)/\(character.image)")) { image in
+                    AsyncImage(url: URL(string: "\(K.URL.baseURL)/\(character.image)")) { image in
                         image
                             .resizable()
                             .frame(width: 70, height: 70)
