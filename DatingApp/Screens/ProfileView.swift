@@ -14,7 +14,7 @@ struct ProfileView: View {
     
     var body: some View {
         ZStack {
-            Color.blue.opacity(0.1).ignoresSafeArea()
+            Color.gray.opacity(0.1).ignoresSafeArea()
             ScrollView(.vertical, showsIndicators: false) {
                 Capsule()
                     .frame(width: 120, height: 6)

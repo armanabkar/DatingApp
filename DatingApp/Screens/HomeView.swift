@@ -13,30 +13,28 @@ struct HomeView: View {
     @GestureState private var dragState = DragState.inactive
     
     var body: some View {
-        ZStack {
-            Color.gray.opacity(0.1).ignoresSafeArea()
-            VStack(spacing: 30) {
-                HeaderView(showGuideView: $homeViewModel.showGuide,
-                           showInfoView: $homeViewModel.showInfo)
-                    .opacity(dragState.isDragging ? 0.0 : 1.0)
-                    .animation(.default, value: dragState.isDragging)
-                
-                Cards()
-                
-                FooterView(showSuggestionAlert: $homeViewModel.showAlert)
-                    .opacity(dragState.isDragging ? 0.0 : 1.0)
-                    .animation(.default, value: dragState.isDragging)
-            }
-            .alert(isPresented: $homeViewModel.showAlert) {
-                Alert(
-                    title: Text(homeViewModel.generateRandomSuggestion()),
-                    dismissButton: .default(Text("Close")))
-            }
-            .task {
-                await homeViewModel.getCharacters()
-                await homeViewModel.getSuggestions()
-            }
+        VStack(spacing: 30) {
+            HeaderView(showGuideView: $homeViewModel.showGuide,
+                       showInfoView: $homeViewModel.showInfo)
+                .opacity(dragState.isDragging ? 0.25 : 1.0)
+                .animation(.default, value: dragState.isDragging)
+            
+            Cards()
+            
+            FooterView(showSuggestionAlert: $homeViewModel.showAlert)
+                .opacity(dragState.isDragging ? 0.25 : 1.0)
+                .animation(.default, value: dragState.isDragging)
         }
+        .alert(isPresented: $homeViewModel.showAlert) {
+            Alert(
+                title: Text(homeViewModel.generateRandomSuggestion()),
+                dismissButton: .default(Text("Close")))
+        }
+        .task {
+            await homeViewModel.getCharacters()
+            await homeViewModel.getSuggestions()
+        }
+        
     }
     
     @ViewBuilder private func Cards() -> some View {

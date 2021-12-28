@@ -13,7 +13,7 @@ struct InfoView: View {
     
     var body: some View {
             ZStack {
-                Color.blue.opacity(0.1).ignoresSafeArea()
+                Color.gray.opacity(0.1).ignoresSafeArea()
                 ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .center, spacing: 20) {
                     VStack(alignment: .center, spacing: 20) {

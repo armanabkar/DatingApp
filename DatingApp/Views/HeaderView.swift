@@ -18,7 +18,7 @@ struct HeaderView: View {
                 self.showInfoView.toggle()
             }) {
                 Image(systemName: K.Icon.info)
-                    .font(.system(size: 40, weight: .semibold))
+                    .font(.system(size: 42, weight: .semibold))
                     .foregroundColor(.gray)
             }
             .accentColor(Color.primary)
@@ -28,7 +28,7 @@ struct HeaderView: View {
             
             Spacer()
             Text(K.Information.appName)
-                .font(.system(size: 32, weight: .heavy, design: .rounded))
+                .font(.system(size: 30, weight: .heavy, design: .rounded))
                 .foregroundColor(.pink)
             
             Spacer()
@@ -36,7 +36,7 @@ struct HeaderView: View {
                 self.showGuideView.toggle()
             }) {
                 Image(systemName: K.Icon.profile)
-                    .font(.system(size: 40, weight: .semibold))
+                    .font(.system(size: 42, weight: .semibold))
                     .foregroundColor(.pink)
             }
             .accentColor(Color.primary)

@@ -14,7 +14,7 @@ struct FooterView: View {
     var body: some View {
         HStack {
             Image(systemName: K.Icon.dismiss)
-                .font(.system(size: 40, weight: .semibold))
+                .font(.system(size: 42, weight: .semibold))
                 .foregroundColor(.red)
             
             Spacer()
@@ -26,17 +26,17 @@ struct FooterView: View {
                     .fontWeight(.heavy)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 12)
-                    .accentColor(Color.white)
-                    .background(Color.pink)
+                    .frame(maxWidth: .infinity)
+                    .accentColor(Color.pink)
                     .cornerRadius(25)
                     .background(
-                        Capsule().stroke(Color.pink, lineWidth: 2)
+                        Capsule().stroke(Color.pink, lineWidth: 4)
                     )
             }
             
             Spacer()
             Image(systemName: K.Icon.like)
-                .font(.system(size: 40, weight: .semibold))
+                .font(.system(size: 42, weight: .semibold))
                 .foregroundColor(.green)
         }
         .padding(.horizontal)

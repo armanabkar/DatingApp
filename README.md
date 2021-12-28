@@ -8,7 +8,7 @@ Dating application. Built with SwiftUI and MVVM architecture using Node.js as a 
 - [x] Home Screen with gestures and animations
 - [x] App's Information Screen
 - [x] Profile Screen with matches, messages, and logout
-- [x] Reusable components
-- [ ] Unit/Integration Tests
+- [x] Reusable components, RichText, and modifiers
 - [x] Basic authentication system
-- [x] iOS 15, AsyncImage, Async/Await Network Manager
+- [x] iOS 15; AsyncImage, Async/Await Network Manager
+- [ ] Unit/Integration Tests
