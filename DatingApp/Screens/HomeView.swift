@@ -13,28 +13,26 @@ struct HomeView: View {
     @GestureState private var dragState = DragState.inactive
     
     var body: some View {
-        VStack(spacing: 30) {
-            HeaderView(showGuideView: $homeViewModel.showGuide,
-                       showInfoView: $homeViewModel.showInfo)
-                .opacity(dragState.isDragging ? 0.25 : 1.0)
-                .animation(.default, value: dragState.isDragging)
-            
-            Cards()
-            
-            FooterView(showSuggestionAlert: $homeViewModel.showAlert)
-                .opacity(dragState.isDragging ? 0.25 : 1.0)
-                .animation(.default, value: dragState.isDragging)
+        ZStack {
+            Color.pink.ignoresSafeArea(edges: [.top])
+            VStack(alignment: .leading, spacing: 15) {
+                HeaderView(showInfoView: $homeViewModel.showInfo,
+                           showSuggestionAlert: $homeViewModel.showAlert)
+                    .opacity(dragState.isDragging ? 0.25 : 1.0)
+                    .animation(.default, value: dragState.isDragging)
+                
+                Cards()
+            }
+            .alert(isPresented: $homeViewModel.showAlert) {
+                Alert(
+                    title: Text(homeViewModel.generateRandomSuggestion()),
+                    dismissButton: .default(Text("Close")))
+            }
+            .task {
+                await homeViewModel.getCharacters()
+                await homeViewModel.getSuggestions()
+            }
         }
-        .alert(isPresented: $homeViewModel.showAlert) {
-            Alert(
-                title: Text(homeViewModel.generateRandomSuggestion()),
-                dismissButton: .default(Text("Close")))
-        }
-        .task {
-            await homeViewModel.getCharacters()
-            await homeViewModel.getSuggestions()
-        }
-        
     }
     
     @ViewBuilder private func Cards() -> some View {

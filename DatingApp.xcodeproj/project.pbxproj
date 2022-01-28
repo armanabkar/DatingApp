@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F056C539279FCF7700CAA430 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056C538279FCF7700CAA430 /* MessagesView.swift */; };
+		F056C53D27A14CCD00CAA430 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056C53C27A14CCD00CAA430 /* TabsView.swift */; };
+		F056C54127A15CC400CAA430 /* MessageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056C54027A15CC400CAA430 /* MessageComponent.swift */; };
+		F056C54327A1AC2B00CAA430 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056C54227A1AC2B00CAA430 /* ViewExtension.swift */; };
 		F06742E7276E40C700488A5C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06742E6276E40C700488A5C /* StringExtension.swift */; };
 		F06742E9276E411C00488A5C /* RichText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06742E8276E411C00488A5C /* RichText.swift */; };
 		F0889DB3275A214500452C22 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0889DB2275A214500452C22 /* AuthViewModel.swift */; };
@@ -24,13 +28,11 @@
 		F0A23843263C423C006DC490 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23842263C423C006DC490 /* HeaderView.swift */; };
 		F0A23846263C426E006DC490 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23845263C426E006DC490 /* InfoView.swift */; };
 		F0A23849263C4294006DC490 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23848263C4294006DC490 /* ProfileView.swift */; };
-		F0A2384C263C42BC006DC490 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2384B263C42BC006DC490 /* FooterView.swift */; };
 		F0A23853263C4349006DC490 /* CardTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23852263C4349006DC490 /* CardTransition.swift */; };
 		F0A23859263C4398006DC490 /* TitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23858263C4398006DC490 /* TitleModifier.swift */; };
 		F0A2385C263C43AD006DC490 /* SymbolModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2385B263C43AD006DC490 /* SymbolModifier.swift */; };
 		F0A2385F263C43C7006DC490 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2385E263C43C7006DC490 /* ButtonModifier.swift */; };
 		F0A23865263C4404006DC490 /* GuideComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23864263C4404006DC490 /* GuideComponent.swift */; };
-		F0FE149B275E19DB00BDE5C2 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */; };
 		F0FE149D2761006A00BDE5C2 /* DatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE149C2761006A00BDE5C2 /* DatingApp.swift */; };
 		F0FE14A72765F37400BDE5C2 /* DatingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14A62765F37400BDE5C2 /* DatingAppTests.swift */; };
 		F0FE14AF2765F3E800BDE5C2 /* WebServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FE14AE2765F3E800BDE5C2 /* WebServiceStub.swift */; };
@@ -48,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F056C538279FCF7700CAA430 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		F056C53C27A14CCD00CAA430 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		F056C54027A15CC400CAA430 /* MessageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageComponent.swift; sourceTree = "<group>"; };
+		F056C54227A1AC2B00CAA430 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		F06742E6276E40C700488A5C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F06742E8276E411C00488A5C /* RichText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichText.swift; sourceTree = "<group>"; };
 		F0889DB2275A214500452C22 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -67,13 +73,11 @@
 		F0A23842263C423C006DC490 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F0A23845263C426E006DC490 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		F0A23848263C4294006DC490 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		F0A2384B263C42BC006DC490 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		F0A23852263C4349006DC490 /* CardTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransition.swift; sourceTree = "<group>"; };
 		F0A23858263C4398006DC490 /* TitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModifier.swift; sourceTree = "<group>"; };
 		F0A2385B263C43AD006DC490 /* SymbolModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolModifier.swift; sourceTree = "<group>"; };
 		F0A2385E263C43C7006DC490 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
 		F0A23864263C4404006DC490 /* GuideComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideComponent.swift; sourceTree = "<group>"; };
-		F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		F0FE149C2761006A00BDE5C2 /* DatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingApp.swift; sourceTree = "<group>"; };
 		F0FE14A42765F37400BDE5C2 /* DatingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FE14A62765F37400BDE5C2 /* DatingAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingAppTests.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				F0A23848263C4294006DC490 /* ProfileView.swift */,
 				F099C39A26AB216800379601 /* AuthView.swift */,
 				F099C39D26AB294000379601 /* HomeView.swift */,
+				F056C538279FCF7700CAA430 /* MessagesView.swift */,
+				F056C53C27A14CCD00CAA430 /* TabsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -194,10 +200,9 @@
 			children = (
 				F0A23864263C4404006DC490 /* GuideComponent.swift */,
 				F0A23842263C423C006DC490 /* HeaderView.swift */,
-				F0A2384B263C42BC006DC490 /* FooterView.swift */,
 				F0A2383E263C4149006DC490 /* CardView.swift */,
-				F0FE149A275E19DB00BDE5C2 /* ChatListView.swift */,
 				F06742E8276E411C00488A5C /* RichText.swift */,
+				F056C54027A15CC400CAA430 /* MessageComponent.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				F0A23852263C4349006DC490 /* CardTransition.swift */,
 				F099C3A426ADC07800379601 /* NavigationViewExtension.swift */,
 				F06742E6276E40C700488A5C /* StringExtension.swift */,
+				F056C54227A1AC2B00CAA430 /* ViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,20 +368,22 @@
 				F0A23865263C4404006DC490 /* GuideComponent.swift in Sources */,
 				F099C3C026AFEFFF00379601 /* Constants.swift in Sources */,
 				F0889DB3275A214500452C22 /* AuthViewModel.swift in Sources */,
+				F056C54327A1AC2B00CAA430 /* ViewExtension.swift in Sources */,
 				F0A23836263C4085006DC490 /* Character.swift in Sources */,
 				F0A2385C263C43AD006DC490 /* SymbolModifier.swift in Sources */,
 				F0A23859263C4398006DC490 /* TitleModifier.swift in Sources */,
 				F099C3A526ADC07800379601 /* NavigationViewExtension.swift in Sources */,
 				F099C3AC26AEE89F00379601 /* WebService.swift in Sources */,
-				F0A2384C263C42BC006DC490 /* FooterView.swift in Sources */,
+				F056C53D27A14CCD00CAA430 /* TabsView.swift in Sources */,
 				F0A23853263C4349006DC490 /* CardTransition.swift in Sources */,
 				F06742E9276E411C00488A5C /* RichText.swift in Sources */,
-				F0FE149B275E19DB00BDE5C2 /* ChatListView.swift in Sources */,
 				F0A2385F263C43C7006DC490 /* ButtonModifier.swift in Sources */,
 				F0FE149D2761006A00BDE5C2 /* DatingApp.swift in Sources */,
 				F099C39E26AB294000379601 /* HomeView.swift in Sources */,
 				F0A2383F263C4149006DC490 /* CardView.swift in Sources */,
 				F099C39B26AB216800379601 /* AuthView.swift in Sources */,
+				F056C54127A15CC400CAA430 /* MessageComponent.swift in Sources */,
+				F056C539279FCF7700CAA430 /* MessagesView.swift in Sources */,
 				F06742E7276E40C700488A5C /* StringExtension.swift in Sources */,
 				F0A23843263C423C006DC490 /* HeaderView.swift in Sources */,
 			);

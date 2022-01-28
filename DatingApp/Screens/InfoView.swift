@@ -12,9 +12,9 @@ struct InfoView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-            ZStack {
-                Color.gray.opacity(0.1).ignoresSafeArea()
-                ScrollView(.vertical, showsIndicators: false) {
+        ZStack {
+            Color.gray.opacity(0.1).ignoresSafeArea()
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .center, spacing: 20) {
                     VStack(alignment: .center, spacing: 20) {
                         Capsule()
@@ -50,18 +50,12 @@ struct InfoView: View {
                     }
                     
                     Spacer(minLength: 0)
-
-                    Text("App Info")
-                        .fontWeight(.black)
-                        .modifier(TitleModifier())
-                    
-                    AppInfoView()
                     
                     Text("Credits")
                         .fontWeight(.black)
                         .modifier(TitleModifier())
                     
-                    CreditsView()
+                    AppInfoView()
                 }
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding(.top, 15)
@@ -95,6 +89,7 @@ struct AppInfoView: View {
             RowAppInfoView(ItemOne: "Compatibility", ItemTwo: "iPhone and iPad")
             RowAppInfoView(ItemOne: "Website", ItemTwo: "armanabkar.ir")
             RowAppInfoView(ItemOne: "Version", ItemTwo: appVersion)
+            RowAppInfoView(ItemOne: "Anime", ItemTwo: "Naruto, Naruto: Shippuden, Boruto: Naruto Next Generations, Code Geass, Attack on Titan, Kill la Kill, One Piece, Tokyo Ghoul, Persona 5, Hunter X Hunter, Demon Slayer, Violet Evergarden, Fullmetal Alchemist: Brotherhood, Death Note, Steins;Gate, Ghost in the Shell", isMultiline: true)
         }
     }
 }
@@ -103,25 +98,24 @@ struct RowAppInfoView: View {
     
     var ItemOne: String
     var ItemTwo: String
+    var isMultiline = false
     
     var body: some View {
-        VStack {
-            HStack {
+        if isMultiline {
+            VStack(alignment: .leading, spacing: 10) {
                 Text(ItemOne).foregroundColor(Color.gray)
-                Spacer()
                 Text(ItemTwo)
+                Divider()
             }
-            Divider()
-        }
-    }
-}
-
-struct CreditsView: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Animes").foregroundColor(Color.gray)
-            Text("Naruto, Naruto: Shippuden, Attack on Titan, Kill la Kill, One Piece, Tokyo Ghoul, Persona 5, Hunter X Hunter, Demon Slayer")
-            Divider()
+        } else {
+            VStack {
+                HStack {
+                    Text(ItemOne).foregroundColor(Color.gray)
+                    Spacer()
+                    Text(ItemTwo)
+                }
+                Divider()
+            }
         }
     }
 }

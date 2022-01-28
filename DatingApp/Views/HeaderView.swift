@@ -9,39 +9,30 @@ import SwiftUI
 
 struct HeaderView: View {
     
-    @Binding var showGuideView: Bool
     @Binding var showInfoView: Bool
+    @Binding var showSuggestionAlert: Bool
     
     var body: some View {
-        HStack {
+        HStack(alignment: .center) {
             Button(action: {
-                self.showInfoView.toggle()
+                showSuggestionAlert.toggle()
             }) {
-                Image(systemName: K.Icon.info)
-                    .font(.system(size: 42, weight: .semibold))
-                    .foregroundColor(.gray)
+                Text(K.Information.appName)
+                    .font(.system(size: 34, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
             }
-            .accentColor(Color.primary)
             .sheet(isPresented: $showInfoView) {
                 InfoView()
             }
             
             Spacer()
-            Text(K.Information.appName)
-                .font(.system(size: 30, weight: .heavy, design: .rounded))
-                .foregroundColor(.pink)
             
-            Spacer()
-            Button(action: {
-                self.showGuideView.toggle()
-            }) {
-                Image(systemName: K.Icon.profile)
-                    .font(.system(size: 42, weight: .semibold))
-                    .foregroundColor(.pink)
-            }
-            .accentColor(Color.primary)
-            .sheet(isPresented: $showGuideView) {
-                ProfileView()
+            Button {
+                showInfoView.toggle()
+            } label: {
+                Image(systemName: K.Icon.info)
+                    .font(.system(size: 26, weight: .bold))
+                    .foregroundColor(.white)
             }
         }
         .padding(.horizontal)
@@ -49,11 +40,14 @@ struct HeaderView: View {
 }
 
 struct HeaderView_Previews: PreviewProvider {
-    @State static var showGuide: Bool = false
     @State static var showInfo: Bool = false
+    @State static var showSuggestionAlert: Bool = false
     
     static var previews: some View {
-        HeaderView(showGuideView: $showGuide, showInfoView: $showInfo)
-            .previewLayout(.fixed(width: 375, height: 80))
+        ZStack {
+            Color.pink
+            HeaderView(showInfoView: $showInfo, showSuggestionAlert: $showSuggestionAlert)
+        }
+        .previewLayout(.fixed(width: 375, height: 80))
     }
 }

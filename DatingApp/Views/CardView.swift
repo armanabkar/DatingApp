@@ -58,8 +58,8 @@ struct CardView: View, Identifiable {
                 )
             
         } placeholder: {
-            Color.gray
-                .opacity(0.2)
+            Color.white
+                .opacity(0.5)
                 .blur(radius: 5)
                 .frame(height: 575)
                 .cornerRadius(14)

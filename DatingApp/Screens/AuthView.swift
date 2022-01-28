@@ -44,7 +44,7 @@ struct AuthView: View {
                     .padding(.top)
                     
                     
-                    NavigationLink(destination: HomeView().navigationBarHidden(true)) {
+                    NavigationLink(destination: TabsView()) {
                         Text("Let's go!".uppercased())
                             .fontWeight(.bold)
                             .modifier(ButtonModifier())

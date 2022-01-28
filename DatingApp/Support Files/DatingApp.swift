@@ -18,7 +18,10 @@ struct TestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AuthView()
+            TabsView()
+            
+            // Temporarily commented due to a system bug related to NavigationView
+            // AuthView()
         }
     }
 }
