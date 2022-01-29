@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MessagesView: View {
     
-    @StateObject private var homeViewModel = HomeViewModel()
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     @State private var searchText = ""
     
     var body: some View {
@@ -17,13 +17,10 @@ struct MessagesView: View {
             List {
                 ForEach(searchResults, id: \.id) { character in
                     MessageComponent(name: character.name,
-                                     image: "\(K.URL.baseURL)/\(character.image)")
+                                     image: "\(K.URL.baseURL)/\(character.image)", messageBody: homeViewModel.suggestions.randomElement() ?? "Hi! my name is \(character.name). Nice to meet you...")
                 }
             }
             .searchable(text: $searchText)
-            .task {
-                await homeViewModel.getCharacters()
-            }
             .navigationTitle("Messages")
             .navigationBarTitleTextColor(.pink)
         }

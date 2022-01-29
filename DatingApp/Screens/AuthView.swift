@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AuthView: View {
     
-    @StateObject private var authViewModel = AuthViewModel()
-    
+    @EnvironmentObject private var homeViewModel: HomeViewModel
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -28,12 +28,12 @@ struct AuthView: View {
                     
                     Spacer()
                     AuthFieldView(placeholder: "Enter your Number",
-                                  text: $authViewModel.phoneNumber)
+                                  text: $homeViewModel.phoneNumber)
                     AuthFieldView(placeholder: "Enter your Name",
-                                  text: $authViewModel.name)
+                                  text: $homeViewModel.name)
                         .padding(.top)
                     AuthFieldView(placeholder: "Enter your Age",
-                                  text: $authViewModel.age)
+                                  text: $homeViewModel.age)
                         .padding(.top)
                     HStack {
                         AuthPickerView(name: "Male",
@@ -50,10 +50,10 @@ struct AuthView: View {
                             .modifier(ButtonModifier())
                             .padding(.top)
                     }
-                    .disabled(authViewModel.areFieldsFilled() ? false : true)
-                    .opacity(authViewModel.areFieldsFilled() ? 1 : 0.5)
+                    .disabled(homeViewModel.areFieldsFilled() ? false : true)
+                    .opacity(homeViewModel.areFieldsFilled() ? 1 : 0.5)
                     .onTapGesture {
-                        authViewModel.login()
+                        homeViewModel.login()
                     }
                     
                     Spacer()

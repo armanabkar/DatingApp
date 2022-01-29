@@ -11,6 +11,7 @@ struct MessageComponent: View {
     
     var name: String
     var image: String
+    var messageBody: String
     
     var body: some View {
         HStack {
@@ -40,7 +41,7 @@ struct MessageComponent: View {
                 Text(name)
                     .fontWeight(.bold)
                     .font(.title2)
-                Text(generateRandomText()!)
+                Text(messageBody)
                     .lineLimit(1)
                     .font(.callout)
                     .foregroundColor(.black.opacity(0.7))
@@ -48,26 +49,13 @@ struct MessageComponent: View {
             .padding(.leading, 5)
         }
     }
-    
-    private func generateRandomText() -> String? {
-        let texts = [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus orci",
-            "eo enim. Phasellus lacinia erat lacus, ac eleifend augue ornare et. Donec",
-            "Mauris sed lacus id sapien pretium pharetra. Nullam auctor suscipit lacus",
-            "Suspendisse in ipsum vel orci rutrum rutrum. Quisque quis tincidunt",
-            "mauris, nec ullamcorper sapien. Aenean rhoncus mattis semper. Pellentesque habitant",
-            "Nam tempor urna vel dolor rhoncus, vel interdum sem congue. Integer non mi",
-            "leo et ex viverra tincidunt. Class aptent taciti sociosqu ad litora torquent per",
-            "Suspendisse egestas, risus ac imperdiet ullamcorper, quam erat tincidunt lorem"
-        ]
-        
-        return texts.randomElement()
-    }
 }
 
 struct MessageComponent_Previews: PreviewProvider {
     static var previews: some View {
-        MessageComponent(name: "Kushina Uzumaki", image: "https://animedating-server.herokuapp.com/images/kushinauzumaki.png")
+        MessageComponent(name: "Kushina Uzumaki",
+                         image: "https://animedating-server.herokuapp.com/images/kushinauzumaki.png",
+                         messageBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras maximus orci")
             .previewLayout(.sizeThatFits)
     }
 }

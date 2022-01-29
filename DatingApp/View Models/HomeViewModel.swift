@@ -22,8 +22,27 @@ final class HomeViewModel: ObservableObject {
     }()
     @Published var offset: CGFloat = .zero
     @Published var dragState: DragState = DragState.inactive
+    @AppStorage("isLogin") var isLogin = false
+    @Published var phoneNumber: String = ""
+    @Published var name: String = ""
+    @Published var age: String = ""
     var dragAreaThreshold: CGFloat = 65.0
     var webService: API = WebService.shared
+    
+    
+    func login() {
+        isLogin = true
+    }
+    
+    func logout() {
+        isLogin = false
+    }
+    
+    func areFieldsFilled() -> Bool {
+        !phoneNumber.isEmpty &&
+        !name.isEmpty &&
+        !age.isEmpty ? true : false
+    }
     
     func moveCards() {
         cardViews.removeFirst()

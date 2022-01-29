@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @StateObject private var authViewModel = AuthViewModel()
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -45,7 +45,7 @@ struct ProfileView: View {
                 Spacer()
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
-                    authViewModel.logout()
+                    homeViewModel.logout()
                     NavigationView<ProfileView>.popToRootView()
                 }) {
                     Text("Log Out".uppercased())

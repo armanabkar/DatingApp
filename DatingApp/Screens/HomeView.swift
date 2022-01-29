@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var homeViewModel = HomeViewModel()
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     @GestureState private var dragState = DragState.inactive
     
     var body: some View {
@@ -27,10 +27,6 @@ struct HomeView: View {
                 Alert(
                     title: Text(homeViewModel.generateRandomSuggestion()),
                     dismissButton: .default(Text("Close")))
-            }
-            .task {
-                await homeViewModel.getCharacters()
-                await homeViewModel.getSuggestions()
             }
         }
     }

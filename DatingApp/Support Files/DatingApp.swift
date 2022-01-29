@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct TestApp: App {
     
+    @StateObject private var model = HomeViewModel()
+    
     init() {
         Task.init {
             let _ = try await WebService.shared.startServer()
@@ -19,6 +21,7 @@ struct TestApp: App {
     var body: some Scene {
         WindowGroup {
             TabsView()
+                .environmentObject(model)
             
             // Temporarily commented due to a system bug related to NavigationView
             // AuthView()

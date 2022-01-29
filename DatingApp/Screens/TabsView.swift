@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabsView: View {
     
-    @StateObject private var homeViewModel = HomeViewModel()
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
         TabView {
@@ -32,6 +32,10 @@ struct TabsView: View {
                 }
         }
         .accentColor(.pink)
+        .task {
+            await homeViewModel.getCharacters()
+            await homeViewModel.getSuggestions()
+        }
     }
 }
 
