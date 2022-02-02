@@ -32,10 +32,6 @@ struct TabsView: View {
                 }
         }
         .accentColor(.pink)
-        .task {
-            await homeViewModel.getCharacters()
-            await homeViewModel.getSuggestions()
-        }
     }
 }
 
@@ -43,6 +39,7 @@ struct TabsView_Previews: PreviewProvider {
     static var previews: some View {
         TabsView()
             .previewDevice("iPhone 13 Pro")
+            .environmentObject(HomeViewModel())
     }
 }
 

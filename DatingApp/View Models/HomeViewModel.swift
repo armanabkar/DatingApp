@@ -29,6 +29,12 @@ final class HomeViewModel: ObservableObject {
     var dragAreaThreshold: CGFloat = 65.0
     var webService: API = WebService.shared
     
+    init() {
+        Task.init {
+            await getSuggestions()
+            await getCharacters()
+        }
+    }
     
     func login() {
         isLogin = true
@@ -47,8 +53,7 @@ final class HomeViewModel: ObservableObject {
     func moveCards() {
         cardViews.removeFirst()
         lastCardIndex += 1
-        let character = characters[lastCardIndex % characters.count]
-        let newCardView = CardView(character: character)
+        let newCardView = CardView(character: characters[lastCardIndex + 2])
         cardViews.append(newCardView)
     }
     
@@ -63,13 +68,15 @@ final class HomeViewModel: ObservableObject {
         let randomInt = Int.random(in: 0..<11)
         let suggestion = suggestions[randomInt]
         return suggestion
-        
     }
     
     func getCharacters() async {
         do {
             let fetchedCharacters = try await webService.fetchCharacters()
             characters.append(contentsOf: fetchedCharacters)
+            for character in characters[lastCardIndex...3] {
+                cardViews.append(CardView(character: character))
+            }
         } catch {
             print(error)
         }
@@ -86,37 +93,4 @@ final class HomeViewModel: ObservableObject {
         
     }
     
-}
-
-enum DragState {
-    case inactive
-    case pressing
-    case dragging(translation: CGSize)
-    
-    var translation: CGSize {
-        switch self {
-            case .inactive, .pressing:
-                return .zero
-            case .dragging(let translation):
-                return translation
-        }
-    }
-    
-    var isDragging: Bool {
-        switch self {
-            case .dragging:
-                return true
-            case .pressing, .inactive:
-                return false
-        }
-    }
-    
-    var isPressing: Bool {
-        switch self {
-            case .pressing, .dragging:
-                return true
-            case .inactive:
-                return false
-        }
-    }
 }
