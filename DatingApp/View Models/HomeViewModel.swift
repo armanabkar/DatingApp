@@ -12,7 +12,7 @@ final class HomeViewModel: ObservableObject {
     
     @Published var characters: [Character] = [Character.createFirstCharacter()]
     @Published var suggestions: [String] = []
-    @Published var lastCardIndex: Int = 1
+    @Published var cardIndex: Int = 1
     @Published var showAlert: Bool = false
     @Published var showGuide: Bool = false
     @Published var showInfo: Bool = false
@@ -37,7 +37,9 @@ final class HomeViewModel: ObservableObject {
     }
     
     func login() {
-        isLogin = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.isLogin = true
+        }
     }
     
     func logout() {
@@ -52,8 +54,8 @@ final class HomeViewModel: ObservableObject {
     
     func moveCards() {
         cardViews.removeFirst()
-        lastCardIndex += 1
-        let newCardView = CardView(character: characters[lastCardIndex + 2])
+        cardIndex += 1
+        let newCardView = CardView(character: characters[cardIndex + 2])
         cardViews.append(newCardView)
     }
     
@@ -74,7 +76,7 @@ final class HomeViewModel: ObservableObject {
         do {
             let fetchedCharacters = try await webService.fetchCharacters()
             characters.append(contentsOf: fetchedCharacters)
-            for character in characters[lastCardIndex...3] {
+            for character in fetchedCharacters[0...3] {
                 cardViews.append(CardView(character: character))
             }
         } catch {

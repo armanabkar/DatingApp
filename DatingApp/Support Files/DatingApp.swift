@@ -20,11 +20,13 @@ struct TestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabsView()
-                .environmentObject(model)
-            
-            // Temporarily commented due to a system bug related to NavigationView
-            // AuthView()
+            if model.isLogin {
+                TabsView()
+                    .environmentObject(model)
+            } else {
+                AuthView()
+                    .environmentObject(model)
+            }
         }
     }
 }

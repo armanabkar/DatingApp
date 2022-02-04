@@ -33,7 +33,7 @@ struct HomeView: View {
     
     @ViewBuilder private func Cards() -> some View {
         ZStack {
-            ForEach(homeViewModel.cardViews) { cardView in
+            ForEach(homeViewModel.cardViews, id: \CardView.character.id) { cardView in
                 cardView
                     .zIndex(homeViewModel.isTopCard(cardView: cardView) ? 1 : 0)
                     .overlay(

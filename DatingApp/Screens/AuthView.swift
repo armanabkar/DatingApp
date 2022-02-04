@@ -10,60 +10,61 @@ import SwiftUI
 struct AuthView: View {
     
     @EnvironmentObject private var homeViewModel: HomeViewModel
-
+    
     var body: some View {
-        NavigationView {
-            ZStack {
-                LinearGradient(colors: [.pink, .purple], startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
+        ZStack {
+            LinearGradient(colors: [.pink, .purple], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
+            
+            VStack(alignment: .center) {
+                Text("Welcome to")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                Text(K.Information.appName)
+                    .font(.system(size: 42, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
                 
-                VStack(alignment: .center) {
-                    Text("Welcome to")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Text(K.Information.appName)
-                        .font(.system(size: 42, weight: .heavy, design: .rounded))
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                    AuthFieldView(placeholder: "Enter your Number",
-                                  text: $homeViewModel.phoneNumber)
-                    AuthFieldView(placeholder: "Enter your Name",
-                                  text: $homeViewModel.name)
-                        .padding(.top)
-                    AuthFieldView(placeholder: "Enter your Age",
-                                  text: $homeViewModel.age)
-                        .padding(.top)
-                    HStack {
-                        AuthPickerView(name: "Male",
-                                       opacity: 1)
-                        AuthPickerView(name: "Female",
-                                       opacity: 0.25)
-                    }
+                Spacer()
+                AuthFieldView(placeholder: "Enter your Name", contentType: .name,
+                              text: $homeViewModel.name)
+                AuthFieldView(placeholder: "Enter your Number",
+                              contentType: .telephoneNumber,
+                              text: $homeViewModel.phoneNumber)
                     .padding(.top)
-                    
-                    
-                    NavigationLink(destination: TabsView()) {
-                        Text("Let's go!".uppercased())
-                            .fontWeight(.bold)
-                            .modifier(ButtonModifier())
-                            .padding(.top)
-                    }
-                    .disabled(homeViewModel.areFieldsFilled() ? false : true)
-                    .opacity(homeViewModel.areFieldsFilled() ? 1 : 0.5)
-                    .onTapGesture {
+                AuthFieldView(placeholder: "Enter your Age",
+                              text: $homeViewModel.age)
+                    .padding(.top)
+                HStack {
+                    AuthPickerView(name: "Male",
+                                   opacity: 1)
+                    AuthPickerView(name: "Female",
+                                   opacity: 0.25)
+                }
+                .padding(.top)
+                
+                Button {
+                    withAnimation(.easeOut(duration: 0.3)) {
                         homeViewModel.login()
                     }
-                    
-                    Spacer()
-                    Text("*Currently only available in the USA.")
-                        .foregroundColor(.white)
+                } label: {
+                    Text("Let's go!".uppercased())
+                        .fontWeight(.bold)
+                        .modifier(ButtonModifier())
+                        .padding(.top)
                 }
-                .frame(maxWidth: 320)
-                .padding(.vertical, 20)
+                .disabled(homeViewModel.areFieldsFilled() ? false : true)
+                .opacity(homeViewModel.areFieldsFilled() ? 1 : 0.5)
+                .onTapGesture {
+                    homeViewModel.login()
+                }
+                
+                Spacer()
+                Text("*Currently only available in the USA.")
+                    .foregroundColor(.white)
             }
-            .navigationBarHidden(true)
+            .frame(maxWidth: 320)
+            .padding(.vertical, 20)
         }
     }
 }
@@ -71,17 +72,20 @@ struct AuthView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         AuthView()
+            .environmentObject(HomeViewModel())
     }
 }
 
 struct AuthFieldView: View {
     
     var placeholder: String
+    var contentType: UITextContentType?
     @Binding var text: String
     
     var body: some View {
         TextField(placeholder, text: $text)
-            .font(.title3)
+            .font(.system(size: 20, weight: .semibold, design: .default))
+            .multilineTextAlignment(.center)
             .padding()
             .frame(height: 60)
             .background(
@@ -92,6 +96,7 @@ struct AuthFieldView: View {
                         )
                 }
             )
+            .textContentType(contentType)
     }
 }
 
