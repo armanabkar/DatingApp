@@ -18,10 +18,13 @@ struct HomeView: View {
             VStack(alignment: .leading, spacing: 15) {
                 HeaderView(showInfoView: $homeViewModel.showInfo,
                            showSuggestionAlert: $homeViewModel.showAlert)
-                    .opacity(dragState.isDragging ? 0.25 : 1.0)
-                    .animation(.default, value: dragState.isDragging)
                 
-                Cards()
+                if homeViewModel.characters.count > 1 {
+                    Cards()
+                } else {
+                    Cards()
+                        .hidden()
+                }
             }
             .alert(isPresented: $homeViewModel.showAlert) {
                 Alert(
@@ -33,7 +36,7 @@ struct HomeView: View {
     
     @ViewBuilder private func Cards() -> some View {
         ZStack {
-            ForEach(homeViewModel.cardViews, id: \CardView.character.id) { cardView in
+            ForEach(homeViewModel.cardViews, id: \.id) { cardView in
                 cardView
                     .zIndex(homeViewModel.isTopCard(cardView: cardView) ? 1 : 0)
                     .overlay(
