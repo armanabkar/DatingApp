@@ -13,9 +13,11 @@ struct ProfileView: View {
     
     var body: some View {
         VStack(spacing: 30) {
-            Image(K.Image.placeholder)
+            Image(systemName: "person.circle")
                 .resizable()
-                .frame(width: 225, height: 225)
+                .foregroundColor(.pink)
+                .background(Color.pink.opacity(0.1))
+                .frame(width: 190, height: 190)
                 .clipShape(Circle())
                 .overlay(
                     Circle()
@@ -25,11 +27,11 @@ struct ProfileView: View {
                 .shadow(radius: 3)
             
             VStack(spacing: 8) {
-                Text("Kushina Uzumaki")
+                Text("Lorem Ipsum")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.pink)
-                Text("Hidden Leaf Village - 24")
+                Text("Ipsum Lorem Village - 99")
                     .font(.title2)
                     .fontWeight(.semibold)
                 Divider()

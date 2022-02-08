@@ -29,7 +29,7 @@ struct MessagesView: View {
     }
     
     var searchResults: [Character] {
-        let characters = Array(homeViewModel.characters.prefix(12))
+        let characters = Array(homeViewModel.matches)
         guard !searchText.isEmpty else { return characters }
         return characters.filter { $0.name.contains(searchText) }
     }

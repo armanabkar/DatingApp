@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Character: Codable {
+struct Character: Codable, Hashable {
     var id: Int
     var name: String
     var neighborhood: String

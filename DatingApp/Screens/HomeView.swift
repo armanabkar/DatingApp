@@ -79,6 +79,7 @@ struct HomeView: View {
                         
                         if drag.translation.width > homeViewModel.dragAreaThreshold {
                             homeViewModel.cardRemovalTransition = .trailingBottom
+                            homeViewModel.matches.insert(cardView.character)
                         }
                     })
                                 .onEnded({ (value) in

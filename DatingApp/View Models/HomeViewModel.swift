@@ -24,6 +24,7 @@ final class HomeViewModel: ObservableObject {
     @AppStorage("isLogin") var isLogin = false
     @Published var phoneNumber: String = ""
     @Published var name: String = ""
+    @Published var matches: Set<Character> = []
     var dragAreaThreshold: CGFloat = 65.0
     var webService: API = WebService.shared
     

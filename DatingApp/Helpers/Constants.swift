@@ -25,11 +25,7 @@ struct K {
         static let charactersURL = "\(baseURL)/api/v1/characters"
         static let suggestionURL = "\(baseURL)/api/v1/suggestions"
     }
-    
-    struct Image {
-        static let placeholder = "kushinauzumaki"
-    }
-    
+ 
     struct Icon {
         static let profile = "person.circle"
         static let like = "heart.circle"
