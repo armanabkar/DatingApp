@@ -32,9 +32,6 @@ struct AuthView: View {
                               contentType: .telephoneNumber,
                               text: $homeViewModel.phoneNumber)
                     .padding(.top)
-                AuthFieldView(placeholder: "Enter your Age",
-                              text: $homeViewModel.age)
-                    .padding(.top)
                 HStack {
                     AuthPickerView(name: "Male",
                                    opacity: 1)

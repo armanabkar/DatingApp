@@ -17,7 +17,7 @@ struct HomeView: View {
             Color.pink.ignoresSafeArea(edges: [.top])
             VStack(alignment: .leading, spacing: 15) {
                 HeaderView(showInfoView: $homeViewModel.showInfo,
-                           showSuggestionAlert: $homeViewModel.showAlert)
+                           showSuggestionAlert: $homeViewModel.showSuggestion)
                 
                 if homeViewModel.characters.count > 1 {
                     Cards()
@@ -26,7 +26,7 @@ struct HomeView: View {
                         .hidden()
                 }
             }
-            .alert(isPresented: $homeViewModel.showAlert) {
+            .alert(isPresented: $homeViewModel.showSuggestion) {
                 Alert(
                     title: Text(homeViewModel.generateRandomSuggestion()),
                     dismissButton: .default(Text("Close")))
@@ -36,7 +36,7 @@ struct HomeView: View {
     
     @ViewBuilder private func Cards() -> some View {
         ZStack {
-            ForEach(homeViewModel.cardViews, id: \.id) { cardView in
+            ForEach(homeViewModel.cardViews.reversed(), id: \.id) { cardView in
                 cardView
                     .zIndex(homeViewModel.isTopCard(cardView: cardView) ? 1 : 0)
                     .overlay(

@@ -12,9 +12,8 @@ final class HomeViewModel: ObservableObject {
     
     @Published var characters: [Character] = [Character.createFirstCharacter()]
     @Published var suggestions: [String] = []
-    @Published var cardIndex: Int = 1
-    @Published var showAlert: Bool = false
-    @Published var showGuide: Bool = false
+    @Published var cardIndex: Int = 0
+    @Published var showSuggestion: Bool = false
     @Published var showInfo: Bool = false
     @Published var cardRemovalTransition = AnyTransition.trailingBottom
     @Published var cardViews: [CardView] = {
@@ -25,7 +24,6 @@ final class HomeViewModel: ObservableObject {
     @AppStorage("isLogin") var isLogin = false
     @Published var phoneNumber: String = ""
     @Published var name: String = ""
-    @Published var age: String = ""
     var dragAreaThreshold: CGFloat = 65.0
     var webService: API = WebService.shared
     
@@ -48,14 +46,13 @@ final class HomeViewModel: ObservableObject {
     
     func areFieldsFilled() -> Bool {
         !phoneNumber.isEmpty &&
-        !name.isEmpty &&
-        !age.isEmpty ? true : false
+        !name.isEmpty
     }
     
     func moveCards() {
         cardViews.removeFirst()
         cardIndex += 1
-        let newCardView = CardView(character: characters[cardIndex + 2])
+        let newCardView = CardView(character: characters[cardIndex + 4])
         cardViews.append(newCardView)
     }
     
@@ -92,7 +89,6 @@ final class HomeViewModel: ObservableObject {
         } catch {
             print(error)
         }
-        
     }
     
 }
