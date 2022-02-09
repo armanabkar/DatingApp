@@ -79,7 +79,6 @@ struct HomeView: View {
                         
                         if drag.translation.width > homeViewModel.dragAreaThreshold {
                             homeViewModel.cardRemovalTransition = .trailingBottom
-                            homeViewModel.matches.insert(cardView.character)
                         }
                     })
                                 .onEnded({ (value) in
@@ -87,8 +86,16 @@ struct HomeView: View {
                             return
                         }
                         
-                        if drag.translation.width < -homeViewModel.dragAreaThreshold || drag.translation.width > homeViewModel.dragAreaThreshold {
+                        if drag.translation.width < -homeViewModel.dragAreaThreshold {
                             homeViewModel.moveCards()
+                        }
+                        
+                        if drag.translation.width > homeViewModel.dragAreaThreshold {
+                            homeViewModel.moveCards()
+                            if Bool.random() { homeViewModel.showMatchSheet.toggle()
+                                homeViewModel.match = cardView.character
+                                homeViewModel.matches.insert(cardView.character)
+                            }
                         }
                     })
                     )

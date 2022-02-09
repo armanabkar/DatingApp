@@ -12,18 +12,20 @@ final class HomeViewModel: ObservableObject {
     
     @Published var characters: [Character] = [Character.createFirstCharacter()]
     @Published var suggestions: [String] = []
-    @Published var cardIndex: Int = 0
-    @Published var showSuggestion: Bool = false
-    @Published var showInfo: Bool = false
+    @Published var cardIndex = 0
+    @Published var showSuggestion = false
+    @Published var showInfo = false
+    @Published var match = Character.createFirstCharacter()
+    @Published var showMatchSheet = false
     @Published var cardRemovalTransition = AnyTransition.trailingBottom
-    @Published var cardViews: [CardView] = {
+    @Published var cardViews = {
         return [CardView(character: Character.createFirstCharacter())]
     }()
     @Published var offset: CGFloat = .zero
     @Published var dragState: DragState = DragState.inactive
     @AppStorage("isLogin") var isLogin = false
-    @Published var phoneNumber: String = ""
-    @Published var name: String = ""
+    @Published var phoneNumber = ""
+    @Published var name = ""
     @Published var matches: Set<Character> = []
     var dragAreaThreshold: CGFloat = 65.0
     var webService: API = WebService.shared
