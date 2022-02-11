@@ -17,55 +17,35 @@ struct CardView: View, Identifiable {
             image
                 .resizable()
                 .cornerRadius(14)
-                .scaledToFit()
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .frame(height: 575)
-                .shadow(radius: 3)
+                .aspectRatio(contentMode: .fit)
                 .overlay(
                     VStack(alignment: .center, spacing: 12) {
                         Text(character.name.uppercased())
                             .foregroundColor(Color.white)
                             .font(.largeTitle)
                             .fontWeight(.bold)
-                            .shadow(radius: 2)
                             .padding(.horizontal, 18)
-                            .padding(.vertical, 4)
-                            .overlay(
-                                Rectangle()
-                                    .fill(Color.white)
-                                    .frame(height: 1)
-                                    .shadow(radius: 1),
-                                alignment: .bottom
-                            )
-                            .multilineTextAlignment(.center)
                         
                         Text("\(character.age) - \(character.neighborhood.uppercased())")
-                            .foregroundColor(Color.black)
                             .font(.subheadline)
                             .fontWeight(.bold)
-                            .frame(minWidth: 85)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 5)
+                            .padding(6)
                             .background(
-                                Capsule().fill(Color.white)
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color.white)
                             )
                     }
-                        .frame(minWidth: 280)
-                        .padding(.bottom, 50)
-                        .padding(.horizontal)
-                        .shadow(radius: 2),
+                        .padding(.bottom, 45)
+                        .shadow(radius: 4),
                     alignment: .bottom
                 )
-            
         } placeholder: {
             Color.white
-                .blur(radius: 5)
-                .frame(height: 575)
                 .cornerRadius(14)
-                .frame(height: 575)
-                .shadow(radius: 3)
-                .padding(.horizontal)
         }
+        .shadow(radius: 2)
+        .frame(height: 575)
+        .padding(.horizontal)
     }
 }
 

@@ -20,6 +20,7 @@ struct MatchView: View {
                     .foregroundColor(.white)
                     .font(.system(size: 36, weight: .heavy))
                     .textCase(.uppercase)
+                
                 HStack(spacing: -50) {
                     Image(systemName: "person.circle")
                         .resizable()
@@ -48,7 +49,7 @@ struct MatchView: View {
                             .shadow(radius: 3)
                     } placeholder: {
                         Color.gray
-                            .opacity(0.2)
+                            .opacity(0.75)
                             .frame(width: 150, height: 150)
                             .clipShape(Circle())
                             .overlay(
@@ -60,6 +61,7 @@ struct MatchView: View {
                     }
                 }
                 .frame(maxHeight: 200)
+                
                 Button {
                     homeViewModel.showMatchSheet.toggle()
                 } label: {
