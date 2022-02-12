@@ -16,8 +16,9 @@ struct CardView: View, Identifiable {
         AsyncImage(url: URL(string: "\(K.URL.baseURL)/\(character.image)")) { image in
             image
                 .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: UIScreen.main.bounds.height / 1.5)
                 .cornerRadius(14)
-                .aspectRatio(contentMode: .fit)
                 .overlay(
                     VStack(alignment: .center, spacing: 12) {
                         Text(character.name.uppercased())
@@ -44,8 +45,7 @@ struct CardView: View, Identifiable {
                 .cornerRadius(14)
         }
         .shadow(radius: 2)
-        .frame(height: 575)
-        .padding(.horizontal)
+        .frame(height: UIScreen.main.bounds.height / 1.5)
     }
 }
 

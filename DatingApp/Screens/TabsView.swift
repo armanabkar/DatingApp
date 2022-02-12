@@ -43,7 +43,7 @@ struct TabsView: View {
 struct TabsView_Previews: PreviewProvider {
     static var previews: some View {
         TabsView()
-            .previewDevice("iPhone 13 Pro")
+            .previewDevice("iPhone 13 Pro Max")
             .environmentObject(HomeViewModel())
     }
 }

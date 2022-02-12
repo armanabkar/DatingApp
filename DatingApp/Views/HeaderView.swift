@@ -11,6 +11,7 @@ struct HeaderView: View {
     
     @Binding var showInfoView: Bool
     @Binding var showSuggestionAlert: Bool
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
         HStack(alignment: .center) {
@@ -24,6 +25,7 @@ struct HeaderView: View {
             .sheet(isPresented: $showInfoView) {
                 InfoView()
             }
+            .disabled(homeViewModel.suggestions.isEmpty && true)
             
             Spacer()
             
@@ -49,5 +51,6 @@ struct HeaderView_Previews: PreviewProvider {
             HeaderView(showInfoView: $showInfo, showSuggestionAlert: $showSuggestionAlert)
         }
         .previewLayout(.fixed(width: 375, height: 80))
+        .environmentObject(HomeViewModel())
     }
 }

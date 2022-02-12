@@ -21,6 +21,7 @@ struct HomeView: View {
                 
                 if homeViewModel.characters.count > 1 {
                     Cards()
+                        .padding(.horizontal)
                 } else {
                     Cards()
                         .hidden()
