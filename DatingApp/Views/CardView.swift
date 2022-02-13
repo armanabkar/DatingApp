@@ -11,6 +11,7 @@ struct CardView: View, Identifiable {
     
     let id = UUID()
     var character: Character
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
         AsyncImage(url: URL(string: "\(K.URL.baseURL)/\(character.image)")) { image in
@@ -18,7 +19,6 @@ struct CardView: View, Identifiable {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: UIScreen.main.bounds.height / 1.5)
-                .cornerRadius(14)
                 .overlay(
                     VStack(alignment: .center, spacing: 12) {
                         Text(character.name.uppercased())
@@ -40,6 +40,8 @@ struct CardView: View, Identifiable {
                         .shadow(radius: 4),
                     alignment: .bottom
                 )
+                .blur(radius: homeViewModel.isTopCard(cardView: self) ? 0 : 6)
+                .cornerRadius(14)
         } placeholder: {
             Color.white
                 .cornerRadius(14)
@@ -52,6 +54,7 @@ struct CardView: View, Identifiable {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView(character: Character.createFirstCharacter())
+            .environmentObject(HomeViewModel())
             .previewLayout(.fixed(width: 375, height: 600))
     }
 }

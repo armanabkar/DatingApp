@@ -22,7 +22,7 @@ struct MatchView: View {
                     .textCase(.uppercase)
                 
                 HStack(spacing: -50) {
-                    Image(systemName: "person.circle")
+                    Image(systemName: K.Icon.profile)
                         .resizable()
                         .foregroundColor(.pink)
                         .background(Color.pink.opacity(0.1))
@@ -65,7 +65,7 @@ struct MatchView: View {
                 Button {
                     homeViewModel.showMatchSheet.toggle()
                 } label: {
-                    Image(systemName: "xmark.circle")
+                    Image(systemName: K.Icon.dismiss)
                         .font(.system(size: 46, weight: .medium))
                         .foregroundColor(.white)
                 }

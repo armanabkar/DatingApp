@@ -13,7 +13,7 @@ struct ProfileView: View {
     
     var body: some View {
         VStack(spacing: 30) {
-            Image(systemName: "person.circle")
+            Image(systemName: K.Icon.profile)
                 .resizable()
                 .foregroundColor(.pink)
                 .background(Color.pink.opacity(0.1))

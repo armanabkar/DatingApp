@@ -33,7 +33,7 @@ struct HeaderView: View {
                 showInfoView.toggle()
             } label: {
                 Image(systemName: K.Icon.info)
-                    .font(.system(size: 26, weight: .bold))
+                    .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.white)
             }
         }

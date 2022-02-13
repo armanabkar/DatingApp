@@ -11,7 +11,6 @@ enum NetworkError: Error {
     case badURL
     case noData
     case decodingError
-    case custom(String?)
 }
 
 protocol API {

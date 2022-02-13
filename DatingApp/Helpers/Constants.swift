@@ -28,6 +28,8 @@ struct K {
  
     struct Icon {
         static let profile = "person.circle"
+        static let matchPage = "heart"
+        static let message = "message"
         static let like = "heart.circle"
         static let dismiss = "xmark.circle"
         static let info = "info.circle"

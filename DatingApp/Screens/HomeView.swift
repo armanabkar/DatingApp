@@ -15,7 +15,7 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Color.pink.ignoresSafeArea(edges: [.top])
-            VStack(alignment: .leading, spacing: 15) {
+            VStack {
                 HeaderView(showInfoView: $homeViewModel.showInfo,
                            showSuggestionAlert: $homeViewModel.showSuggestion)
                 
@@ -109,7 +109,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .previewDevice("iPhone 13 Pro")
             .environmentObject(HomeViewModel())
     }
 }

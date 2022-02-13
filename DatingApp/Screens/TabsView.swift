@@ -15,19 +15,19 @@ struct TabsView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Image(systemName: "heart")
+                    Image(systemName: K.Icon.matchPage)
                     Text("Home")
                 }
             
             MessagesView()
                 .tabItem {
-                    Image(systemName: "message")
+                    Image(systemName: K.Icon.message)
                     Text("Messages")
                 }
             
             ProfileView()
                 .tabItem {
-                    Image(systemName: "person.circle")
+                    Image(systemName: K.Icon.profile)
                     Text("Profile")
                 }
         }
@@ -43,7 +43,6 @@ struct TabsView: View {
 struct TabsView_Previews: PreviewProvider {
     static var previews: some View {
         TabsView()
-            .previewDevice("iPhone 13 Pro Max")
             .environmentObject(HomeViewModel())
     }
 }
