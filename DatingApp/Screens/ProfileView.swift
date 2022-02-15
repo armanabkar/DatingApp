@@ -27,18 +27,18 @@ struct ProfileView: View {
                 .shadow(radius: 3)
             
             VStack(spacing: 8) {
-                Text("Lorem Ipsum")
+                Text(homeViewModel.profileName)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.pink)
-                Text("Ipsum Lorem Village - 99")
+                Text(homeViewModel.generateRandomInformation()[0])
                     .font(.title2)
                     .fontWeight(.semibold)
                 Divider()
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. ")
+                Text(homeViewModel.generateRandomInformation()[1])
                     .foregroundColor(.black.opacity(0.8))
                     .multilineTextAlignment(.center)
-                Text("Sed do eiusmd tempor incidiunt ut labre et dore magna aliqua minim veniam. ")
+                Text(homeViewModel.generateRandomInformation()[2])
                     .foregroundColor(.black.opacity(0.8))
                     .multilineTextAlignment(.center)
             }
@@ -59,6 +59,7 @@ struct ProfileView: View {
 struct GuideView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(HomeViewModel())
     }
 }
 

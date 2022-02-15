@@ -16,8 +16,7 @@ struct HomeView: View {
         ZStack {
             Color.pink.ignoresSafeArea(edges: [.top])
             VStack {
-                HeaderView(showInfoView: $homeViewModel.showInfo,
-                           showSuggestionAlert: $homeViewModel.showSuggestion)
+                HeaderView()
                 
                 if homeViewModel.characters.count > 1 {
                     Cards()

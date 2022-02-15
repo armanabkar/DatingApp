@@ -14,21 +14,22 @@ final class HomeViewModel: ObservableObject {
     @Published var suggestions: [String] = []
     @Published var cardIndex = 0
     @Published var showSuggestion = false
-    @Published var showInfo = false
+    @Published var showInfoView: Bool = false
     @Published var match = Character.createFirstCharacter()
     @Published var showMatchSheet = false
     @Published var cardRemovalTransition = AnyTransition.trailingBottom
     @Published var cardViews = {
         return [CardView(character: Character.createFirstCharacter())]
     }()
-    @Published var offset: CGFloat = .zero
     @Published var dragState: DragState = DragState.inactive
-    @AppStorage("isLogin") var isLogin = false
-    @Published var phoneNumber = ""
     @Published var name = ""
+    @Published var phoneNumber = ""
     @Published var matches: Set<Character> = []
-    var dragAreaThreshold: CGFloat = 65.0
-    var webService: API = WebService.shared
+    @Published var searchText = ""
+    @AppStorage("isLogin") var isLogin = false
+    @AppStorage("name") var profileName = "Lorem Ipsum"
+    let dragAreaThreshold: CGFloat = 65.0
+    let webService: API = WebService.shared
     
     init() {
         Task.init {
@@ -38,6 +39,7 @@ final class HomeViewModel: ObservableObject {
     }
     
     func login() {
+        profileName = name
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.isLogin = true
         }
@@ -70,6 +72,15 @@ final class HomeViewModel: ObservableObject {
         let randomInt = Int.random(in: 0..<11)
         let suggestion = suggestions[randomInt]
         return suggestion
+    }
+    
+    func generateRandomInformation() -> [String] {
+        let randomAge = Int.random(in: 18...50)
+        return [
+            "Some Random Place - \(randomAge)",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+            "Sed do eiusmd tempor incidiunt ut labre et dore magna aliqua minim veniam."
+        ]
     }
     
     func getCharacters() async {

@@ -10,7 +10,6 @@ import SwiftUI
 struct MessagesView: View {
     
     @EnvironmentObject private var homeViewModel: HomeViewModel
-    @State private var searchText = ""
     
     var body: some View {
         NavigationView {
@@ -22,7 +21,7 @@ struct MessagesView: View {
                     }
                 }
             }
-            .searchable(text: $searchText)
+            .searchable(text: $homeViewModel.searchText)
             .navigationTitle("Messages")
             .navigationBarTitleTextColor(.pink)
         }
@@ -30,8 +29,8 @@ struct MessagesView: View {
     
     var searchResults: [Character] {
         let characters = Array(homeViewModel.matches)
-        guard !searchText.isEmpty else { return characters }
-        return characters.filter { $0.name.contains(searchText) }
+        guard !homeViewModel.searchText.isEmpty else { return characters }
+        return characters.filter { $0.name.contains(homeViewModel.searchText) }
     }
 }
 
