@@ -10,8 +10,8 @@ import SwiftUI
 @MainActor
 final class HomeViewModel: ObservableObject {
     
-    @Published var characters: [Character] = [Character.createFirstCharacter()]
-    @Published var suggestions: [String] = []
+    @Published var characters: [Character]? = []
+    @Published var suggestions: [String]? = []
     @Published var cardIndex = 0
     @Published var showSuggestion = false
     @Published var showInfoView: Bool = false
@@ -33,8 +33,8 @@ final class HomeViewModel: ObservableObject {
     
     init() {
         Task.init {
-            await getSuggestions()
             await getCharacters()
+            await getSuggestions()
         }
     }
     
@@ -57,7 +57,7 @@ final class HomeViewModel: ObservableObject {
     func moveCards() {
         cardViews.removeFirst()
         cardIndex += 1
-        let newCardView = CardView(character: characters[cardIndex + 4])
+        let newCardView = CardView(character: characters![cardIndex + 4])
         cardViews.append(newCardView)
     }
     
@@ -70,7 +70,7 @@ final class HomeViewModel: ObservableObject {
     
     func generateRandomSuggestion() -> String {
         let randomInt = Int.random(in: 0..<11)
-        let suggestion = suggestions[randomInt]
+        let suggestion = suggestions![randomInt]
         return suggestion
     }
     
@@ -86,7 +86,7 @@ final class HomeViewModel: ObservableObject {
     func getCharacters() async {
         do {
             let fetchedCharacters = try await webService.fetchCharacters()
-            characters.append(contentsOf: fetchedCharacters)
+            characters?.append(contentsOf: fetchedCharacters)
             for character in fetchedCharacters[0...3] {
                 cardViews.append(CardView(character: character))
             }
@@ -99,7 +99,7 @@ final class HomeViewModel: ObservableObject {
     func getSuggestions() async {
         do {
             let fetchedSuggestions = try await webService.fetchSuggestions()
-            suggestions.append(contentsOf: fetchedSuggestions)
+            suggestions?.append(contentsOf: fetchedSuggestions)
         } catch {
             print(error)
         }

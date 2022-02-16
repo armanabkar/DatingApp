@@ -18,12 +18,12 @@ struct HomeView: View {
             VStack {
                 HeaderView()
                 
-                if homeViewModel.characters.count > 1 {
-                    Cards()
-                        .padding(.horizontal)
-                } else {
+                if homeViewModel.characters!.isEmpty {
                     Cards()
                         .hidden()
+                } else {
+                    Cards()
+                        .padding(.horizontal)
                 }
             }
             .alert(isPresented: $homeViewModel.showSuggestion) {
@@ -92,7 +92,8 @@ struct HomeView: View {
                         
                         if drag.translation.width > homeViewModel.dragAreaThreshold {
                             homeViewModel.moveCards()
-                            if Bool.random() { homeViewModel.showMatchSheet.toggle()
+                            if Bool.random() {
+                                homeViewModel.showMatchSheet.toggle()
                                 homeViewModel.match = cardView.character
                                 homeViewModel.matches.insert(cardView.character)
                             }

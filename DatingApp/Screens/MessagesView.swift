@@ -14,11 +14,10 @@ struct MessagesView: View {
     var body: some View {
         NavigationView {
             List {
-                if homeViewModel.characters.count > 1 {
-                    ForEach(searchResults, id: \.id) { character in
-                        MessageComponent(name: character.name,
-                                         image: "\(K.URL.baseURL)/\(character.image)", messageBody: homeViewModel.suggestions.randomElement() ?? "Hi! my name is \(character.name). Nice to meet you...")
-                    }
+                ForEach(searchResults, id: \.id) { character in
+                    MessageComponent(name: character.name,
+                                     image: "\(K.URL.baseURL)/\(character.image)",
+                                     messageBody: homeViewModel.suggestions!.randomElement()!)
                 }
             }
             .searchable(text: $homeViewModel.searchText)

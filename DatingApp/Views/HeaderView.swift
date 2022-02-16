@@ -20,7 +20,7 @@ struct HeaderView: View {
                     .font(.system(size: 34, weight: .heavy, design: .rounded))
                     .foregroundColor(.white)
             }
-            .disabled(homeViewModel.suggestions.isEmpty && true)
+            .disabled(homeViewModel.suggestions!.isEmpty && true)
             .sheet(isPresented: $homeViewModel.showInfoView) {
                 InfoView()
             }
@@ -28,9 +28,16 @@ struct HeaderView: View {
             Spacer()
             
             Button {
-                homeViewModel.showInfoView.toggle()
+                if homeViewModel.characters!.isEmpty {
+                    Task.init {
+                        await homeViewModel.getCharacters()
+                        await homeViewModel.getSuggestions()
+                    }
+                } else {
+                    homeViewModel.showInfoView.toggle()
+                }
             } label: {
-                Image(systemName: K.Icon.info)
+                Image(systemName: homeViewModel.characters!.isEmpty ? K.Icon.reload : K.Icon.info)
                     .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.white)
             }

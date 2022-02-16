@@ -15,58 +15,39 @@ struct MatchView: View {
     var body: some View {
         ZStack {
             Color.black.opacity(0.5).ignoresSafeArea(.all)
-            VStack(spacing: 10) {
+            VStack(spacing: 30) {
                 Text("It's a match!")
                     .foregroundColor(.white)
                     .font(.system(size: 36, weight: .heavy))
                     .textCase(.uppercase)
                 
                 HStack(spacing: -50) {
-                    Image(systemName: K.Icon.profile)
-                        .resizable()
-                        .foregroundColor(.pink)
-                        .background(Color.pink.opacity(0.1))
+                    ProfileImage(imageName: K.Icon.profile)
                         .frame(width: 150, height: 150)
-                        .clipShape(Circle())
-                        .overlay(
-                            Circle()
-                                .stroke(Color.white,
-                                        lineWidth: 5)
-                        )
-                        .shadow(radius: 3)
+                    
                     AsyncImage(url: URL(string: image)) { image in
                         image
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .foregroundColor(.pink)
-                            .frame(width: 150, height: 150)
-                            .clipShape(Circle())
-                            .overlay(
-                                Circle()
-                                    .stroke(Color.white,
-                                            lineWidth: 5)
-                            )
-                            .shadow(radius: 3)
                     } placeholder: {
                         Color.gray
                             .opacity(0.75)
-                            .frame(width: 150, height: 150)
-                            .clipShape(Circle())
-                            .overlay(
-                                Circle()
-                                    .stroke(Color.white,
-                                            lineWidth: 5)
-                            )
-                            .shadow(radius: 3)
                     }
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 150, height: 150)
+                    .clipShape(Circle())
+                    .overlay(
+                        Circle()
+                            .stroke(Color.white,
+                                    lineWidth: 5)
+                    )
+                    .shadow(radius: 3)
                 }
-                .frame(maxHeight: 200)
                 
                 Button {
                     homeViewModel.showMatchSheet.toggle()
                 } label: {
                     Image(systemName: K.Icon.dismiss)
-                        .font(.system(size: 46, weight: .medium))
+                        .font(.system(size: 50, weight: .medium))
                         .foregroundColor(.white)
                 }
             }

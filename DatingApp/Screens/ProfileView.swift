@@ -13,18 +13,8 @@ struct ProfileView: View {
     
     var body: some View {
         VStack(spacing: 30) {
-            Image(systemName: K.Icon.profile)
-                .resizable()
-                .foregroundColor(.pink)
-                .background(Color.pink.opacity(0.1))
+            ProfileImage(imageName: K.Icon.profile)
                 .frame(width: 190, height: 190)
-                .clipShape(Circle())
-                .overlay(
-                    Circle()
-                        .stroke(Color.white,
-                                lineWidth: 5)
-                )
-                .shadow(radius: 3)
             
             VStack(spacing: 8) {
                 Text(homeViewModel.profileName)
@@ -63,3 +53,21 @@ struct GuideView_Previews: PreviewProvider {
     }
 }
 
+struct ProfileImage: View {
+    
+    var imageName: String
+    
+    var body: some View {
+        Image(systemName: imageName)
+            .resizable()
+            .foregroundColor(.pink)
+            .background(Color.pink.opacity(0.1))
+            .clipShape(Circle())
+            .overlay(
+                Circle()
+                    .stroke(Color.white,
+                            lineWidth: 5)
+            )
+            .shadow(radius: 3)
+    }
+}
