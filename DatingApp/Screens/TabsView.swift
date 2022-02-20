@@ -33,7 +33,7 @@ struct TabsView: View {
         }
         .overlay {
             if homeViewModel.showMatchSheet {
-                MatchView(image: "\(K.URL.baseURL)/\(homeViewModel.match.image)")
+                MatchView(image: homeViewModel.match!.imageURL)
             }
         }
         .accentColor(.pink)

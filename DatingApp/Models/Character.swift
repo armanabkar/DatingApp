@@ -25,4 +25,8 @@ extension Character {
             image: "images/hinatahyuga.jpg"
         )
     }
+    
+    var imageURL: String {
+        return "\(K.URL.baseURL)/\(image)"
+    }
 }

@@ -13,9 +13,7 @@ struct TestApp: App {
     @StateObject private var model = HomeViewModel()
     
     init() {
-        Task.init {
-            let _ = try await WebService.shared.startServer()
-        }
+        model.startServer()
     }
     
     var body: some Scene {

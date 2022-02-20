@@ -14,7 +14,7 @@ struct CardView: View, Identifiable {
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
-        AsyncImage(url: URL(string: "\(K.URL.baseURL)/\(character.image)")) { image in
+        AsyncImage(url: URL(string: character.imageURL)) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fill)

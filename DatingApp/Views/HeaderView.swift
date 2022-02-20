@@ -29,10 +29,7 @@ struct HeaderView: View {
             
             Button {
                 if homeViewModel.characters!.isEmpty {
-                    Task.init {
-                        await homeViewModel.getCharacters()
-                        await homeViewModel.getSuggestions()
-                    }
+                    homeViewModel.getData()
                 } else {
                     homeViewModel.showInfoView.toggle()
                 }

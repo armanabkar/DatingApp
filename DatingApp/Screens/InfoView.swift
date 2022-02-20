@@ -12,56 +12,53 @@ struct InfoView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        ZStack {
-            Color.gray.opacity(0.1).ignoresSafeArea()
-            ScrollView(.vertical, showsIndicators: false) {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .center, spacing: 20) {
                 VStack(alignment: .center, spacing: 20) {
-                    VStack(alignment: .center, spacing: 20) {
-                        Capsule()
-                            .frame(width: 120, height: 6)
-                            .foregroundColor(Color.secondary)
-                            .opacity(0.25)
-                        
-                        Text(K.Information.appName)
-                            .font(.system(size: 38, weight: .heavy, design: .rounded))
-                            .foregroundColor(.pink)
-                    }
+                    Capsule()
+                        .frame(width: 120, height: 6)
+                        .foregroundColor(Color.secondary)
+                        .opacity(0.25)
                     
-                    RichText(K.Information.description)
-                        .font(.system(size: 22, weight: .medium, design: .rounded))
-                        .textCase(.uppercase)
-                        .lineLimit(nil)
-                        .multilineTextAlignment(.center)
-                    
-                    Spacer(minLength: 0)
-                    
-                    VStack(alignment: .leading, spacing: 25) {
-                        GuideComponent(
-                            title: "Like",
-                            subtitle: "Swipe right",
-                            description: "Do you like them? Touch the screen and swipe right. If they do the same, you will be matched!",
-                            icon: "heart.circle", iconColor: .green)
-                        
-                        GuideComponent(
-                            title: "Dismiss",
-                            subtitle: "Swipe left",
-                            description: "You don't like them? Touch the screen and swipe left. You will no longer see them.",
-                            icon: "xmark.circle", iconColor: .red)
-                    }
-                    
-                    Spacer(minLength: 0)
-                    
-                    Text("Credits")
-                        .fontWeight(.black)
-                        .modifier(TitleModifier())
-                    
-                    AppInfoView()
+                    Text(K.Information.appName)
+                        .font(.system(size: 38, weight: .heavy, design: .rounded))
+                        .foregroundColor(.pink)
                 }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .padding(.top, 15)
-                .padding(.bottom, 25)
-                .padding(.horizontal, 25)
+                
+                RichText(K.Information.description)
+                    .font(.system(size: 22, weight: .medium, design: .rounded))
+                    .textCase(.uppercase)
+                    .lineLimit(nil)
+                    .multilineTextAlignment(.center)
+                
+                Spacer(minLength: 0)
+                
+                VStack(alignment: .leading, spacing: 25) {
+                    GuideComponent(
+                        title: "Like",
+                        subtitle: "Swipe right",
+                        description: "Do you like them? Touch the screen and swipe right. If they do the same, you will be matched!",
+                        icon: "heart.circle", iconColor: .green)
+                    
+                    GuideComponent(
+                        title: "Dismiss",
+                        subtitle: "Swipe left",
+                        description: "You don't like them? Touch the screen and swipe left. You will no longer see them.",
+                        icon: "xmark.circle", iconColor: .red)
+                }
+                
+                Spacer(minLength: 0)
+                
+                Text("Credits")
+                    .fontWeight(.black)
+                    .modifier(TitleModifier())
+                
+                AppInfoView()
             }
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .padding(.top, 15)
+            .padding(.bottom, 25)
+            .padding(.horizontal, 25)
         }
     }
 }

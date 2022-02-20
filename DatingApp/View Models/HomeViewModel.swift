@@ -12,35 +12,38 @@ final class HomeViewModel: ObservableObject {
     
     @Published var characters: [Character]? = []
     @Published var suggestions: [String]? = []
-    @Published var cardIndex = 0
-    @Published var showSuggestion = false
-    @Published var showInfoView: Bool = false
-    @Published var match = Character.createFirstCharacter()
-    @Published var showMatchSheet = false
-    @Published var cardRemovalTransition = AnyTransition.trailingBottom
+    @Published var matches: Set<Character> = []
     @Published var cardViews = {
         return [CardView(character: Character.createFirstCharacter())]
     }()
-    @Published var dragState: DragState = DragState.inactive
+    private var cardIndex = 0
+    @Published var match: Character?
+    @Published var showSuggestion = false
+    @Published var showInfoView = false
+    @Published var showMatchSheet = false
+    @Published var cardRemovalTransition = AnyTransition.trailingBottom
+    @Published var dragState = DragState.inactive
+    let dragAreaThreshold: CGFloat = 65.0
     @Published var name = ""
     @Published var phoneNumber = ""
-    @Published var matches: Set<Character> = []
     @Published var searchText = ""
     @AppStorage("isLogin") var isLogin = false
     @AppStorage("name") var profileName = "Lorem Ipsum"
-    let dragAreaThreshold: CGFloat = 65.0
-    let webService: API = WebService.shared
+    var webService: API = WebService.shared
     
     init() {
-        Task.init {
-            await getCharacters()
-            await getSuggestions()
-        }
+        getData()
+    }
+    
+    var searchResults: [Character] {
+        let characters = Array(matches)
+        guard !searchText.isEmpty else { return characters }
+        return characters.filter { $0.name.contains(searchText) }
     }
     
     func login() {
         profileName = name
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.isLogin = true
         }
     }
@@ -83,7 +86,20 @@ final class HomeViewModel: ObservableObject {
         ]
     }
     
-    func getCharacters() async {
+    func getData() {
+        Task.init {
+            await getCharacters()
+            await getSuggestions()
+        }
+    }
+    
+    func startServer() {
+        Task.init {
+            let _ = try await WebService.shared.startServer()
+        }
+    }
+    
+    private func getCharacters() async {
         do {
             let fetchedCharacters = try await webService.fetchCharacters()
             characters?.append(contentsOf: fetchedCharacters)
@@ -96,7 +112,7 @@ final class HomeViewModel: ObservableObject {
         
     }
     
-    func getSuggestions() async {
+    private func getSuggestions() async {
         do {
             let fetchedSuggestions = try await webService.fetchSuggestions()
             suggestions?.append(contentsOf: fetchedSuggestions)

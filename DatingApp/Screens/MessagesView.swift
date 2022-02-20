@@ -14,9 +14,9 @@ struct MessagesView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(searchResults, id: \.id) { character in
+                ForEach(homeViewModel.searchResults, id: \.id) { character in
                     MessageComponent(name: character.name,
-                                     image: "\(K.URL.baseURL)/\(character.image)",
+                                     image: character.imageURL,
                                      messageBody: homeViewModel.suggestions!.randomElement()!)
                 }
             }
@@ -24,12 +24,6 @@ struct MessagesView: View {
             .navigationTitle("Messages")
             .navigationBarTitleTextColor(.pink)
         }
-    }
-    
-    var searchResults: [Character] {
-        let characters = Array(homeViewModel.matches)
-        guard !homeViewModel.searchText.isEmpty else { return characters }
-        return characters.filter { $0.name.contains(homeViewModel.searchText) }
     }
 }
 

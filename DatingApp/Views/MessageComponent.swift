@@ -18,18 +18,13 @@ struct MessageComponent: View {
             AsyncImage(url: URL(string: image)) { image in
                 image
                     .resizable()
-                    .shadow(radius: 1)
             } placeholder: {
                 Color.gray
                     .opacity(0.2)
             }
             .frame(width: 55, height: 55)
-            .clipShape(Circle())
-            .overlay(
-                Circle()
-                    .stroke(Color.white,
-                            lineWidth: 4)
-            )
+            .clipShape(RoundedRectangle(cornerRadius: 7))
+            
             VStack(alignment: .leading, spacing: 5) {
                 Text(name)
                     .fontWeight(.bold)

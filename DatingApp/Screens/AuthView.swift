@@ -13,7 +13,7 @@ struct AuthView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.pink, .purple], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [.pink, .white], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
             VStack(alignment: .center) {
@@ -58,7 +58,6 @@ struct AuthView: View {
                 
                 Spacer()
                 Text("*Currently only available in the USA.")
-                    .foregroundColor(.white)
             }
             .frame(maxWidth: 320)
             .padding(.vertical, 20)

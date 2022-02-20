@@ -14,9 +14,9 @@ struct ProfileView: View {
     var body: some View {
         VStack(spacing: 30) {
             ProfileImage(imageName: K.Icon.profile)
-                .frame(width: 190, height: 190)
+                .frame(width: 175, height: 175)
             
-            VStack(spacing: 8) {
+            VStack(spacing: 10) {
                 Text(homeViewModel.profileName)
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -24,7 +24,7 @@ struct ProfileView: View {
                 Text(homeViewModel.generateRandomInformation()[0])
                     .font(.title2)
                     .fontWeight(.semibold)
-                Divider()
+                    .padding(.bottom)
                 Text(homeViewModel.generateRandomInformation()[1])
                     .foregroundColor(.black.opacity(0.8))
                     .multilineTextAlignment(.center)
@@ -61,7 +61,6 @@ struct ProfileImage: View {
         Image(systemName: imageName)
             .resizable()
             .foregroundColor(.pink)
-            .background(Color.pink.opacity(0.1))
             .clipShape(Circle())
             .overlay(
                 Circle()

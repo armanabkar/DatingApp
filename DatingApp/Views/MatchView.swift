@@ -14,7 +14,7 @@ struct MatchView: View {
     
     var body: some View {
         ZStack {
-            Color.black.opacity(0.5).ignoresSafeArea(.all)
+            Color.black.opacity(0.7).ignoresSafeArea(.all)
             VStack(spacing: 30) {
                 Text("It's a match!")
                     .foregroundColor(.white)
