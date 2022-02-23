@@ -4,7 +4,11 @@
 </div>
 <br>
 
-### Static dating iOS application based on popular anime characters. Built with SwiftUI and MVVM architecture using Node.js as a backend solution.
+### Static dating application based on popular anime characters. Built with SwiftUI and MVVM architecture using Node.js as a backend solution.
+
+- [Node.js Server Repository](https://github.com/armanabkar/AnimeDating_server)
+- [Flutter version](https://github.com/armanabkar/anime_dating_flutter)
+- [React Native Version](https://github.com/armanabkar/AnimeDatingReactNative)
 
 ## Features
 
