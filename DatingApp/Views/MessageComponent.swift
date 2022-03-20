@@ -18,6 +18,7 @@ struct MessageComponent: View {
             AsyncImage(url: URL(string: image)) { image in
                 image
                     .resizable()
+                    .aspectRatio(contentMode: .fill)
             } placeholder: {
                 Color.gray
                     .opacity(0.2)
