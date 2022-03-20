@@ -13,9 +13,7 @@ final class HomeViewModel: ObservableObject {
     @Published var characters: [Character]? = []
     @Published var suggestions: [String]? = []
     @Published var matches: Set<Character> = []
-    @Published var cardViews = {
-        return [CardView(character: Character.createFirstCharacter())]
-    }()
+    @Published var cardViews: [CardView]
     private var cardIndex = 0
     @Published var match: Character?
     @Published var showSuggestion = false
@@ -32,6 +30,7 @@ final class HomeViewModel: ObservableObject {
     var webService: API = WebService.shared
     
     init() {
+        self._cardViews = Published(wrappedValue: [CardView(character: Character.createFirstCharacter())])
         getData()
     }
     
@@ -88,15 +87,14 @@ final class HomeViewModel: ObservableObject {
     
     func getData() {
         Task.init {
+            await startServer()
             await getCharacters()
             await getSuggestions()
         }
     }
     
-    func startServer() {
-        Task.init {
-            let _ = try await WebService.shared.startServer()
-        }
+    private func startServer() async {
+        let _ = try? await WebService.shared.startServer()
     }
     
     private func getCharacters() async {

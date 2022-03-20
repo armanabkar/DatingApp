@@ -10,10 +10,10 @@ import SwiftUI
 @main
 struct TestApp: App {
     
-    @StateObject private var model = HomeViewModel()
+    @StateObject private var model: HomeViewModel
     
     init() {
-        model.startServer()
+        self._model = StateObject(wrappedValue: HomeViewModel())
     }
     
     var body: some Scene {
