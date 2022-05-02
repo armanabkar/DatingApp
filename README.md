@@ -18,3 +18,7 @@
 - [x] iOS 15; AsyncImage and Async/Await
 - [ ] Unit/Integration Tests
 - [ ] UI Tests
+
+### Contributing
+
+We appreciate your help!
