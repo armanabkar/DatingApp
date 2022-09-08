@@ -18,7 +18,7 @@ struct HeaderView: View {
             }) {
                 Text(K.Information.appName)
                     .font(.system(size: 34, weight: .heavy, design: .rounded))
-                    .foregroundColor(.white)
+                    .foregroundColor(.pink)
             }
             .disabled(homeViewModel.suggestions!.isEmpty && true)
             .sheet(isPresented: $homeViewModel.showInfoView) {
@@ -35,8 +35,8 @@ struct HeaderView: View {
                 }
             } label: {
                 Image(systemName: homeViewModel.characters!.isEmpty ? K.Icon.reload : K.Icon.info)
-                    .font(.system(size: 28, weight: .bold))
-                    .foregroundColor(.white)
+                    .font(.system(size: 28, weight: .medium))
+                    .foregroundColor(.gray)
             }
         }
         .padding(.horizontal)
@@ -45,10 +45,7 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            Color.pink
             HeaderView()
-        }
         .previewLayout(.fixed(width: 375, height: 80))
         .environmentObject(HomeViewModel())
     }

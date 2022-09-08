@@ -19,7 +19,7 @@ struct TestApp: App {
     var body: some Scene {
         WindowGroup {
             if model.isLogin {
-                TabsView()
+                ContentView()
                     .environmentObject(model)
             } else {
                 AuthView()

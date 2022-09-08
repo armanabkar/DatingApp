@@ -1,5 +1,5 @@
 //
-//  TabsView.swift
+//  ContentView.swift
 //  DatingApp
 //
 //  Created by Arman Abkar on 1/26/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TabsView: View {
+struct ContentView: View {
     
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
@@ -40,9 +40,9 @@ struct TabsView: View {
     }
 }
 
-struct TabsView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TabsView()
+        ContentView()
             .environmentObject(HomeViewModel())
     }
 }

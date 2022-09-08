@@ -61,6 +61,5 @@ struct RichText_Previews: PreviewProvider {
     static var previews: some View {
         RichText("*Hello World!* this is a *test* text.")
             .previewLayout(.sizeThatFits)
-            .padding()
     }
 }

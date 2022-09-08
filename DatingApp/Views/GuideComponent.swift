@@ -16,39 +16,34 @@ struct GuideComponent: View {
     var iconColor: Color
     
     var body: some View {
-        HStack(alignment: .center, spacing: 20) {
-            VStack(alignment: .leading, spacing: 4) {
-                HStack {
-                    Image(systemName: icon)
-                        .font(.title)
-                        .foregroundColor(iconColor)
-                    Text(title.uppercased())
-                        .font(.title2)
-                        .fontWeight(.heavy)
-                    Spacer()
-                    Text(subtitle.uppercased())
-                        .font(.footnote)
-                        .fontWeight(.heavy)
-                        .foregroundColor(Color.pink)
-                }
-                Divider().padding(.bottom, 4)
-                Text(description)
-                    .foregroundColor(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
+        Section {
+            HStack {
+                Image(systemName: icon)
+                    .font(.title)
+                    .foregroundColor(iconColor)
+                Text(title)
+                    .font(.title2)
+                    .fontWeight(.heavy)
             }
+            .padding(.vertical, 5)
+        } header: {
+            Text(subtitle)
+        } footer: {
+            Text(description)
         }
     }
 }
 
 struct GuideComponent_Previews: PreviewProvider {
     static var previews: some View {
-        GuideComponent(
-            title: "Title",
-            subtitle: "Swipe right",
-            description: "This is a placeholder sentence. This is a placeholder sentence. This is a placeholder sentence.",
-            icon: "heart.circle",
-            iconColor: .green)
+        List {
+            GuideComponent(
+                title: "Title",
+                subtitle: "Swipe right",
+                description: "This is a placeholder sentence. This is a placeholder sentence. This is a placeholder sentence.",
+                icon: "heart.circle",
+                iconColor: .green)
             .previewLayout(.sizeThatFits)
-            .padding()
+        }
     }
 }

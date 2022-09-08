@@ -13,24 +13,21 @@ struct HomeView: View {
     @GestureState private var dragState = DragState.inactive
     
     var body: some View {
-        ZStack {
-            Color.pink.ignoresSafeArea(edges: [.top])
-            VStack {
-                HeaderView()
-                
-                if homeViewModel.characters!.isEmpty {
-                    Cards()
-                        .hidden()
-                } else {
-                    Cards()
-                        .padding(.horizontal)
-                }
+        VStack {
+            HeaderView()
+            
+            if homeViewModel.characters!.isEmpty {
+                Cards()
+                    .hidden()
+            } else {
+                Cards()
+                    .padding(.horizontal)
             }
-            .alert(isPresented: $homeViewModel.showSuggestion) {
-                Alert(
-                    title: Text(homeViewModel.generateRandomSuggestion()),
-                    dismissButton: .default(Text("Close")))
-            }
+        }
+        .alert(isPresented: $homeViewModel.showSuggestion) {
+            Alert(
+                title: Text(homeViewModel.generateRandomSuggestion()),
+                dismissButton: .default(Text("Close")))
         }
     }
     
@@ -57,48 +54,48 @@ struct HomeView: View {
                     .rotationEffect(Angle(degrees: homeViewModel.isTopCard(cardView: cardView) ? Double(self.dragState.translation.width / 12) : 0))
                     .animation(.default, value: dragState.translation)
                     .gesture(LongPressGesture(minimumDuration: 0.01)
-                                .sequenced(before: DragGesture())
-                                .updating(self.$dragState, body: { (value, state, transaction) in
-                        switch value {
-                            case .first(true):
-                                state = .pressing
-                            case .second(true, let drag):
-                                state = .dragging(translation: drag?.translation ?? .zero)
-                            default:
-                                break
-                        }
-                    })
-                                .onChanged({ (value) in
-                        guard case .second(true, let drag?) = value else {
-                            return
-                        }
-                        
-                        if drag.translation.width < -homeViewModel.dragAreaThreshold {
-                            homeViewModel.cardRemovalTransition = .leadingBottom
-                        }
-                        
-                        if drag.translation.width > homeViewModel.dragAreaThreshold {
-                            homeViewModel.cardRemovalTransition = .trailingBottom
-                        }
-                    })
-                                .onEnded({ (value) in
-                        guard case .second(true, let drag?) = value else {
-                            return
-                        }
-                        
-                        if drag.translation.width < -homeViewModel.dragAreaThreshold {
-                            homeViewModel.moveCards()
-                        }
-                        
-                        if drag.translation.width > homeViewModel.dragAreaThreshold {
-                            homeViewModel.moveCards()
-                            if Bool.random() {
-                                homeViewModel.showMatchSheet.toggle()
-                                homeViewModel.match = cardView.character
-                                homeViewModel.matches.insert(cardView.character)
+                        .sequenced(before: DragGesture())
+                        .updating(self.$dragState, body: { (value, state, transaction) in
+                            switch value {
+                                case .first(true):
+                                    state = .pressing
+                                case .second(true, let drag):
+                                    state = .dragging(translation: drag?.translation ?? .zero)
+                                default:
+                                    break
                             }
-                        }
-                    })
+                        })
+                            .onChanged({ (value) in
+                                guard case .second(true, let drag?) = value else {
+                                    return
+                                }
+                                
+                                if drag.translation.width < -homeViewModel.dragAreaThreshold {
+                                    homeViewModel.cardRemovalTransition = .leadingBottom
+                                }
+                                
+                                if drag.translation.width > homeViewModel.dragAreaThreshold {
+                                    homeViewModel.cardRemovalTransition = .trailingBottom
+                                }
+                            })
+                                .onEnded({ (value) in
+                                    guard case .second(true, let drag?) = value else {
+                                        return
+                                    }
+                                    
+                                    if drag.translation.width < -homeViewModel.dragAreaThreshold {
+                                        homeViewModel.moveCards()
+                                    }
+                                    
+                                    if drag.translation.width > homeViewModel.dragAreaThreshold {
+                                        homeViewModel.moveCards()
+                                        if Bool.random() {
+                                            homeViewModel.showMatchSheet.toggle()
+                                            homeViewModel.match = cardView.character
+                                            homeViewModel.matches.insert(cardView.character)
+                                        }
+                                    }
+                                })
                     )
                     .transition(homeViewModel.cardRemovalTransition)
             }
