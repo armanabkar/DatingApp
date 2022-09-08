@@ -4,7 +4,7 @@
 </div>
 <br>
 
-### Static dating application based on popular anime characters. Built with SwiftUI and MVVM architecture using Node.js as a backend solution.
+Static dating application based on popular anime characters. Built with SwiftUI and MVVM architecture using Node.js as a backend solution.
 
 - [Node.js Server Repository](https://github.com/armanabkar/AnimeDating_server)
 - [Flutter version](https://github.com/armanabkar/anime_dating_flutter)
@@ -12,9 +12,19 @@
 
 ## Features
 
-- [x] MVVM Architecture
 - [x] Gestures and Animations
 - [x] Basic authentication system
-- [x] iOS 15; AsyncImage and Async/Await
+- [x] MVVM Architecture
+- [x] iOS 15 features
+- [x] Async/Await network requests
+- [x] AsyncImage
+- [x] Custom UI Alerts
+- [ ] Haptic Feedbacks
 - [ ] Unit/Integration Tests
 - [ ] UI Tests
+- Total lines of code: 1423
+- No External Dependency
+
+### Contributing
+
+We appreciate your help!
