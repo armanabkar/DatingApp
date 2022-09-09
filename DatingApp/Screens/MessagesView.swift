@@ -15,7 +15,7 @@ struct MessagesView: View {
         NavigationView {
             List {
                 ForEach(homeViewModel.searchResults, id: \.id) { character in
-                    MessageComponent(name: character.name,
+                    MessageComponent(name: character.firstName,
                                      image: character.imageURL,
                                      messageBody: homeViewModel.suggestions!.randomElement()!)
                 }

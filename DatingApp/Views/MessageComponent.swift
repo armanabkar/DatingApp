@@ -15,7 +15,7 @@ struct MessageComponent: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: image)) { image in
+            CachedAsyncImage(url: URL(string: image)) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)

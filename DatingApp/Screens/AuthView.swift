@@ -52,10 +52,7 @@ struct AuthView: View {
                 }
                 .disabled(homeViewModel.areFieldsFilled() ? false : true)
                 .opacity(homeViewModel.areFieldsFilled() ? 1 : 0.5)
-                .onTapGesture {
-                    homeViewModel.login()
-                }
-                
+
                 Spacer()
                 Text("*Currently only available in the USA.")
             }

@@ -29,4 +29,8 @@ extension Character {
     var imageURL: String {
         return "\(K.URL.baseURL)/\(image)"
     }
+    
+    var firstName: String {
+        return name.components(separatedBy: " ")[0]
+    }
 }

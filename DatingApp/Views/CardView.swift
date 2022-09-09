@@ -14,13 +14,11 @@ struct CardView: View, Identifiable {
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
-        AsyncImage(url: URL(string: character.imageURL)) { image in
+        CachedAsyncImage(url: URL(string: character.imageURL)) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(height: UIScreen.main.bounds.height / 1.5)
-                .overlay(cardDescription(),
-                         alignment: .bottom)
+                .overlay(cardDescription(), alignment: .bottomLeading)
                 .blur(radius: homeViewModel.isTopCard(cardView: self) ? 0 : 6)
         } placeholder: {
             Color.white
@@ -31,23 +29,22 @@ struct CardView: View, Identifiable {
     }
     
     @ViewBuilder private func cardDescription() -> some View {
-        VStack(alignment: .center, spacing: 12) {
-            Text(character.name.uppercased())
+        VStack(alignment: .leading, spacing: 5) {
+            Text("\(character.firstName.uppercased()), \(character.age)")
                 .foregroundColor(Color.white)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .padding(.horizontal, 18)
             
-            Text("\(character.age) - \(character.neighborhood.uppercased())")
+            Text(character.neighborhood.uppercased())
                 .font(.subheadline)
                 .fontWeight(.bold)
-                .padding(6)
+                .padding(4)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.white)
+                        .fill(Color.white.opacity(0.75))
                 )
         }
-        .padding(.bottom, 45)
+        .padding(25)
         .shadow(radius: 4)
     }
     

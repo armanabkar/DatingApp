@@ -25,7 +25,7 @@ struct MatchView: View {
                     ProfileImage(imageName: K.Icon.profile)
                         .frame(width: 150, height: 150)
                     
-                    AsyncImage(url: URL(string: image)) { image in
+                    CachedAsyncImage(url: URL(string: image)) { image in
                         image
                             .resizable()
                     } placeholder: {
