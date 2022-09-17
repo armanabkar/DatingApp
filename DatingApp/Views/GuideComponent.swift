@@ -23,7 +23,8 @@ struct GuideComponent: View {
                     .foregroundColor(iconColor)
                 Text(title)
                     .font(.title2)
-                    .fontWeight(.heavy)
+                    .fontWeight(.bold)
+                    .foregroundColor(iconColor)
             }
             .padding(.vertical, 5)
         } header: {
@@ -41,7 +42,7 @@ struct GuideComponent_Previews: PreviewProvider {
                 title: "Title",
                 subtitle: "Swipe right",
                 description: "This is a placeholder sentence. This is a placeholder sentence. This is a placeholder sentence.",
-                icon: "heart.circle",
+                icon: K.Icon.like,
                 iconColor: .green)
             .previewLayout(.sizeThatFits)
         }

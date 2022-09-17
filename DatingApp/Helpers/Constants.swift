@@ -32,8 +32,6 @@ struct K {
         static let message = "message"
         static let like = "heart.circle"
         static let dismiss = "xmark.circle"
-        static let info = "info.circle"
-        static let reload = "goforward"
     }
     
 }

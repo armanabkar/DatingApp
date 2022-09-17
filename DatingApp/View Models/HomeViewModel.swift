@@ -17,7 +17,6 @@ final class HomeViewModel: ObservableObject {
     private var cardIndex = 0
     @Published var match: Character?
     @Published var showSuggestion = false
-    @Published var showInfoView = false
     @Published var showMatchSheet = false
     @Published var cardRemovalTransition = AnyTransition.trailingBottom
     @Published var dragState = DragState.inactive
@@ -26,7 +25,7 @@ final class HomeViewModel: ObservableObject {
     @Published var phoneNumber = ""
     @Published var searchText = ""
     @AppStorage("isLogin") var isLogin = false
-    @AppStorage("name") var profileName = "Lorem Ipsum"
+    @AppStorage("name") var profileName = "Arman"
     var webService: API = WebService.shared
     
     init() {
@@ -76,13 +75,9 @@ final class HomeViewModel: ObservableObject {
         return suggestion
     }
     
-    func generateRandomInformation() -> [String] {
+    func generateRandomInformation() -> String {
         let randomAge = Int.random(in: 18...50)
-        return [
-            "Some Random Place - \(randomAge)",
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-            "Sed do eiusmd tempor incidiunt ut labre et dore magna aliqua minim veniam."
-        ]
+        return "Some Random Place - \(randomAge)"
     }
     
     func getData() {

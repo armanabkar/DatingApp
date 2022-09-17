@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F01BCFB028D5CEFC00B37545 /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01BCFAF28D5CEFC00B37545 /* AppInfoView.swift */; };
 		F041E6D927AA76610059D299 /* DragState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F041E6D827AA76610059D299 /* DragState.swift */; };
 		F041E6DB27B2F6700059D299 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F041E6DA27B2F6700059D299 /* MatchView.swift */; };
 		F056C539279FCF7700CAA430 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F056C538279FCF7700CAA430 /* MessagesView.swift */; };
@@ -27,7 +28,6 @@
 		F0A23836263C4085006DC490 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23835263C4085006DC490 /* Character.swift */; };
 		F0A2383F263C4149006DC490 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A2383E263C4149006DC490 /* CardView.swift */; };
 		F0A23843263C423C006DC490 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23842263C423C006DC490 /* HeaderView.swift */; };
-		F0A23846263C426E006DC490 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23845263C426E006DC490 /* InfoView.swift */; };
 		F0A23849263C4294006DC490 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23848263C4294006DC490 /* ProfileView.swift */; };
 		F0A23853263C4349006DC490 /* CardTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23852263C4349006DC490 /* CardTransition.swift */; };
 		F0A23859263C4398006DC490 /* TitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A23858263C4398006DC490 /* TitleModifier.swift */; };
@@ -51,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F01BCFAF28D5CEFC00B37545 /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
 		F041E6D827AA76610059D299 /* DragState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragState.swift; sourceTree = "<group>"; };
 		F041E6DA27B2F6700059D299 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		F056C538279FCF7700CAA430 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		F0A23835263C4085006DC490 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		F0A2383E263C4149006DC490 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F0A23842263C423C006DC490 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		F0A23845263C426E006DC490 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		F0A23848263C4294006DC490 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F0A23852263C4349006DC490 /* CardTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransition.swift; sourceTree = "<group>"; };
 		F0A23858263C4398006DC490 /* TitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModifier.swift; sourceTree = "<group>"; };
@@ -187,7 +187,6 @@
 		F0A2383D263C412D006DC490 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				F0A23845263C426E006DC490 /* InfoView.swift */,
 				F0A23848263C4294006DC490 /* ProfileView.swift */,
 				F099C39A26AB216800379601 /* AuthView.swift */,
 				F099C39D26AB294000379601 /* HomeView.swift */,
@@ -206,6 +205,7 @@
 				F06742E8276E411C00488A5C /* RichText.swift */,
 				F056C54027A15CC400CAA430 /* MessageComponent.swift */,
 				F041E6DA27B2F6700059D299 /* MatchView.swift */,
+				F01BCFAF28D5CEFC00B37545 /* AppInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -368,13 +368,13 @@
 				F0A23849263C4294006DC490 /* ProfileView.swift in Sources */,
 				F041E6D927AA76610059D299 /* DragState.swift in Sources */,
 				F099C3B126AEEC1A00379601 /* HomeViewModel.swift in Sources */,
-				F0A23846263C426E006DC490 /* InfoView.swift in Sources */,
 				F0A23865263C4404006DC490 /* GuideComponent.swift in Sources */,
 				F099C3C026AFEFFF00379601 /* Constants.swift in Sources */,
 				F056C54327A1AC2B00CAA430 /* ViewExtension.swift in Sources */,
 				F0A23836263C4085006DC490 /* Character.swift in Sources */,
 				F0A2385C263C43AD006DC490 /* SymbolModifier.swift in Sources */,
 				F0A23859263C4398006DC490 /* TitleModifier.swift in Sources */,
+				F01BCFB028D5CEFC00B37545 /* AppInfoView.swift in Sources */,
 				F041E6DB27B2F6700059D299 /* MatchView.swift in Sources */,
 				F099C3AC26AEE89F00379601 /* WebService.swift in Sources */,
 				F056C53D27A14CCD00CAA430 /* ContentView.swift in Sources */,
@@ -558,7 +558,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 3.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.DatingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -583,7 +583,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3.1;
+				MARKETING_VERSION = 3.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = co.armanabkar.DatingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

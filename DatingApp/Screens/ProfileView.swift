@@ -12,37 +12,58 @@ struct ProfileView: View {
     @EnvironmentObject private var homeViewModel: HomeViewModel
     
     var body: some View {
-        VStack(spacing: 30) {
-            ProfileImage(imageName: K.Icon.profile)
-                .frame(width: 175, height: 175)
+        List {
+            Section { } footer: {
+                HStack {
+                    Spacer()
+                    VStack(spacing: 20) {
+                        ProfileImage(imageName: K.Icon.profile)
+                            .frame(width: 125, height: 125)
+                        
+                        VStack(spacing: 5) {
+                            Text(homeViewModel.profileName)
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(.pink)
+                            Text(homeViewModel.generateRandomInformation())
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                        }
+                        
+                        Divider()
+                        RichText(K.Information.description)
+                            .font(.system(size: 20, weight: .medium, design: .rounded))
+                            .textCase(.uppercase)
+                    }
+                    .multilineTextAlignment(.center)
+                    Spacer()
+                }
+            }
+ 
+            GuideComponent(title: "Like", subtitle: "Swipe Right", description: "Do you like them? Touch the screen and swipe right. If they do the same, you will be matched!", icon: K.Icon.like, iconColor: .green)
+            GuideComponent(title: "Dismiss", subtitle: "Swipe Left", description: "You don't like them? Touch the screen and swipe left. You will no longer see them.", icon: K.Icon.dismiss, iconColor: .red)
             
-            VStack(spacing: 10) {
-                Text(homeViewModel.profileName)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.pink)
-                Text(homeViewModel.generateRandomInformation()[0])
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .padding(.bottom)
-                Text(homeViewModel.generateRandomInformation()[1])
-                    .foregroundColor(.black.opacity(0.8))
-                    .multilineTextAlignment(.center)
-                Text(homeViewModel.generateRandomInformation()[2])
-                    .foregroundColor(.black.opacity(0.8))
-                    .multilineTextAlignment(.center)
+            Section {
+                AppInfoView()
+            } header: {
+                Text("Credits")
             }
             
-            Spacer()
-            Button(action: {
-                homeViewModel.logout()
-            }) {
-                Text("Log Out".uppercased())
-                    .fontWeight(.bold)
-                    .modifier(ButtonModifier())
+            Section {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        homeViewModel.logout()
+                    }) {
+                        Text("Log Out")
+                            .fontWeight(.bold)
+                            .font(.title2)
+                            .foregroundColor(.pink)
+                    }
+                    Spacer()
+                }
             }
         }
-        .padding(25)
     }
 }
 
