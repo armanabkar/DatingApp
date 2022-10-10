@@ -21,11 +21,11 @@ struct ProfileView: View {
                             .frame(width: 125, height: 125)
                         
                         VStack(spacing: 5) {
-                            Text(homeViewModel.profileName)
+                            Text("Arman")
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .foregroundColor(.pink)
-                            Text(homeViewModel.generateRandomInformation())
+                            Text("Vienna, 26")
                                 .font(.title2)
                                 .fontWeight(.semibold)
                         }
@@ -47,21 +47,6 @@ struct ProfileView: View {
                 AppInfoView()
             } header: {
                 Text("Credits")
-            }
-            
-            Section {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        homeViewModel.logout()
-                    }) {
-                        Text("Log Out")
-                            .fontWeight(.bold)
-                            .font(.title2)
-                            .foregroundColor(.pink)
-                    }
-                    Spacer()
-                }
             }
         }
     }

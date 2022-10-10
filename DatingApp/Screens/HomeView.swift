@@ -13,15 +13,17 @@ struct HomeView: View {
     @GestureState private var dragState = DragState.inactive
     
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             HeaderView()
             
             if homeViewModel.characters!.isEmpty {
                 Cards()
                     .hidden()
+                    .overlay {
+                        Color(UIColor.secondarySystemBackground).cornerRadius(14)
+                    }
             } else {
                 Cards()
-                    .padding(.horizontal)
             }
         }
         .alert(isPresented: $homeViewModel.showSuggestion) {
@@ -29,6 +31,7 @@ struct HomeView: View {
                 title: Text(homeViewModel.generateRandomSuggestion()),
                 dismissButton: .default(Text("Close")))
         }
+        .padding()
     }
     
     @ViewBuilder private func Cards() -> some View {

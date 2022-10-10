@@ -17,19 +17,19 @@ struct CardView: View, Identifiable {
         CachedAsyncImage(url: URL(string: character.imageURL)) { image in
             image
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .overlay(cardDescription(), alignment: .bottomLeading)
+                .overlay(cardDescription(), alignment: .bottom)
                 .blur(radius: homeViewModel.isTopCard(cardView: self) ? 0 : 6)
+                .aspectRatio(contentMode: .fill)
         } placeholder: {
-            Color.white
+            Color(UIColor.secondarySystemBackground)
         }
+        .frame(width: UIScreen.main.bounds.width - 50)
         .cornerRadius(14)
         .shadow(radius: 2)
-        .frame(height: UIScreen.main.bounds.height / 1.5)
     }
     
     @ViewBuilder private func cardDescription() -> some View {
-        VStack(alignment: .leading, spacing: 5) {
+        VStack(alignment: .center, spacing: 5) {
             Text("\(character.firstName.uppercased()), \(character.age)")
                 .foregroundColor(Color.white)
                 .font(.largeTitle)
@@ -44,7 +44,7 @@ struct CardView: View, Identifiable {
                         .fill(Color.white.opacity(0.75))
                 )
         }
-        .padding(25)
+        .padding(.bottom, 30)
         .shadow(radius: 4)
     }
     

@@ -21,11 +21,7 @@ final class HomeViewModel: ObservableObject {
     @Published var cardRemovalTransition = AnyTransition.trailingBottom
     @Published var dragState = DragState.inactive
     let dragAreaThreshold: CGFloat = 65.0
-    @Published var name = ""
-    @Published var phoneNumber = ""
     @Published var searchText = ""
-    @AppStorage("isLogin") var isLogin = false
-    @AppStorage("name") var profileName = "Arman"
     var webService: API = WebService.shared
     
     init() {
@@ -37,22 +33,6 @@ final class HomeViewModel: ObservableObject {
         let characters = Array(matches)
         guard !searchText.isEmpty else { return characters }
         return characters.filter { $0.name.contains(searchText) }
-    }
-    
-    func login() {
-        profileName = name
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.isLogin = true
-        }
-    }
-    
-    func logout() {
-        isLogin = false
-    }
-    
-    func areFieldsFilled() -> Bool {
-        !phoneNumber.isEmpty &&
-        !name.isEmpty
     }
     
     func moveCards() {
@@ -74,12 +54,7 @@ final class HomeViewModel: ObservableObject {
         let suggestion = suggestions![randomInt]
         return suggestion
     }
-    
-    func generateRandomInformation() -> String {
-        let randomAge = Int.random(in: 18...50)
-        return "Some Random Place - \(randomAge)"
-    }
-    
+ 
     func getData() {
         Task.init {
             await startServer()

@@ -18,13 +18,8 @@ struct TestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if model.isLogin {
-                ContentView()
-                    .environmentObject(model)
-            } else {
-                AuthView()
-                    .environmentObject(model)
-            }
+            ContentView()
+                .environmentObject(model)
         }
     }
 }
