@@ -20,7 +20,8 @@ struct K {
     }
     
     struct URL {
-        static let baseURL = "https://animedating-server.herokuapp.com"
+        static let baseURL = "https://curious-smock-frog.cyclic.app"
+//        static let baseURL = "https://animedating-server.herokuapp.com"
         static let startURL = "\(baseURL)/start"
         static let charactersURL = "\(baseURL)/api/v1/characters"
         static let suggestionURL = "\(baseURL)/api/v1/suggestions"
